@@ -49,9 +49,13 @@ var corePowers = [90,10,50,30,60]
 var gunNames = ["None", "Single Shot", "Rail Gun", "Laser", "Spread Shot", "Blow", "Ground Bomb", "Homing", "Charge Shot"]
 var gunPowers = [0,5,20,10,15,10,15,10,30]
 var maxPowers = [100,100,100,100,100]
+var structureNames = ["Small", "Medium", "Large"]
+var hullNames = ["Light", "Medium", "Heavy"]
+var engineNames = ["Slow", "Medium", "Fast"]
+var thrusterNames = ["Agile", "Balanced", "Fast"]
 var movementScales = [0.75,1,1.25]
 var start_movement_scale
-var armorValues = [80,100,140]
+var armorValues = [80,100,120]
 
 var resolution = Vector2()
 var mousePos = Vector2()
@@ -65,6 +69,7 @@ var maxPower = 0
 var currentArmor = 0
 var maxArmor = 0
 var wallHit = false
+var money = 0
 
 var core = CORE.teleport
 var structure = STRUCTURE.medium
@@ -91,9 +96,8 @@ func _ready():
 	currentMovementArea = $MovementArea1
 	start_movement_scale = currentMovementArea.scale.x
 	_update_gear()
-	_update_gear_values()
 	currentArmor = maxArmor
-
+	_update_gear_values()
 
 func _process(delta):
 	mousePos = get_viewport().get_mouse_position()
@@ -128,7 +132,7 @@ func _go():
 		global_position = prevPos
 		targetPos = prevPos
 		wallHit = true
-		print("Wall hit!")
+		hit(8)
 		
 	global_position.x = clamp(global_position.x, 0, resolution.x);
 	global_position.y = clamp(global_position.y, 0, resolution.y - 32);	
@@ -153,17 +157,44 @@ func _update_gear():
 	
 	maxArmor = armorValues[hull]
 	
+	var tempStr = "Core: %s"
+	get_parent().get_node("BottomUI/CoreLabel").text = tempStr % [coreAbilityNames[core]]
+	tempStr = "Structure: %s"
+	get_parent().get_node("BottomUI/StructureLabel").text = tempStr % [structureNames[structure]]
+	tempStr = "Hull: %s"
+	get_parent().get_node("BottomUI/HullLabel").text = tempStr % [hullNames[hull]]
+	tempStr = "Engine: %s"
+	get_parent().get_node("BottomUI/EngineLabel").text = tempStr % [engineNames[engine]]
+	tempStr = "Thruster: %s"
+	get_parent().get_node("BottomUI/ThrusterLabel").text = tempStr % [thrusterNames[thruster]]
+	
 func _update_gear_values():
-	_set_action_button($ActionUI/Button1, gunNames[gun1], gun1 == GUN.none or currentPower <= gunPowers[gun1])
-	_set_action_button($ActionUI/Button2, gunNames[gun2], gun2 == GUN.none or currentPower <= gunPowers[gun2])
-	_set_action_button($ActionUI/Button3, coreAbilityNames[core], currentPower <= corePowers[core])
+	
+	var tempStr = "%s [-%s]"
+	tempStr = tempStr % [gunNames[gun1], gunPowers[gun1]]
+	_set_action_button($ActionUI/Button1, tempStr, gun1 == GUN.none or currentPower < gunPowers[gun1])
+	
+	tempStr = "%s [-%s]"
+	tempStr = tempStr % [gunNames[gun2], gunPowers[gun2]]
+	_set_action_button($ActionUI/Button2, tempStr, gun2 == GUN.none or currentPower < gunPowers[gun2])
+	
+	tempStr = "%s [-%s]"
+	tempStr = tempStr % [coreAbilityNames[core], corePowers[core]]
+	_set_action_button($ActionUI/Button3, tempStr, currentPower < corePowers[core])
+	
 	_set_action_button($ActionUI/Button4, "Only move", false)
 	
 	maxPower = maxPowers[core]
 	currentPower = clamp(currentPower, 0, maxPower)
 	
-	var powerStr = "Power: %d/%d"
-	get_parent().get_node("BottomUI/RichTextLabel").text = powerStr % [currentPower, maxPower]
+	tempStr = "Power: %d/%d"
+	get_parent().get_node("BottomUI/PowerLabel").text = tempStr % [currentPower, maxPower]
+	
+	tempStr = "Armor: %d/%d"
+	get_parent().get_node("BottomUI/ArmorLabel").text = tempStr % [currentArmor, maxArmor]
+	
+	tempStr = "Money: %d"
+	get_parent().get_node("BottomUI/MoneyLabel").text = tempStr % [money]
 
 func _set_action_button(var button, var name, var disabled):
 	button.text = name
@@ -215,6 +246,11 @@ func _shoot():
 	get_parent().add_child(bullet)
 	bullet.startMove()
 	bullets.append(bullet)
+	
+func hit(var damage):
+	currentArmor -= damage
+	if(currentArmor <= 0):
+		get_tree().reload_current_scene()
 
 func _on_Area2D_input_event(viewport, event, shape_idx):
 	if Input.is_action_just_pressed("press"):

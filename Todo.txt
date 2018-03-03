@@ -1,0 +1,15 @@
+ - Gear UI
+ - Enemies
+ - Loot
+	- Money
+	- Power
+ - Shop
+ - Different guns
+ - Different core abilities
+ - Different movement areas
+ - Level generation
+ - Level wrapping
+ - Game over
+ - Options
+	- Fullscreen on/off
+ 

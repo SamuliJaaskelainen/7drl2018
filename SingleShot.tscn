@@ -11,7 +11,7 @@ extents = Vector2( 8.0658, 3.24153 )
 [node name="SingleShot" type="KinematicBody2D"]
 
 input_pickable = false
-collision_layer = 1
+collision_layer = 4
 collision_mask = 1
 collision/safe_margin = 0.08
 script = ExtResource( 1 )

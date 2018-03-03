@@ -9,12 +9,12 @@
 [ext_resource path="res://Sprites/MovementCone1.png" type="Texture" id=7]
 [ext_resource path="res://Sprites/UI.png" type="Texture" id=8]
 
-[sub_resource type="RectangleShape2D" id=10]
+[sub_resource type="RectangleShape2D" id=1]
 
 custom_solver_bias = 0.0
 extents = Vector2( 34.9091, 32 )
 
-[sub_resource type="StyleBoxFlat" id=3]
+[sub_resource type="StyleBoxFlat" id=2]
 
 content_margin_left = -1.0
 content_margin_right = -1.0
@@ -43,7 +43,7 @@ anti_aliasing = false
 anti_aliasing_size = 1
 _sections_unfolded = [ "Border", "Border Width", "Corner Radius", "Expand Margin", "Shadow" ]
 
-[sub_resource type="StyleBoxFlat" id=4]
+[sub_resource type="StyleBoxFlat" id=3]
 
 content_margin_left = -1.0
 content_margin_right = -1.0
@@ -72,7 +72,7 @@ anti_aliasing = false
 anti_aliasing_size = 1
 _sections_unfolded = [ "Anti Aliasing", "Border", "Border Width", "Corner Radius", "Expand Margin", "Shadow" ]
 
-[sub_resource type="StyleBoxFlat" id=5]
+[sub_resource type="StyleBoxFlat" id=4]
 
 content_margin_left = -1.0
 content_margin_right = -1.0
@@ -101,7 +101,7 @@ anti_aliasing = false
 anti_aliasing_size = 1
 _sections_unfolded = [ "Anti Aliasing", "Border", "Border Width", "Corner Radius", "Expand Margin", "Shadow" ]
 
-[sub_resource type="StyleBoxFlat" id=6]
+[sub_resource type="StyleBoxFlat" id=5]
 
 content_margin_left = -1.0
 content_margin_right = -1.0
@@ -130,7 +130,7 @@ anti_aliasing = false
 anti_aliasing_size = 1
 _sections_unfolded = [ "Anti Aliasing", "Border", "Border Width", "Corner Radius", "Expand Margin", "Shadow" ]
 
-[sub_resource type="DynamicFont" id=7]
+[sub_resource type="DynamicFont" id=6]
 
 size = 8
 use_mipmaps = false
@@ -138,12 +138,12 @@ use_filter = false
 font_data = ExtResource( 6 )
 _sections_unfolded = [ "Extra Spacing", "Font", "Settings" ]
 
-[sub_resource type="RectangleShape2D" id=8]
+[sub_resource type="RectangleShape2D" id=7]
 
 custom_solver_bias = 0.0
 extents = Vector2( 27.0807, 13.5443 )
 
-[sub_resource type="DynamicFont" id=2]
+[sub_resource type="DynamicFont" id=8]
 
 size = 8
 use_mipmaps = false
@@ -155,11 +155,11 @@ _sections_unfolded = [ "Font", "Settings" ]
 
 [node name="Level" type="KinematicBody2D" parent="." index="0"]
 
-position = Vector2( 256, 128 )
+position = Vector2( 255.825, 128 )
 scale = Vector2( 8, 4 )
 input_pickable = false
 collision_layer = 1
-collision_mask = 1
+collision_mask = 7
 collision/safe_margin = 0.08
 script = ExtResource( 1 )
 _sections_unfolded = [ "Collision", "Material", "Pickable", "Transform", "Visibility", "Z Index", "collision" ]
@@ -171,13 +171,13 @@ __meta__ = {
 
 position = Vector2( 25, 24 )
 scale = Vector2( 0.171875, 0.3125 )
-shape = SubResource( 10 )
+shape = SubResource( 1 )
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="Level" index="1"]
 
 position = Vector2( 6.51563, -11.0625 )
 scale = Vector2( 0.171875, 0.3125 )
-shape = SubResource( 10 )
+shape = SubResource( 1 )
 
 [node name="Sprite" type="Sprite" parent="Level" index="2"]
 
@@ -201,7 +201,7 @@ texture = ExtResource( 2 )
 position = Vector2( 64, 112 )
 scale = Vector2( 0.25, 0.25 )
 input_pickable = false
-collision_layer = 1
+collision_layer = 2
 collision_mask = 1
 collision/safe_margin = 0.08
 script = ExtResource( 3 )
@@ -264,11 +264,11 @@ mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-custom_styles/hover = SubResource( 3 )
-custom_styles/pressed = SubResource( 4 )
-custom_styles/disabled = SubResource( 5 )
-custom_styles/normal = SubResource( 6 )
-custom_fonts/font = SubResource( 7 )
+custom_styles/hover = SubResource( 2 )
+custom_styles/pressed = SubResource( 3 )
+custom_styles/disabled = SubResource( 4 )
+custom_styles/normal = SubResource( 5 )
+custom_fonts/font = SubResource( 6 )
 custom_colors/font_color_disabled = Color( 0, 0, 0, 1 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 custom_colors/font_color_hover = Color( 0, 0, 0, 1 )
@@ -303,11 +303,11 @@ mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-custom_styles/hover = SubResource( 3 )
-custom_styles/pressed = SubResource( 4 )
-custom_styles/disabled = SubResource( 5 )
-custom_styles/normal = SubResource( 6 )
-custom_fonts/font = SubResource( 7 )
+custom_styles/hover = SubResource( 2 )
+custom_styles/pressed = SubResource( 3 )
+custom_styles/disabled = SubResource( 4 )
+custom_styles/normal = SubResource( 5 )
+custom_fonts/font = SubResource( 6 )
 custom_colors/font_color_disabled = Color( 0, 0, 0, 1 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 custom_colors/font_color_hover = Color( 0, 0, 0, 1 )
@@ -342,11 +342,11 @@ mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-custom_styles/hover = SubResource( 3 )
-custom_styles/pressed = SubResource( 4 )
-custom_styles/disabled = SubResource( 5 )
-custom_styles/normal = SubResource( 6 )
-custom_fonts/font = SubResource( 7 )
+custom_styles/hover = SubResource( 2 )
+custom_styles/pressed = SubResource( 3 )
+custom_styles/disabled = SubResource( 4 )
+custom_styles/normal = SubResource( 5 )
+custom_fonts/font = SubResource( 6 )
 custom_colors/font_color_disabled = Color( 0, 0, 0, 1 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 custom_colors/font_color_hover = Color( 0, 0, 0, 1 )
@@ -380,11 +380,11 @@ mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-custom_styles/hover = SubResource( 3 )
-custom_styles/pressed = SubResource( 4 )
-custom_styles/disabled = SubResource( 5 )
-custom_styles/normal = SubResource( 6 )
-custom_fonts/font = SubResource( 7 )
+custom_styles/hover = SubResource( 2 )
+custom_styles/pressed = SubResource( 3 )
+custom_styles/disabled = SubResource( 4 )
+custom_styles/normal = SubResource( 5 )
+custom_fonts/font = SubResource( 6 )
 custom_colors/font_color_disabled = Color( 0, 0, 0, 1 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 custom_colors/font_color_hover = Color( 0, 0, 0, 1 )
@@ -403,7 +403,7 @@ __meta__ = {
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Player" index="3"]
 
-shape = SubResource( 8 )
+shape = SubResource( 7 )
 
 [node name="MovementArea1" type="Sprite" parent="Player" index="4"]
 
@@ -441,613 +441,447 @@ polygon = PoolVector2Array( -8.6189, -16.3982, -1.78764, -19.0931, 6.67311, -21.
 
 [node name="BottomUI" type="Node" parent="." index="2"]
 
-editor/display_folded = true
-
-[node name="Sprite" type="Sprite" parent="BottomUI" index="0"]
-
-position = Vector2( 0, 256 )
-z_index = -1
-z_as_relative = false
-texture = ExtResource( 8 )
-centered = false
-_sections_unfolded = [ "Animation", "Offset", "Region", "Transform", "Z Index" ]
-
-[node name="Sprite5" type="Sprite" parent="BottomUI" index="1"]
-
-position = Vector2( 32, 256 )
-z_index = -1
-z_as_relative = false
-texture = ExtResource( 8 )
-centered = false
-_sections_unfolded = [ "Offset" ]
-
-[node name="Sprite10" type="Sprite" parent="BottomUI" index="2"]
-
-position = Vector2( 64, 256 )
-z_index = -1
-z_as_relative = false
-texture = ExtResource( 8 )
-centered = false
-_sections_unfolded = [ "Offset" ]
-
-[node name="Sprite14" type="Sprite" parent="BottomUI" index="3"]
-
-position = Vector2( 96, 256 )
-z_index = -1
-z_as_relative = false
-texture = ExtResource( 8 )
-centered = false
-_sections_unfolded = [ "Offset" ]
-
-[node name="Sprite18" type="Sprite" parent="BottomUI" index="4"]
-
-position = Vector2( 128, 256 )
-z_index = -1
-z_as_relative = false
-texture = ExtResource( 8 )
-centered = false
-_sections_unfolded = [ "Offset" ]
-
-[node name="Sprite21" type="Sprite" parent="BottomUI" index="5"]
-
-position = Vector2( 160, 256 )
-z_index = -1
-z_as_relative = false
-texture = ExtResource( 8 )
-centered = false
-_sections_unfolded = [ "Offset" ]
-
-[node name="Sprite27" type="Sprite" parent="BottomUI" index="6"]
-
-position = Vector2( 192, 256 )
-z_index = -1
-z_as_relative = false
-texture = ExtResource( 8 )
-centered = false
-_sections_unfolded = [ "Offset" ]
-
-[node name="Sprite29" type="Sprite" parent="BottomUI" index="7"]
-
-position = Vector2( 224, 256 )
-z_index = -1
-z_as_relative = false
-texture = ExtResource( 8 )
-centered = false
-_sections_unfolded = [ "Offset" ]
-
-[node name="Sprite35" type="Sprite" parent="BottomUI" index="8"]
-
-position = Vector2( 256, 256 )
-z_index = -1
-z_as_relative = false
-texture = ExtResource( 8 )
-centered = false
-_sections_unfolded = [ "Offset" ]
-
-[node name="Sprite38" type="Sprite" parent="BottomUI" index="9"]
-
-position = Vector2( 288, 256 )
-z_index = -1
-z_as_relative = false
-texture = ExtResource( 8 )
-centered = false
-_sections_unfolded = [ "Offset" ]
-
-[node name="Sprite41" type="Sprite" parent="BottomUI" index="10"]
-
-position = Vector2( 320, 256 )
-z_index = -1
-z_as_relative = false
-texture = ExtResource( 8 )
-centered = false
-_sections_unfolded = [ "Offset" ]
-
-[node name="Sprite45" type="Sprite" parent="BottomUI" index="11"]
-
-position = Vector2( 352, 256 )
-z_index = -1
-z_as_relative = false
-texture = ExtResource( 8 )
-centered = false
-_sections_unfolded = [ "Offset" ]
-
-[node name="Sprite51" type="Sprite" parent="BottomUI" index="12"]
-
-position = Vector2( 384, 256 )
-z_index = -1
-z_as_relative = false
-texture = ExtResource( 8 )
-centered = false
-_sections_unfolded = [ "Offset" ]
-
-[node name="Sprite55" type="Sprite" parent="BottomUI" index="13"]
-
-position = Vector2( 416, 256 )
-z_index = -1
-z_as_relative = false
-texture = ExtResource( 8 )
-centered = false
-_sections_unfolded = [ "Offset" ]
-
-[node name="Sprite57" type="Sprite" parent="BottomUI" index="14"]
-
-position = Vector2( 448, 256 )
-z_index = -1
-z_as_relative = false
-texture = ExtResource( 8 )
-centered = false
-_sections_unfolded = [ "Offset" ]
-
-[node name="Sprite61" type="Sprite" parent="BottomUI" index="15"]
-
-position = Vector2( 480, 256 )
-z_index = -1
-z_as_relative = false
-texture = ExtResource( 8 )
-centered = false
-_sections_unfolded = [ "Offset" ]
-
-[node name="Sprite2" type="Sprite" parent="BottomUI" index="16"]
-
-position = Vector2( 16, 256 )
-z_index = -1
-z_as_relative = false
-texture = ExtResource( 8 )
-centered = false
-_sections_unfolded = [ "Offset" ]
-
-[node name="Sprite7" type="Sprite" parent="BottomUI" index="17"]
-
-position = Vector2( 48, 256 )
-z_index = -1
-z_as_relative = false
-texture = ExtResource( 8 )
-centered = false
-_sections_unfolded = [ "Offset" ]
-
-[node name="Sprite9" type="Sprite" parent="BottomUI" index="18"]
-
-position = Vector2( 80, 256 )
-z_index = -1
-z_as_relative = false
-texture = ExtResource( 8 )
-centered = false
-_sections_unfolded = [ "Offset" ]
-
-[node name="Sprite13" type="Sprite" parent="BottomUI" index="19"]
-
-position = Vector2( 112, 256 )
-z_index = -1
-z_as_relative = false
-texture = ExtResource( 8 )
-centered = false
-_sections_unfolded = [ "Offset" ]
-
-[node name="Sprite20" type="Sprite" parent="BottomUI" index="20"]
-
-position = Vector2( 144, 256 )
-z_index = -1
-z_as_relative = false
-texture = ExtResource( 8 )
-centered = false
-_sections_unfolded = [ "Offset" ]
-
-[node name="Sprite22" type="Sprite" parent="BottomUI" index="21"]
-
-position = Vector2( 176, 256 )
-z_index = -1
-z_as_relative = false
-texture = ExtResource( 8 )
-centered = false
-_sections_unfolded = [ "Offset" ]
-
-[node name="Sprite26" type="Sprite" parent="BottomUI" index="22"]
-
-position = Vector2( 208, 256 )
-z_index = -1
-z_as_relative = false
-texture = ExtResource( 8 )
-centered = false
-_sections_unfolded = [ "Offset" ]
-
-[node name="Sprite32" type="Sprite" parent="BottomUI" index="23"]
-
-position = Vector2( 240, 256 )
-z_index = -1
-z_as_relative = false
-texture = ExtResource( 8 )
-centered = false
-_sections_unfolded = [ "Offset" ]
-
-[node name="Sprite36" type="Sprite" parent="BottomUI" index="24"]
-
-position = Vector2( 272, 256 )
-z_index = -1
-z_as_relative = false
-texture = ExtResource( 8 )
-centered = false
-_sections_unfolded = [ "Offset" ]
-
-[node name="Sprite40" type="Sprite" parent="BottomUI" index="25"]
-
-position = Vector2( 304, 256 )
-z_index = -1
-z_as_relative = false
-texture = ExtResource( 8 )
-centered = false
-_sections_unfolded = [ "Offset" ]
-
-[node name="Sprite44" type="Sprite" parent="BottomUI" index="26"]
-
-position = Vector2( 336, 256 )
-z_index = -1
-z_as_relative = false
-texture = ExtResource( 8 )
-centered = false
-_sections_unfolded = [ "Offset" ]
-
-[node name="Sprite48" type="Sprite" parent="BottomUI" index="27"]
-
-position = Vector2( 368, 256 )
-z_index = -1
-z_as_relative = false
-texture = ExtResource( 8 )
-centered = false
-_sections_unfolded = [ "Offset" ]
-
-[node name="Sprite52" type="Sprite" parent="BottomUI" index="28"]
-
-position = Vector2( 400, 256 )
-z_index = -1
-z_as_relative = false
-texture = ExtResource( 8 )
-centered = false
-_sections_unfolded = [ "Offset" ]
-
-[node name="Sprite56" type="Sprite" parent="BottomUI" index="29"]
-
-position = Vector2( 432, 256 )
-z_index = -1
-z_as_relative = false
-texture = ExtResource( 8 )
-centered = false
-_sections_unfolded = [ "Offset" ]
-
-[node name="Sprite59" type="Sprite" parent="BottomUI" index="30"]
-
-position = Vector2( 464, 256 )
-z_index = -1
-z_as_relative = false
-texture = ExtResource( 8 )
-centered = false
-_sections_unfolded = [ "Offset" ]
-
-[node name="Sprite64" type="Sprite" parent="BottomUI" index="31"]
-
-position = Vector2( 496, 256 )
-z_index = -1
-z_as_relative = false
-texture = ExtResource( 8 )
-centered = false
-_sections_unfolded = [ "Offset" ]
-
-[node name="Sprite3" type="Sprite" parent="BottomUI" index="32"]
-
-position = Vector2( 16, 272 )
-z_index = -1
-z_as_relative = false
-texture = ExtResource( 8 )
-centered = false
-_sections_unfolded = [ "Offset" ]
-
-[node name="Sprite6" type="Sprite" parent="BottomUI" index="33"]
-
-position = Vector2( 48, 272 )
-z_index = -1
-z_as_relative = false
-texture = ExtResource( 8 )
-centered = false
-_sections_unfolded = [ "Offset" ]
-
-[node name="Sprite11" type="Sprite" parent="BottomUI" index="34"]
-
-position = Vector2( 80, 272 )
-z_index = -1
-z_as_relative = false
-texture = ExtResource( 8 )
-centered = false
-_sections_unfolded = [ "Offset" ]
-
-[node name="Sprite16" type="Sprite" parent="BottomUI" index="35"]
-
-position = Vector2( 112, 272 )
-z_index = -1
-z_as_relative = false
-texture = ExtResource( 8 )
-centered = false
-_sections_unfolded = [ "Offset" ]
-
-[node name="Sprite19" type="Sprite" parent="BottomUI" index="36"]
-
-position = Vector2( 144, 272 )
-z_index = -1
-z_as_relative = false
-texture = ExtResource( 8 )
-centered = false
-_sections_unfolded = [ "Offset" ]
-
-[node name="Sprite23" type="Sprite" parent="BottomUI" index="37"]
-
-position = Vector2( 176, 272 )
-z_index = -1
-z_as_relative = false
-texture = ExtResource( 8 )
-centered = false
-_sections_unfolded = [ "Offset" ]
-
-[node name="Sprite25" type="Sprite" parent="BottomUI" index="38"]
-
-position = Vector2( 208, 272 )
-z_index = -1
-z_as_relative = false
-texture = ExtResource( 8 )
-centered = false
-_sections_unfolded = [ "Offset" ]
-
-[node name="Sprite30" type="Sprite" parent="BottomUI" index="39"]
-
-position = Vector2( 240, 272 )
-z_index = -1
-z_as_relative = false
-texture = ExtResource( 8 )
-centered = false
-_sections_unfolded = [ "Offset" ]
-
-[node name="Sprite33" type="Sprite" parent="BottomUI" index="40"]
-
-position = Vector2( 272, 272 )
-z_index = -1
-z_as_relative = false
-texture = ExtResource( 8 )
-centered = false
-_sections_unfolded = [ "Offset" ]
-
-[node name="Sprite37" type="Sprite" parent="BottomUI" index="41"]
-
-position = Vector2( 304, 272 )
-z_index = -1
-z_as_relative = false
-texture = ExtResource( 8 )
-centered = false
-_sections_unfolded = [ "Offset" ]
-
-[node name="Sprite43" type="Sprite" parent="BottomUI" index="42"]
-
-position = Vector2( 336, 272 )
-z_index = -1
-z_as_relative = false
-texture = ExtResource( 8 )
-centered = false
-_sections_unfolded = [ "Offset" ]
-
-[node name="Sprite47" type="Sprite" parent="BottomUI" index="43"]
-
-position = Vector2( 368, 272 )
-z_index = -1
-z_as_relative = false
-texture = ExtResource( 8 )
-centered = false
-_sections_unfolded = [ "Offset" ]
-
-[node name="Sprite49" type="Sprite" parent="BottomUI" index="44"]
-
-position = Vector2( 400, 272 )
-z_index = -1
-z_as_relative = false
-texture = ExtResource( 8 )
-centered = false
-_sections_unfolded = [ "Offset" ]
-
-[node name="Sprite53" type="Sprite" parent="BottomUI" index="45"]
-
-position = Vector2( 432, 272 )
-z_index = -1
-z_as_relative = false
-texture = ExtResource( 8 )
-centered = false
-_sections_unfolded = [ "Offset" ]
-
-[node name="Sprite60" type="Sprite" parent="BottomUI" index="46"]
-
-position = Vector2( 464, 272 )
-z_index = -1
-z_as_relative = false
-texture = ExtResource( 8 )
-centered = false
-_sections_unfolded = [ "Offset" ]
-
-[node name="Sprite63" type="Sprite" parent="BottomUI" index="47"]
-
-position = Vector2( 496, 272 )
-z_index = -1
-z_as_relative = false
-texture = ExtResource( 8 )
-centered = false
-_sections_unfolded = [ "Offset" ]
-
-[node name="Sprite4" type="Sprite" parent="BottomUI" index="48"]
-
-position = Vector2( 0, 272 )
-z_index = -1
-z_as_relative = false
-texture = ExtResource( 8 )
-centered = false
-_sections_unfolded = [ "Offset" ]
-
-[node name="Sprite8" type="Sprite" parent="BottomUI" index="49"]
-
-position = Vector2( 32, 272 )
-z_index = -1
-z_as_relative = false
-texture = ExtResource( 8 )
-centered = false
-_sections_unfolded = [ "Offset" ]
-
-[node name="Sprite12" type="Sprite" parent="BottomUI" index="50"]
-
-position = Vector2( 64, 272 )
-z_index = -1
-z_as_relative = false
-texture = ExtResource( 8 )
-centered = false
-_sections_unfolded = [ "Offset" ]
-
-[node name="Sprite15" type="Sprite" parent="BottomUI" index="51"]
-
-position = Vector2( 96, 272 )
-z_index = -1
-z_as_relative = false
-texture = ExtResource( 8 )
-centered = false
-_sections_unfolded = [ "Offset" ]
-
-[node name="Sprite17" type="Sprite" parent="BottomUI" index="52"]
-
-position = Vector2( 128, 272 )
-z_index = -1
-z_as_relative = false
-texture = ExtResource( 8 )
-centered = false
-_sections_unfolded = [ "Offset" ]
-
-[node name="Sprite24" type="Sprite" parent="BottomUI" index="53"]
-
-position = Vector2( 160, 272 )
-z_index = -1
-z_as_relative = false
-texture = ExtResource( 8 )
-centered = false
-_sections_unfolded = [ "Offset" ]
-
-[node name="Sprite28" type="Sprite" parent="BottomUI" index="54"]
-
-position = Vector2( 192, 272 )
-z_index = -1
-z_as_relative = false
-texture = ExtResource( 8 )
-centered = false
-_sections_unfolded = [ "Offset" ]
-
-[node name="Sprite31" type="Sprite" parent="BottomUI" index="55"]
-
-position = Vector2( 224, 272 )
-z_index = -1
-z_as_relative = false
-texture = ExtResource( 8 )
-centered = false
-_sections_unfolded = [ "Offset" ]
-
-[node name="Sprite34" type="Sprite" parent="BottomUI" index="56"]
-
-position = Vector2( 256, 272 )
-z_index = -1
-z_as_relative = false
-texture = ExtResource( 8 )
-centered = false
-_sections_unfolded = [ "Offset" ]
-
-[node name="Sprite39" type="Sprite" parent="BottomUI" index="57"]
-
-position = Vector2( 288, 272 )
-z_index = -1
-z_as_relative = false
-texture = ExtResource( 8 )
-centered = false
-_sections_unfolded = [ "Offset" ]
-
-[node name="Sprite42" type="Sprite" parent="BottomUI" index="58"]
-
-position = Vector2( 320, 272 )
-z_index = -1
-z_as_relative = false
-texture = ExtResource( 8 )
-centered = false
-_sections_unfolded = [ "Offset" ]
-
-[node name="Sprite46" type="Sprite" parent="BottomUI" index="59"]
-
-position = Vector2( 352, 272 )
-z_index = -1
-z_as_relative = false
-texture = ExtResource( 8 )
-centered = false
-_sections_unfolded = [ "Offset" ]
-
-[node name="Sprite50" type="Sprite" parent="BottomUI" index="60"]
-
-position = Vector2( 384, 272 )
-z_index = -1
-z_as_relative = false
-texture = ExtResource( 8 )
-centered = false
-_sections_unfolded = [ "Offset" ]
-
-[node name="Sprite54" type="Sprite" parent="BottomUI" index="61"]
-
-position = Vector2( 416, 272 )
-z_index = -1
-z_as_relative = false
-texture = ExtResource( 8 )
-centered = false
-_sections_unfolded = [ "Offset" ]
-
-[node name="Sprite58" type="Sprite" parent="BottomUI" index="62"]
-
-position = Vector2( 448, 272 )
-z_index = -1
-z_as_relative = false
-texture = ExtResource( 8 )
-centered = false
-_sections_unfolded = [ "Offset" ]
-
-[node name="Sprite62" type="Sprite" parent="BottomUI" index="63"]
-
-position = Vector2( 480, 272 )
-z_index = -1
-z_as_relative = false
-texture = ExtResource( 8 )
-centered = false
-_sections_unfolded = [ "Offset" ]
-
-[node name="RichTextLabel" type="RichTextLabel" parent="BottomUI" index="64"]
+[node name="PowerLabel" type="RichTextLabel" parent="BottomUI" index="0"]
 
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 3.0
-margin_top = 244.0
-margin_right = 87.0
-margin_bottom = 255.0
+margin_left = 4.0
+margin_top = 260.0
+margin_right = 88.0
+margin_bottom = 271.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = true
 mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-custom_fonts/normal_font = SubResource( 2 )
+custom_fonts/normal_font = SubResource( 8 )
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+custom_colors/selection_color = Color( 0, 0, 0, 1 )
+custom_colors/font_color_selected = Color( 0, 0, 0, 1 )
 bbcode_enabled = false
 bbcode_text = ""
 visible_characters = -1
 percent_visible = 1.0
 meta_underlined = true
 tab_size = 4
-text = "Power 100/100"
+text = "Power: 100/100"
 scroll_active = false
 scroll_following = false
 selection_enabled = false
 override_selected_font_color = false
 _sections_unfolded = [ "custom_fonts" ]
+
+[node name="ArmorLabel" type="RichTextLabel" parent="BottomUI" index="1"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 4.0
+margin_top = 272.0
+margin_right = 88.0
+margin_bottom = 283.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = true
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+custom_fonts/normal_font = SubResource( 8 )
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+custom_colors/selection_color = Color( 0, 0, 0, 1 )
+custom_colors/font_color_selected = Color( 0, 0, 0, 1 )
+bbcode_enabled = false
+bbcode_text = ""
+visible_characters = -1
+percent_visible = 1.0
+meta_underlined = true
+tab_size = 4
+text = "Armor: 100/100"
+scroll_active = false
+scroll_following = false
+selection_enabled = false
+override_selected_font_color = false
+_sections_unfolded = [ "custom_fonts" ]
+
+[node name="CoreLabel" type="RichTextLabel" parent="BottomUI" index="2"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 104.0
+margin_top = 260.0
+margin_right = 188.0
+margin_bottom = 271.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = true
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+custom_fonts/normal_font = SubResource( 8 )
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+custom_colors/selection_color = Color( 0, 0, 0, 1 )
+custom_colors/font_color_selected = Color( 0, 0, 0, 1 )
+bbcode_enabled = false
+bbcode_text = ""
+visible_characters = -1
+percent_visible = 1.0
+meta_underlined = true
+tab_size = 4
+text = "Core: Teleport"
+scroll_active = false
+scroll_following = false
+selection_enabled = false
+override_selected_font_color = false
+_sections_unfolded = [ "custom_fonts" ]
+
+[node name="MoneyLabel" type="RichTextLabel" parent="BottomUI" index="3"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 104.0
+margin_top = 272.0
+margin_right = 188.0
+margin_bottom = 283.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = true
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+custom_fonts/normal_font = SubResource( 8 )
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+custom_colors/selection_color = Color( 0, 0, 0, 1 )
+custom_colors/font_color_selected = Color( 0, 0, 0, 1 )
+bbcode_enabled = false
+bbcode_text = ""
+visible_characters = -1
+percent_visible = 1.0
+meta_underlined = true
+tab_size = 4
+text = "Money: 100"
+scroll_active = false
+scroll_following = false
+selection_enabled = false
+override_selected_font_color = false
+_sections_unfolded = [ "custom_fonts" ]
+
+[node name="StructureLabel" type="RichTextLabel" parent="BottomUI" index="4"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 200.0
+margin_top = 260.0
+margin_right = 284.0
+margin_bottom = 271.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = true
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+custom_fonts/normal_font = SubResource( 8 )
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+custom_colors/selection_color = Color( 0, 0, 0, 1 )
+custom_colors/font_color_selected = Color( 0, 0, 0, 1 )
+bbcode_enabled = false
+bbcode_text = ""
+visible_characters = -1
+percent_visible = 1.0
+meta_underlined = true
+tab_size = 4
+text = "Structure: Small"
+scroll_active = false
+scroll_following = false
+selection_enabled = false
+override_selected_font_color = false
+_sections_unfolded = [ "custom_fonts" ]
+
+[node name="HullLabel" type="RichTextLabel" parent="BottomUI" index="5"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 200.0
+margin_top = 272.0
+margin_right = 284.0
+margin_bottom = 283.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = true
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+custom_fonts/normal_font = SubResource( 8 )
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+custom_colors/selection_color = Color( 0, 0, 0, 1 )
+custom_colors/font_color_selected = Color( 0, 0, 0, 1 )
+bbcode_enabled = false
+bbcode_text = ""
+visible_characters = -1
+percent_visible = 1.0
+meta_underlined = true
+tab_size = 4
+text = "Hull: Medium"
+scroll_active = false
+scroll_following = false
+selection_enabled = false
+override_selected_font_color = false
+_sections_unfolded = [ "custom_fonts" ]
+
+[node name="EngineLabel" type="RichTextLabel" parent="BottomUI" index="6"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 300.0
+margin_top = 260.0
+margin_right = 384.0
+margin_bottom = 271.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = true
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+custom_fonts/normal_font = SubResource( 8 )
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+custom_colors/selection_color = Color( 0, 0, 0, 1 )
+custom_colors/font_color_selected = Color( 0, 0, 0, 1 )
+bbcode_enabled = false
+bbcode_text = ""
+visible_characters = -1
+percent_visible = 1.0
+meta_underlined = true
+tab_size = 4
+text = "Engine: Medium"
+scroll_active = false
+scroll_following = false
+selection_enabled = false
+override_selected_font_color = false
+_sections_unfolded = [ "custom_fonts" ]
+
+[node name="ThrusterLabel" type="RichTextLabel" parent="BottomUI" index="7"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 300.0
+margin_top = 272.0
+margin_right = 384.0
+margin_bottom = 283.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = true
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+custom_fonts/normal_font = SubResource( 8 )
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+custom_colors/selection_color = Color( 0, 0, 0, 1 )
+custom_colors/font_color_selected = Color( 0, 0, 0, 1 )
+bbcode_enabled = false
+bbcode_text = ""
+visible_characters = -1
+percent_visible = 1.0
+meta_underlined = true
+tab_size = 4
+text = "Thruster: Balanced"
+scroll_active = false
+scroll_following = false
+selection_enabled = false
+override_selected_font_color = false
+_sections_unfolded = [ "custom_fonts" ]
+
+[node name="Gun1Label" type="RichTextLabel" parent="BottomUI" index="8"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 412.0
+margin_top = 260.0
+margin_right = 496.0
+margin_bottom = 271.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = true
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+custom_fonts/normal_font = SubResource( 8 )
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+custom_colors/selection_color = Color( 0, 0, 0, 1 )
+custom_colors/font_color_selected = Color( 0, 0, 0, 1 )
+bbcode_enabled = false
+bbcode_text = ""
+visible_characters = -1
+percent_visible = 1.0
+meta_underlined = true
+tab_size = 4
+text = "Gun1: Single Shot"
+scroll_active = false
+scroll_following = false
+selection_enabled = false
+override_selected_font_color = false
+_sections_unfolded = [ "custom_fonts" ]
+
+[node name="Gun2Label" type="RichTextLabel" parent="BottomUI" index="9"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 412.0
+margin_top = 272.0
+margin_right = 496.0
+margin_bottom = 283.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = true
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+custom_fonts/normal_font = SubResource( 8 )
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+custom_colors/selection_color = Color( 0, 0, 0, 1 )
+custom_colors/font_color_selected = Color( 0, 0, 0, 1 )
+bbcode_enabled = false
+bbcode_text = ""
+visible_characters = -1
+percent_visible = 1.0
+meta_underlined = true
+tab_size = 4
+text = "Gun2: Laser"
+scroll_active = false
+scroll_following = false
+selection_enabled = false
+override_selected_font_color = false
+_sections_unfolded = [ "custom_fonts" ]
+
+[node name="UISprite" type="Sprite" parent="BottomUI" index="10"]
+
+position = Vector2( 16, 272 )
+z_index = -1
+texture = ExtResource( 8 )
+_sections_unfolded = [ "Z Index" ]
+
+[node name="UISprite2" type="Sprite" parent="BottomUI" index="11"]
+
+position = Vector2( 48, 272 )
+z_index = -1
+texture = ExtResource( 8 )
+_sections_unfolded = [ "Z Index" ]
+
+[node name="UISprite3" type="Sprite" parent="BottomUI" index="12"]
+
+position = Vector2( 80, 272 )
+z_index = -1
+texture = ExtResource( 8 )
+_sections_unfolded = [ "Z Index" ]
+
+[node name="UISprite4" type="Sprite" parent="BottomUI" index="13"]
+
+position = Vector2( 112, 272 )
+z_index = -1
+texture = ExtResource( 8 )
+_sections_unfolded = [ "Z Index" ]
+
+[node name="UISprite5" type="Sprite" parent="BottomUI" index="14"]
+
+position = Vector2( 144, 272 )
+z_index = -1
+texture = ExtResource( 8 )
+_sections_unfolded = [ "Z Index" ]
+
+[node name="UISprite6" type="Sprite" parent="BottomUI" index="15"]
+
+position = Vector2( 176, 272 )
+z_index = -1
+texture = ExtResource( 8 )
+_sections_unfolded = [ "Z Index" ]
+
+[node name="UISprite7" type="Sprite" parent="BottomUI" index="16"]
+
+position = Vector2( 208, 272 )
+z_index = -1
+texture = ExtResource( 8 )
+_sections_unfolded = [ "Z Index" ]
+
+[node name="UISprite8" type="Sprite" parent="BottomUI" index="17"]
+
+position = Vector2( 240, 272 )
+z_index = -1
+texture = ExtResource( 8 )
+_sections_unfolded = [ "Z Index" ]
+
+[node name="UISprite9" type="Sprite" parent="BottomUI" index="18"]
+
+position = Vector2( 272, 272 )
+z_index = -1
+texture = ExtResource( 8 )
+_sections_unfolded = [ "Z Index" ]
+
+[node name="UISprite10" type="Sprite" parent="BottomUI" index="19"]
+
+position = Vector2( 304, 272 )
+z_index = -1
+texture = ExtResource( 8 )
+_sections_unfolded = [ "Z Index" ]
+
+[node name="UISprite11" type="Sprite" parent="BottomUI" index="20"]
+
+position = Vector2( 336, 272 )
+z_index = -1
+texture = ExtResource( 8 )
+_sections_unfolded = [ "Z Index" ]
+
+[node name="UISprite12" type="Sprite" parent="BottomUI" index="21"]
+
+position = Vector2( 368, 272 )
+z_index = -1
+texture = ExtResource( 8 )
+_sections_unfolded = [ "Z Index" ]
+
+[node name="UISprite13" type="Sprite" parent="BottomUI" index="22"]
+
+position = Vector2( 400, 272 )
+z_index = -1
+texture = ExtResource( 8 )
+_sections_unfolded = [ "Z Index" ]
+
+[node name="UISprite14" type="Sprite" parent="BottomUI" index="23"]
+
+position = Vector2( 432, 272 )
+z_index = -1
+texture = ExtResource( 8 )
+_sections_unfolded = [ "Z Index" ]
+
+[node name="UISprite15" type="Sprite" parent="BottomUI" index="24"]
+
+position = Vector2( 464, 272 )
+z_index = -1
+texture = ExtResource( 8 )
+_sections_unfolded = [ "Z Index" ]
+
+[node name="UISprite16" type="Sprite" parent="BottomUI" index="25"]
+
+position = Vector2( 496, 272 )
+z_index = -1
+texture = ExtResource( 8 )
+_sections_unfolded = [ "Z Index" ]
 
 [connection signal="pressed" from="Player/ActionUI/Button1" to="Player" method="_on_Button1_pressed"]
 
