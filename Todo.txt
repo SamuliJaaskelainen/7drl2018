@@ -1,15 +1,22 @@
- - Gear UI
+ - Level wrapping
+ - Level generation
  - Enemies
  - Loot
 	- Money
 	- Power
- - Shop
+	- Gear
  - Different guns
+	- Single shot
+	- Whole turn
+	- Chargeable
  - Different core abilities
  - Different movement areas
- - Level generation
- - Level wrapping
- - Game over
- - Options
-	- Fullscreen on/off
+ - Shop
+ - Game over screen
+	- Restart
+	- Back to menu
+ - Menu screen
+	- Start game
+	- Full screen on/off
+	- Quit game
  
