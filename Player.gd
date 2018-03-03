@@ -95,9 +95,9 @@ func _ready():
 	movementAreas = [$MovementArea1, $MovementArea1, $MovementArea1]
 	currentMovementArea = $MovementArea1
 	start_movement_scale = currentMovementArea.scale.x
-	_update_gear()
+	update_gear()
 	currentArmor = maxArmor
-	_update_gear_values()
+	update_gear_values()
 
 func _process(delta):
 	mousePos = get_viewport().get_mouse_position()
@@ -106,24 +106,28 @@ func _process(delta):
 	 
 	if(my_turn):
 		$Cursor.modulate = Color(0,0,0) if Input.is_action_pressed("press") else Color(1,1,1)
-		_we()
+		we()
 	else:
 		$Cursor.modulate = Color(0,0,0)
-		_go()
+		go()
 		turnVal += delta * (1 / turn_time)
 		if(turnVal >= 1.0):
-			my_turn = true
-			currentMovementArea.show()
-			currentPower += 5
-			wallHit = false
-			_update_gear_values()
+			nextTurn()
 			
 	$Cursor.global_position = mousePos;
 
-func _we():
+func nextTurn():
+	my_turn = true
+	currentMovementArea.show()
+	currentPower += 5
+	wallHit = false
+	update_gear_values()
+	
+func we():
+	# Player's turn logic is handled via ui signals
 	pass
 
-func _go():
+func go():
 	var prevPos = global_position
 	var nextPos = oldPos.linear_interpolate(targetPos, turnVal)
 	var collision = move_and_collide(nextPos - global_position)
@@ -149,14 +153,15 @@ func _go():
 			l.queue_free()
 			levelPieces.erase(l)
 
-func _update_gear():
+func update_gear():
+	
+	# Movement area
 	currentMovementArea.hide()
 	currentMovementArea = movementAreas[thruster]
 	currentMovementArea.scale = Vector2(start_movement_scale * movementScales[engine], currentMovementArea.scale.y)
 	currentMovementArea.show()
 	
-	maxArmor = armorValues[hull]
-	
+	# BottomUI
 	var tempStr = "Core: %s"
 	get_parent().get_node("BottomUI/CoreLabel").text = tempStr % [coreAbilityNames[core]]
 	tempStr = "Structure: %s"
@@ -168,31 +173,30 @@ func _update_gear():
 	tempStr = "Thruster: %s"
 	get_parent().get_node("BottomUI/ThrusterLabel").text = tempStr % [thrusterNames[thruster]]
 	
-func _update_gear_values():
+	# Max values
+	maxArmor = armorValues[hull]
+	maxPower = maxPowers[maxPower]
 	
+func update_gear_values():
+	
+	# ActionUI
 	var tempStr = "%s [-%s]"
 	tempStr = tempStr % [gunNames[gun1], gunPowers[gun1]]
 	_set_action_button($ActionUI/Button1, tempStr, gun1 == GUN.none or currentPower < gunPowers[gun1])
-	
 	tempStr = "%s [-%s]"
 	tempStr = tempStr % [gunNames[gun2], gunPowers[gun2]]
 	_set_action_button($ActionUI/Button2, tempStr, gun2 == GUN.none or currentPower < gunPowers[gun2])
-	
 	tempStr = "%s [-%s]"
 	tempStr = tempStr % [coreAbilityNames[core], corePowers[core]]
 	_set_action_button($ActionUI/Button3, tempStr, currentPower < corePowers[core])
-	
 	_set_action_button($ActionUI/Button4, "Only move", false)
 	
-	maxPower = maxPowers[core]
+	# BottomUI
 	currentPower = clamp(currentPower, 0, maxPower)
-	
 	tempStr = "Power: %d/%d"
 	get_parent().get_node("BottomUI/PowerLabel").text = tempStr % [currentPower, maxPower]
-	
 	tempStr = "Armor: %d/%d"
 	get_parent().get_node("BottomUI/ArmorLabel").text = tempStr % [currentArmor, maxArmor]
-	
 	tempStr = "Money: %d"
 	get_parent().get_node("BottomUI/MoneyLabel").text = tempStr % [money]
 
@@ -200,12 +204,13 @@ func _set_action_button(var button, var name, var disabled):
 	button.text = name
 	button.disabled = disabled
 
-func _selectAction(var actionNumber):
+func base_action():
 	my_turn = false
 	targetPos = $ActionUI.rect_global_position
 	$ActionUI.hide()
 	currentMovementArea.hide()
 	turnVal = 0.0
+	update_gear_values()
 	
 	for b in bullets:
 		b.startMove()
@@ -215,32 +220,26 @@ func _selectAction(var actionNumber):
 	
 func _on_Button1_pressed():
 	currentPower -= gunPowers[gun1]
-	_selectAction(0)
-	_update_gear_values()
-	_shoot()
+	base_action()
+	shoot()
 
 func _on_Button2_pressed():
 	currentPower -= gunPowers[gun2]
-	_selectAction(1)
-	_update_gear_values()
-	_shoot()
+	base_action()
+	shoot()
 
 func _on_Button3_pressed():
-	_selectAction(2)
 	currentPower -= corePowers[core]
-	
+	base_action()
 	match core:
 		CORE.teleport:
 			oldPos = targetPos
-			global_position = targetPos
-			
-	_update_gear_values()
+			global_position = targetPos	
 
 func _on_Button4_pressed():
-	_selectAction(3)
-	_update_gear_values()
+	base_action()
 
-func _shoot():
+func shoot():
 	var bullet = singleShot.instance()
 	bullet.position = Vector2(global_position.x + 10, global_position.y)
 	get_parent().add_child(bullet)
@@ -250,6 +249,7 @@ func _shoot():
 func hit(var damage):
 	currentArmor -= damage
 	if(currentArmor <= 0):
+		currentArmor = 0
 		get_tree().reload_current_scene()
 
 func _on_Area2D_input_event(viewport, event, shape_idx):
