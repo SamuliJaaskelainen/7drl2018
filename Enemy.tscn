@@ -1,0 +1,56 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://Enemy.gd" type="Script" id=1]
+[ext_resource path="res://Sprites/boxEnemy.png" type="Texture" id=2]
+[ext_resource path="res://Sprites/thruster/thruster_animated-1.png" type="Texture" id=3]
+[ext_resource path="res://Sprites/thruster/thruster_animated-2.png" type="Texture" id=4]
+
+[sub_resource type="RectangleShape2D" id=1]
+
+custom_solver_bias = 0.0
+extents = Vector2( 14.0133, 14.1968 )
+
+[sub_resource type="SpriteFrames" id=2]
+
+animations = [ {
+"frames": [ ExtResource( 3 ), ExtResource( 4 ) ],
+"loop": true,
+"name": "idle",
+"speed": 2.0
+} ]
+
+[node name="KinematicBody2D" type="KinematicBody2D" index="0"]
+
+position = Vector2( 0.581135, 1.35598 )
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+collision/safe_margin = 0.08
+script = ExtResource( 1 )
+_sections_unfolded = [ "Collision", "Pickable", "collision" ]
+bulletSceneFile = "res://EnemyShot.tscn"
+shootingTurnInterval = 1
+moveSpeed = 1
+collisionDamage = 10
+health = 10
+playerName = "Player"
+animationSpeed = 0.1
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." index="0"]
+
+position = Vector2( 0.150156, 0.125722 )
+shape = SubResource( 1 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="Sprite" type="Sprite" parent="." index="1"]
+
+texture = ExtResource( 2 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="." index="2"]
+
+position = Vector2( -0.774849, 18.9837 )
+frames = SubResource( 2 )
+animation = "idle"
+playing = true
+
+
