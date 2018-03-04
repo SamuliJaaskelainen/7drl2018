@@ -7,10 +7,10 @@ path="res://.import/BlowShot.png-2e96b70620ec762fa871cba496c2dfb2.stex"
 [deps]
 
 source_file="res://Sprites/BlowShot.png"
-source_md5="c3612c21d6dbb97fe68261814de27e00"
+source_md5="d704b3f5e2660b8a8c6bf090ab731f53"
 
 dest_files=[ "res://.import/BlowShot.png-2e96b70620ec762fa871cba496c2dfb2.stex" ]
-dest_md5="4ece455b2f44a2fe93ab504076306d3f"
+dest_md5="21d78a779a32d6713380404179dfebb2"
 
 [params]
 

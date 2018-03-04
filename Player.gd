@@ -76,8 +76,8 @@ var structure = STRUCTURE.medium
 var hull = HULL.medium
 var engine = ENGINE.fast
 var thruster = THRUSTER.balanced
-var gun1 = GUN.singleShot
-var gun2 = GUN.laser
+var gun1 = GUN.laser
+var gun2 = GUN.railGun
 
 var currentMovementArea
 var movementAreas
