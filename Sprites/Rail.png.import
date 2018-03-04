@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Laser.png-9f8cfe7f4878c3e124a7611593350731.stex"
+path="res://.import/Rail.png-bdc490dddfe1e114d10cbc486b14b02d.stex"
 
 [deps]
 
-source_file="res://Sprites/Laser.png"
-source_md5="25c90f8048d5f7ad37d36bf6d622e635"
+source_file="res://Sprites/Rail.png"
+source_md5="c075b27d70d073eb169330337379561a"
 
-dest_files=[ "res://.import/Laser.png-9f8cfe7f4878c3e124a7611593350731.stex" ]
-dest_md5="a55985827da3fd08a9a4bb133ed4439f"
+dest_files=[ "res://.import/Rail.png-bdc490dddfe1e114d10cbc486b14b02d.stex" ]
+dest_md5="0ab760f13b5fdfd259f301cf77301599"
 
 [params]
 

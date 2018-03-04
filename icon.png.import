@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Laser.png-9f8cfe7f4878c3e124a7611593350731.stex"
+path="res://.import/icon.png-487276ed1e3a0c39cad0279d744ee560.stex"
 
 [deps]
 
-source_file="res://Sprites/Laser.png"
-source_md5="25c90f8048d5f7ad37d36bf6d622e635"
+source_file="res://icon.png"
+source_md5="ae7e641067601e2184afcade49abd283"
 
-dest_files=[ "res://.import/Laser.png-9f8cfe7f4878c3e124a7611593350731.stex" ]
-dest_md5="a55985827da3fd08a9a4bb133ed4439f"
+dest_files=[ "res://.import/icon.png-487276ed1e3a0c39cad0279d744ee560.stex" ]
+dest_md5="e98d9bb7134bfbd85e4454221ef47204"
 
 [params]
 

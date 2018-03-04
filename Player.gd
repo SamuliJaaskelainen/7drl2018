@@ -76,8 +76,8 @@ var structure = STRUCTURE.medium
 var hull = HULL.medium
 var engine = ENGINE.fast
 var thruster = THRUSTER.balanced
-var gun1 = GUN.singleShot
-var gun2 = GUN.laser
+var gun1 = GUN.laser
+var gun2 = GUN.railGun
 
 var currentMovementArea
 var movementAreas
@@ -164,11 +164,16 @@ func go():
 	var nextPos = oldPos.linear_interpolate(targetPos, turnVal)
 	var collision = move_and_collide(nextPos - global_position)
 	
-	if collision and not wallHit:
-		global_position = prevPos
-		targetPos = prevPos
-		wallHit = true
-		hit(8)
+	if collision:
+		if (collision.collider.get_name() == "Power"):
+			currentPower += 30
+			collision.collider.queue_free()
+			print("Power pickup")
+		elif not wallHit:
+			global_position = prevPos
+			targetPos = prevPos
+			wallHit = true
+			hit(8)
 		
 	global_position.x = clamp(global_position.x, 0, resolution.x);
 	global_position.y = clamp(global_position.y, 0, resolution.y - 32);	
