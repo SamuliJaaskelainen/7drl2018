@@ -1,5 +1,4 @@
- - Level wrapping
- - Level generation
+ - Levels
  - Enemies
  - Loot
 	- Money

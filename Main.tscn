@@ -1,18 +1,20 @@
-[gd_scene load_steps=17 format=2]
+[gd_scene load_steps=15 format=2]
 
-[ext_resource path="res://LevelPiece.gd" type="Script" id=1]
-[ext_resource path="res://Sprites/icon.png" type="Texture" id=2]
+[ext_resource path="res://uni0553-webfont.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://Sprites/UI.png" type="Texture" id=2]
 [ext_resource path="res://Player.gd" type="Script" id=3]
 [ext_resource path="res://Sprites/Cursor.png" type="Texture" id=4]
 [ext_resource path="res://Sprites/PlayerShip.png" type="Texture" id=5]
-[ext_resource path="res://uni0553-webfont.ttf" type="DynamicFontData" id=6]
-[ext_resource path="res://Sprites/MovementCone1.png" type="Texture" id=7]
-[ext_resource path="res://Sprites/UI.png" type="Texture" id=8]
+[ext_resource path="res://Sprites/MovementCone1.png" type="Texture" id=6]
+[ext_resource path="res://LevelManager.gd" type="Script" id=7]
 
-[sub_resource type="RectangleShape2D" id=1]
+[sub_resource type="DynamicFont" id=8]
 
-custom_solver_bias = 0.0
-extents = Vector2( 34.9091, 32 )
+size = 8
+use_mipmaps = false
+use_filter = false
+font_data = ExtResource( 1 )
+_sections_unfolded = [ "Font", "Settings" ]
 
 [sub_resource type="StyleBoxFlat" id=2]
 
@@ -135,7 +137,7 @@ _sections_unfolded = [ "Anti Aliasing", "Border", "Border Width", "Corner Radius
 size = 8
 use_mipmaps = false
 use_filter = false
-font_data = ExtResource( 6 )
+font_data = ExtResource( 1 )
 _sections_unfolded = [ "Extra Spacing", "Font", "Settings" ]
 
 [sub_resource type="RectangleShape2D" id=7]
@@ -143,303 +145,11 @@ _sections_unfolded = [ "Extra Spacing", "Font", "Settings" ]
 custom_solver_bias = 0.0
 extents = Vector2( 27.0807, 13.5443 )
 
-[sub_resource type="DynamicFont" id=8]
-
-size = 8
-use_mipmaps = false
-use_filter = false
-font_data = ExtResource( 6 )
-_sections_unfolded = [ "Font", "Settings" ]
-
 [node name="Game" type="Node" index="0"]
 
-[node name="Level" type="KinematicBody2D" parent="." index="0"]
-
-position = Vector2( 255.825, 128 )
-scale = Vector2( 8, 4 )
-input_pickable = false
-collision_layer = 1
-collision_mask = 7
-collision/safe_margin = 0.08
-script = ExtResource( 1 )
-_sections_unfolded = [ "Collision", "Material", "Pickable", "Transform", "Visibility", "Z Index", "collision" ]
-__meta__ = {
-"_edit_group_": true
-}
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Level" index="0"]
-
-position = Vector2( 25, 24 )
-scale = Vector2( 0.171875, 0.3125 )
-shape = SubResource( 1 )
-
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="Level" index="1"]
-
-position = Vector2( 6.51563, -11.0625 )
-scale = Vector2( 0.171875, 0.3125 )
-shape = SubResource( 1 )
-
-[node name="Sprite" type="Sprite" parent="Level" index="2"]
-
-position = Vector2( 25, 24 )
-scale = Vector2( 0.171875, 0.3125 )
-z_index = -2
-z_as_relative = false
-texture = ExtResource( 2 )
-_sections_unfolded = [ "Z Index" ]
-
-[node name="Sprite2" type="Sprite" parent="Level" index="3"]
-
-position = Vector2( 6.51563, -11.0625 )
-scale = Vector2( 0.171875, 0.3125 )
-z_index = -2
-z_as_relative = false
-texture = ExtResource( 2 )
-
-[node name="Player" type="KinematicBody2D" parent="." index="1"]
-
-position = Vector2( 64, 112 )
-scale = Vector2( 0.25, 0.25 )
-input_pickable = false
-collision_layer = 2
-collision_mask = 1
-collision/safe_margin = 0.08
-script = ExtResource( 3 )
-_sections_unfolded = [ "Collision", "Pickable", "Transform", "Visibility", "Z Index", "collision" ]
-__meta__ = {
-"_edit_group_": true
-}
-
-[node name="Cursor" type="Sprite" parent="Player" index="0"]
-
-position = Vector2( -256, -448 )
-scale = Vector2( 4, 4 )
-z_index = 10
-z_as_relative = false
-texture = ExtResource( 4 )
-centered = false
-_sections_unfolded = [ "Offset", "Visibility", "Z Index" ]
-
-[node name="Sprite" type="Sprite" parent="Player" index="1"]
-
-scale = Vector2( 4, 4 )
-z_index = -3
-z_as_relative = false
-texture = ExtResource( 5 )
-_sections_unfolded = [ "Transform", "Z Index" ]
-
-[node name="ActionUI" type="Control" parent="Player" index="2"]
+[node name="BottomUI" type="Node" parent="." index="0"]
 
 editor/display_folded = true
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
-margin_left = -256.0
-margin_top = -448.0
-margin_right = -128.0
-margin_bottom = -384.0
-rect_scale = Vector2( 2, 2 )
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 0
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
-
-[node name="Button1" type="Button" parent="Player/ActionUI" index="0"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
-margin_left = 4.0
-margin_top = 4.0
-margin_right = 108.0
-margin_bottom = 20.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-focus_mode = 2
-mouse_filter = 0
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
-custom_styles/hover = SubResource( 2 )
-custom_styles/pressed = SubResource( 3 )
-custom_styles/disabled = SubResource( 4 )
-custom_styles/normal = SubResource( 5 )
-custom_fonts/font = SubResource( 6 )
-custom_colors/font_color_disabled = Color( 0, 0, 0, 1 )
-custom_colors/font_color = Color( 0, 0, 0, 1 )
-custom_colors/font_color_hover = Color( 0, 0, 0, 1 )
-custom_colors/font_color_pressed = Color( 0, 0, 0, 1 )
-disabled = true
-toggle_mode = false
-enabled_focus_mode = 2
-shortcut = null
-group = null
-text = "Single shot"
-flat = false
-align = 0
-_sections_unfolded = [ "Pause" ]
-__meta__ = {
-"_edit_group_": true
-}
-
-[node name="Button2" type="Button" parent="Player/ActionUI" index="1"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
-margin_left = 4.0
-margin_top = 18.0
-margin_right = 108.0
-margin_bottom = 34.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-focus_mode = 2
-mouse_filter = 0
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
-custom_styles/hover = SubResource( 2 )
-custom_styles/pressed = SubResource( 3 )
-custom_styles/disabled = SubResource( 4 )
-custom_styles/normal = SubResource( 5 )
-custom_fonts/font = SubResource( 6 )
-custom_colors/font_color_disabled = Color( 0, 0, 0, 1 )
-custom_colors/font_color = Color( 0, 0, 0, 1 )
-custom_colors/font_color_hover = Color( 0, 0, 0, 1 )
-custom_colors/font_color_pressed = Color( 0, 0, 0, 1 )
-disabled = true
-toggle_mode = false
-enabled_focus_mode = 2
-shortcut = null
-group = null
-text = "Ground bomb"
-flat = false
-align = 0
-_sections_unfolded = [ "Anchor", "Focus", "Grow Direction", "Hint", "Margin", "Material", "Mouse", "Pause", "Rect", "Size Flags", "Theme", "Visibility", "custom_colors", "custom_constants", "custom_fonts", "custom_styles" ]
-__meta__ = {
-"_edit_group_": true
-}
-
-[node name="Button3" type="Button" parent="Player/ActionUI" index="2"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
-margin_left = 4.0
-margin_top = 32.0
-margin_right = 108.0
-margin_bottom = 48.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-focus_mode = 2
-mouse_filter = 0
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
-custom_styles/hover = SubResource( 2 )
-custom_styles/pressed = SubResource( 3 )
-custom_styles/disabled = SubResource( 4 )
-custom_styles/normal = SubResource( 5 )
-custom_fonts/font = SubResource( 6 )
-custom_colors/font_color_disabled = Color( 0, 0, 0, 1 )
-custom_colors/font_color = Color( 0, 0, 0, 1 )
-custom_colors/font_color_hover = Color( 0, 0, 0, 1 )
-custom_colors/font_color_pressed = Color( 0, 0, 0, 1 )
-toggle_mode = false
-enabled_focus_mode = 2
-shortcut = null
-group = null
-text = "Teleport"
-flat = false
-align = 0
-_sections_unfolded = [ "Anchor", "Focus", "Grow Direction", "Hint", "Margin", "Material", "Mouse", "Pause", "Rect", "Size Flags", "Theme", "Visibility", "custom_colors", "custom_constants", "custom_fonts", "custom_styles" ]
-__meta__ = {
-"_edit_group_": true
-}
-
-[node name="Button4" type="Button" parent="Player/ActionUI" index="3"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
-margin_left = 4.0
-margin_top = 46.0
-margin_right = 108.0
-margin_bottom = 62.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-focus_mode = 2
-mouse_filter = 0
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
-custom_styles/hover = SubResource( 2 )
-custom_styles/pressed = SubResource( 3 )
-custom_styles/disabled = SubResource( 4 )
-custom_styles/normal = SubResource( 5 )
-custom_fonts/font = SubResource( 6 )
-custom_colors/font_color_disabled = Color( 0, 0, 0, 1 )
-custom_colors/font_color = Color( 0, 0, 0, 1 )
-custom_colors/font_color_hover = Color( 0, 0, 0, 1 )
-custom_colors/font_color_pressed = Color( 0, 0, 0, 1 )
-toggle_mode = false
-enabled_focus_mode = 2
-shortcut = null
-group = null
-text = "Just move"
-flat = false
-align = 0
-_sections_unfolded = [ "Anchor", "Focus", "Grow Direction", "Hint", "Margin", "Material", "Mouse", "Pause", "Rect", "Size Flags", "Theme", "Visibility", "custom_colors", "custom_constants", "custom_fonts", "custom_styles" ]
-__meta__ = {
-"_edit_group_": true
-}
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Player" index="3"]
-
-shape = SubResource( 7 )
-
-[node name="MovementArea1" type="Sprite" parent="Player" index="4"]
-
-editor/display_folded = true
-modulate = Color( 1, 1, 1, 0.0196078 )
-position = Vector2( -256, 0 )
-scale = Vector2( 8, 8 )
-texture = ExtResource( 7 )
-centered = false
-offset = Vector2( 0, -32 )
-_sections_unfolded = [ "Animation", "Offset", "Region", "Transform", "Visibility", "Z Index" ]
-__meta__ = {
-"_edit_group_": true
-}
-
-[node name="Area2D" type="Area2D" parent="Player/MovementArea1" index="0"]
-
-editor/display_folded = true
-position = Vector2( 1.35852, -0.486641 )
-input_pickable = true
-gravity_vec = Vector2( 0, 1 )
-gravity = 98.0
-linear_damp = 0.1
-angular_damp = 1.0
-audio_bus_override = false
-audio_bus_name = "Master"
-_sections_unfolded = [ "Pickable", "Transform" ]
-
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Player/MovementArea1/Area2D" index="0"]
-
-position = Vector2( 31.3324, 0 )
-scale = Vector2( 1.01957, 1 )
-build_mode = 0
-polygon = PoolVector2Array( -8.6189, -16.3982, -1.78764, -19.0931, 6.67311, -21.6, 30.6139, -21.5373, 30.6766, 21.2678, 7.04914, 21.2678, -7.36546, 17.3821, -19.3985, 11.3029, -24.475, 7.41721, -29.6141, 1.33802, -29.4261, -2.48499, -24.2243, -8.56419, -17.393, -12.2618 )
-
-[node name="BottomUI" type="Node" parent="." index="2"]
 
 [node name="PowerLabel" type="RichTextLabel" parent="BottomUI" index="0"]
 
@@ -775,113 +485,361 @@ _sections_unfolded = [ "custom_fonts" ]
 
 position = Vector2( 16, 272 )
 z_index = -1
-texture = ExtResource( 8 )
+texture = ExtResource( 2 )
 _sections_unfolded = [ "Z Index" ]
 
 [node name="UISprite2" type="Sprite" parent="BottomUI" index="11"]
 
 position = Vector2( 48, 272 )
 z_index = -1
-texture = ExtResource( 8 )
+texture = ExtResource( 2 )
 _sections_unfolded = [ "Z Index" ]
 
 [node name="UISprite3" type="Sprite" parent="BottomUI" index="12"]
 
 position = Vector2( 80, 272 )
 z_index = -1
-texture = ExtResource( 8 )
+texture = ExtResource( 2 )
 _sections_unfolded = [ "Z Index" ]
 
 [node name="UISprite4" type="Sprite" parent="BottomUI" index="13"]
 
 position = Vector2( 112, 272 )
 z_index = -1
-texture = ExtResource( 8 )
+texture = ExtResource( 2 )
 _sections_unfolded = [ "Z Index" ]
 
 [node name="UISprite5" type="Sprite" parent="BottomUI" index="14"]
 
 position = Vector2( 144, 272 )
 z_index = -1
-texture = ExtResource( 8 )
+texture = ExtResource( 2 )
 _sections_unfolded = [ "Z Index" ]
 
 [node name="UISprite6" type="Sprite" parent="BottomUI" index="15"]
 
 position = Vector2( 176, 272 )
 z_index = -1
-texture = ExtResource( 8 )
+texture = ExtResource( 2 )
 _sections_unfolded = [ "Z Index" ]
 
 [node name="UISprite7" type="Sprite" parent="BottomUI" index="16"]
 
 position = Vector2( 208, 272 )
 z_index = -1
-texture = ExtResource( 8 )
+texture = ExtResource( 2 )
 _sections_unfolded = [ "Z Index" ]
 
 [node name="UISprite8" type="Sprite" parent="BottomUI" index="17"]
 
 position = Vector2( 240, 272 )
 z_index = -1
-texture = ExtResource( 8 )
+texture = ExtResource( 2 )
 _sections_unfolded = [ "Z Index" ]
 
 [node name="UISprite9" type="Sprite" parent="BottomUI" index="18"]
 
 position = Vector2( 272, 272 )
 z_index = -1
-texture = ExtResource( 8 )
+texture = ExtResource( 2 )
 _sections_unfolded = [ "Z Index" ]
 
 [node name="UISprite10" type="Sprite" parent="BottomUI" index="19"]
 
 position = Vector2( 304, 272 )
 z_index = -1
-texture = ExtResource( 8 )
+texture = ExtResource( 2 )
 _sections_unfolded = [ "Z Index" ]
 
 [node name="UISprite11" type="Sprite" parent="BottomUI" index="20"]
 
 position = Vector2( 336, 272 )
 z_index = -1
-texture = ExtResource( 8 )
+texture = ExtResource( 2 )
 _sections_unfolded = [ "Z Index" ]
 
 [node name="UISprite12" type="Sprite" parent="BottomUI" index="21"]
 
 position = Vector2( 368, 272 )
 z_index = -1
-texture = ExtResource( 8 )
+texture = ExtResource( 2 )
 _sections_unfolded = [ "Z Index" ]
 
 [node name="UISprite13" type="Sprite" parent="BottomUI" index="22"]
 
 position = Vector2( 400, 272 )
 z_index = -1
-texture = ExtResource( 8 )
+texture = ExtResource( 2 )
 _sections_unfolded = [ "Z Index" ]
 
 [node name="UISprite14" type="Sprite" parent="BottomUI" index="23"]
 
 position = Vector2( 432, 272 )
 z_index = -1
-texture = ExtResource( 8 )
+texture = ExtResource( 2 )
 _sections_unfolded = [ "Z Index" ]
 
 [node name="UISprite15" type="Sprite" parent="BottomUI" index="24"]
 
 position = Vector2( 464, 272 )
 z_index = -1
-texture = ExtResource( 8 )
+texture = ExtResource( 2 )
 _sections_unfolded = [ "Z Index" ]
 
 [node name="UISprite16" type="Sprite" parent="BottomUI" index="25"]
 
 position = Vector2( 496, 272 )
 z_index = -1
-texture = ExtResource( 8 )
+texture = ExtResource( 2 )
 _sections_unfolded = [ "Z Index" ]
+
+[node name="Player" type="KinematicBody2D" parent="." index="1"]
+
+editor/display_folded = true
+position = Vector2( 64, 112 )
+scale = Vector2( 0.25, 0.25 )
+input_pickable = false
+collision_layer = 2
+collision_mask = 1
+collision/safe_margin = 0.08
+script = ExtResource( 3 )
+_sections_unfolded = [ "Collision", "Pickable", "Transform", "Visibility", "Z Index", "collision" ]
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Cursor" type="Sprite" parent="Player" index="0"]
+
+position = Vector2( -256, -448 )
+scale = Vector2( 4, 4 )
+z_index = 10
+z_as_relative = false
+texture = ExtResource( 4 )
+centered = false
+_sections_unfolded = [ "Offset", "Visibility", "Z Index" ]
+
+[node name="Sprite" type="Sprite" parent="Player" index="1"]
+
+scale = Vector2( 4, 4 )
+z_index = -3
+z_as_relative = false
+texture = ExtResource( 5 )
+_sections_unfolded = [ "Transform", "Z Index" ]
+
+[node name="ActionUI" type="Control" parent="Player" index="2"]
+
+editor/display_folded = true
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = -256.0
+margin_top = -448.0
+margin_right = -128.0
+margin_bottom = -384.0
+rect_scale = Vector2( 2, 2 )
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+
+[node name="Button1" type="Button" parent="Player/ActionUI" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 4.0
+margin_top = 4.0
+margin_right = 108.0
+margin_bottom = 20.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+custom_styles/hover = SubResource( 2 )
+custom_styles/pressed = SubResource( 3 )
+custom_styles/disabled = SubResource( 4 )
+custom_styles/normal = SubResource( 5 )
+custom_fonts/font = SubResource( 6 )
+custom_colors/font_color_disabled = Color( 0, 0, 0, 1 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_colors/font_color_hover = Color( 0, 0, 0, 1 )
+custom_colors/font_color_pressed = Color( 0, 0, 0, 1 )
+disabled = true
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+group = null
+text = "Single shot"
+flat = false
+align = 0
+_sections_unfolded = [ "Pause" ]
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Button2" type="Button" parent="Player/ActionUI" index="1"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 4.0
+margin_top = 18.0
+margin_right = 108.0
+margin_bottom = 34.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+custom_styles/hover = SubResource( 2 )
+custom_styles/pressed = SubResource( 3 )
+custom_styles/disabled = SubResource( 4 )
+custom_styles/normal = SubResource( 5 )
+custom_fonts/font = SubResource( 6 )
+custom_colors/font_color_disabled = Color( 0, 0, 0, 1 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_colors/font_color_hover = Color( 0, 0, 0, 1 )
+custom_colors/font_color_pressed = Color( 0, 0, 0, 1 )
+disabled = true
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+group = null
+text = "Ground bomb"
+flat = false
+align = 0
+_sections_unfolded = [ "Anchor", "Focus", "Grow Direction", "Hint", "Margin", "Material", "Mouse", "Pause", "Rect", "Size Flags", "Theme", "Visibility", "custom_colors", "custom_constants", "custom_fonts", "custom_styles" ]
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Button3" type="Button" parent="Player/ActionUI" index="2"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 4.0
+margin_top = 32.0
+margin_right = 108.0
+margin_bottom = 48.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+custom_styles/hover = SubResource( 2 )
+custom_styles/pressed = SubResource( 3 )
+custom_styles/disabled = SubResource( 4 )
+custom_styles/normal = SubResource( 5 )
+custom_fonts/font = SubResource( 6 )
+custom_colors/font_color_disabled = Color( 0, 0, 0, 1 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_colors/font_color_hover = Color( 0, 0, 0, 1 )
+custom_colors/font_color_pressed = Color( 0, 0, 0, 1 )
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+group = null
+text = "Teleport"
+flat = false
+align = 0
+_sections_unfolded = [ "Anchor", "Focus", "Grow Direction", "Hint", "Margin", "Material", "Mouse", "Pause", "Rect", "Size Flags", "Theme", "Visibility", "custom_colors", "custom_constants", "custom_fonts", "custom_styles" ]
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Button4" type="Button" parent="Player/ActionUI" index="3"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 4.0
+margin_top = 46.0
+margin_right = 108.0
+margin_bottom = 62.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+custom_styles/hover = SubResource( 2 )
+custom_styles/pressed = SubResource( 3 )
+custom_styles/disabled = SubResource( 4 )
+custom_styles/normal = SubResource( 5 )
+custom_fonts/font = SubResource( 6 )
+custom_colors/font_color_disabled = Color( 0, 0, 0, 1 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_colors/font_color_hover = Color( 0, 0, 0, 1 )
+custom_colors/font_color_pressed = Color( 0, 0, 0, 1 )
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+group = null
+text = "Just move"
+flat = false
+align = 0
+_sections_unfolded = [ "Anchor", "Focus", "Grow Direction", "Hint", "Margin", "Material", "Mouse", "Pause", "Rect", "Size Flags", "Theme", "Visibility", "custom_colors", "custom_constants", "custom_fonts", "custom_styles" ]
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player" index="3"]
+
+shape = SubResource( 7 )
+
+[node name="MovementArea1" type="Sprite" parent="Player" index="4"]
+
+editor/display_folded = true
+modulate = Color( 1, 1, 1, 0.0196078 )
+position = Vector2( -256, 0 )
+scale = Vector2( 8, 8 )
+texture = ExtResource( 6 )
+centered = false
+offset = Vector2( 0, -32 )
+_sections_unfolded = [ "Animation", "Offset", "Region", "Transform", "Visibility", "Z Index" ]
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Area2D" type="Area2D" parent="Player/MovementArea1" index="0"]
+
+editor/display_folded = true
+position = Vector2( 1.35852, -0.486641 )
+input_pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+audio_bus_override = false
+audio_bus_name = "Master"
+_sections_unfolded = [ "Pickable", "Transform" ]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Player/MovementArea1/Area2D" index="0"]
+
+position = Vector2( 31.3324, 0 )
+scale = Vector2( 1.01957, 1 )
+build_mode = 0
+polygon = PoolVector2Array( -8.6189, -16.3982, -1.78764, -19.0931, 6.67311, -21.6, 30.6139, -21.5373, 30.6766, 21.2678, 7.04914, 21.2678, -7.36546, 17.3821, -19.3985, 11.3029, -24.475, 7.41721, -29.6141, 1.33802, -29.4261, -2.48499, -24.2243, -8.56419, -17.393, -12.2618 )
+
+[node name="LevelManager" type="Node" parent="." index="2"]
+
+script = ExtResource( 7 )
 
 [connection signal="pressed" from="Player/ActionUI/Button1" to="Player" method="_on_Button1_pressed"]
 

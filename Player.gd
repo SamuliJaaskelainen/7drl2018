@@ -83,11 +83,12 @@ var currentMovementArea
 var movementAreas
 
 var bullets = []
-var levelPieces = []
 var singleShot = preload("res://SingleShot.tscn")
 
+var levelManager
+
 func _ready():
-	levelPieces.append(get_parent().find_node("Level"))
+	levelManager = get_parent().get_node("LevelManager")
 	$ActionUI.hide()
 	Input.set_mouse_mode(Input.MOUSE_MODE_HIDDEN)
 	resolution.x = ProjectSettings.get_setting("display/window/size/width")
@@ -147,11 +148,7 @@ func go():
 			b.queue_free()
 			bullets.erase(b)
 			
-	for l in levelPieces:
-		l.move(turnVal)
-		if l.killMe:
-			l.queue_free()
-			levelPieces.erase(l)
+	levelManager.moveLevel(turnVal)
 
 func update_gear():
 	
@@ -215,8 +212,7 @@ func base_action():
 	for b in bullets:
 		b.startMove()
 		
-	for l in levelPieces:
-		l.startMove()
+	levelManager.startMove()
 	
 func _on_Button1_pressed():
 	currentPower -= gunPowers[gun1]

@@ -18,6 +18,7 @@ func move(var val):
 	if collision:
 		if (collision.collider.get_name() == "Player"):
 			collision.collider.hit(damage)
+		print("bullet hit %s", collision.collider.get_name())
 		killMe = true
 
 func _on_VisibilityNotifier2D_viewport_exited(viewport):

@@ -2,7 +2,7 @@ extends KinematicBody2D
 
 var dir = Vector2(-1,0)
 var pieceWidth = 256
-var speed = 50
+var speed = 30
 var lastPos
 var targetPos
 var killMe = false
