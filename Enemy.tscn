@@ -51,6 +51,7 @@ texture = ExtResource( 2 )
 position = Vector2( -0.774849, 18.9837 )
 frames = SubResource( 2 )
 animation = "idle"
+frame = 1
 playing = true
 
 
