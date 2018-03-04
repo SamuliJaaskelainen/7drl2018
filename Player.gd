@@ -33,10 +33,9 @@ enum THRUSTER{
 }
 
 enum GUN{
-	none,
   	singleShot,
-	railGun,
 	laser,
+	railGun,
 	spreadShot,
 	blow,
 	groundBomb,
@@ -46,8 +45,8 @@ enum GUN{
 
 var coreAbilityNames = ["Shield", "Probe", "Teleport", "DamageBoost", "Bomb"]
 var corePowers = [90,10,50,30,60]
-var gunNames = ["None", "Single Shot", "Rail Gun", "Laser", "Spread Shot", "Blow", "Ground Bomb", "Homing", "Charge Shot"]
-var gunPowers = [0,5,20,10,15,10,15,10,30]
+var gunNames = ["Single Shot", "Laser", "Rail Gun", "Spread Shot", "Blow", "Ground Bomb", "Homing", "Charge Shot"]
+var gunPowers = [5,10,40,10,10,15,10,30]
 var maxPowers = [100,100,100,100,100]
 var structureNames = ["Small", "Medium", "Large"]
 var hullNames = ["Light", "Medium", "Heavy"]
@@ -70,6 +69,7 @@ var currentArmor = 0
 var maxArmor = 0
 var wallHit = false
 var money = 0
+var powerPerTurn = 5
 
 var core = CORE.teleport
 var structure = STRUCTURE.medium
@@ -77,18 +77,28 @@ var hull = HULL.medium
 var engine = ENGINE.fast
 var thruster = THRUSTER.balanced
 var gun1 = GUN.singleShot
-var gun2 = GUN.laser
+var gun2 = GUN.spreadShot
 
 var currentMovementArea
 var movementAreas
 
+var shotBullets = []
 var bullets = []
+var gun1Bullet
+var gun2Bullet
 var singleShot = preload("res://SingleShot.tscn")
+var laserShot = preload("res://LaserShot.tscn")
+var railShot = preload("res://RailShot.tscn")
+var spreadShot = preload("res://SpreadShot.tscn")
 
 var levelManager
 
 func _ready():
 	levelManager = get_parent().get_node("LevelManager")
+	bullets.append(singleShot)
+	bullets.append(laserShot)
+	bullets.append(railShot)
+	bullets.append(spreadShot)
 	$ActionUI.hide()
 	Input.set_mouse_mode(Input.MOUSE_MODE_HIDDEN)
 	resolution.x = ProjectSettings.get_setting("display/window/size/width")
@@ -120,13 +130,34 @@ func _process(delta):
 func nextTurn():
 	my_turn = true
 	currentMovementArea.show()
-	currentPower += 5
+	currentPower += powerPerTurn
 	wallHit = false
 	update_gear_values()
 	
+	for b in shotBullets:
+		b.endMove()
+		if b.killMe:
+			b.queue_free()
+			shotBullets.erase(b)
+	
 func we():
-	# Player's turn logic is handled via ui signals
-	pass
+	# Player's turn logic is handled via ui signals as well
+	# Here we have hotkeys for leet players
+	if $ActionUI.is_visible_in_tree():
+		if Input.is_action_just_pressed("action1") and not $ActionUI/Button1.disabled:
+			_on_Button1_pressed()
+			
+	if $ActionUI.is_visible_in_tree():
+		if Input.is_action_just_pressed("action2") and not $ActionUI/Button2.disabled:
+			_on_Button2_pressed()
+			
+	if $ActionUI.is_visible_in_tree():
+		if Input.is_action_just_pressed("action3") and not $ActionUI/Button3.disabled:
+			_on_Button3_pressed()
+			
+	if $ActionUI.is_visible_in_tree():
+		if Input.is_action_just_pressed("action4") and not $ActionUI/Button4.disabled:
+			_on_Button4_pressed()
 
 func go():
 	var prevPos = global_position
@@ -142,11 +173,11 @@ func go():
 	global_position.x = clamp(global_position.x, 0, resolution.x);
 	global_position.y = clamp(global_position.y, 0, resolution.y - 32);	
 	
-	for b in bullets:
+	for b in shotBullets:
 		b.move(turnVal)
 		if b.killMe:
 			b.queue_free()
-			bullets.erase(b)
+			shotBullets.erase(b)
 			
 	levelManager.moveLevel(turnVal)
 
@@ -170,23 +201,25 @@ func update_gear():
 	tempStr = "Thruster: %s"
 	get_parent().get_node("BottomUI/ThrusterLabel").text = tempStr % [thrusterNames[thruster]]
 	
-	# Max values
+	# Gear values
 	maxArmor = armorValues[hull]
 	maxPower = maxPowers[maxPower]
+	gun1Bullet = bullets[gun1]
+	gun2Bullet = bullets[gun2]
 	
 func update_gear_values():
 	
 	# ActionUI
-	var tempStr = "%s [-%s]"
+	var tempStr = "1) %s [-%s]"
 	tempStr = tempStr % [gunNames[gun1], gunPowers[gun1]]
-	_set_action_button($ActionUI/Button1, tempStr, gun1 == GUN.none or currentPower < gunPowers[gun1])
-	tempStr = "%s [-%s]"
+	_set_action_button($ActionUI/Button1, tempStr, currentPower < gunPowers[gun1])
+	tempStr = "2) %s [-%s]"
 	tempStr = tempStr % [gunNames[gun2], gunPowers[gun2]]
-	_set_action_button($ActionUI/Button2, tempStr, gun2 == GUN.none or currentPower < gunPowers[gun2])
-	tempStr = "%s [-%s]"
+	_set_action_button($ActionUI/Button2, tempStr, currentPower < gunPowers[gun2])
+	tempStr = "3) %s [-%s]"
 	tempStr = tempStr % [coreAbilityNames[core], corePowers[core]]
 	_set_action_button($ActionUI/Button3, tempStr, currentPower < corePowers[core])
-	_set_action_button($ActionUI/Button4, "Only move", false)
+	_set_action_button($ActionUI/Button4, "4) Only move", false)
 	
 	# BottomUI
 	currentPower = clamp(currentPower, 0, maxPower)
@@ -209,7 +242,7 @@ func base_action():
 	turnVal = 0.0
 	update_gear_values()
 	
-	for b in bullets:
+	for b in shotBullets:
 		b.startMove()
 		
 	levelManager.startMove()
@@ -217,12 +250,12 @@ func base_action():
 func _on_Button1_pressed():
 	currentPower -= gunPowers[gun1]
 	base_action()
-	shoot()
+	shoot(gun1Bullet, gun1)
 
 func _on_Button2_pressed():
 	currentPower -= gunPowers[gun2]
 	base_action()
-	shoot()
+	shoot(gun2Bullet, gun2)
 
 func _on_Button3_pressed():
 	currentPower -= corePowers[core]
@@ -235,12 +268,25 @@ func _on_Button3_pressed():
 func _on_Button4_pressed():
 	base_action()
 
-func shoot():
-	var bullet = singleShot.instance()
-	bullet.position = Vector2(global_position.x + 10, global_position.y)
+func shoot(var gunBullet, var gun):
+	if (gun == GUN.spreadShot):
+		createBullet(gunBullet)
+		var bulletUp = createBullet(gunBullet)
+		bulletUp.dir = Vector2(1,0.2)
+		bulletUp.startMove()
+		var bulletDown = createBullet(gunBullet)
+		bulletDown.dir = Vector2(1,-0.2)
+		bulletDown.startMove()
+	else:
+		createBullet(gunBullet)
+	
+func createBullet(var gunBullet):
+	var bullet = gunBullet.instance()
+	bullet.position = Vector2(global_position.x + 16, global_position.y)
 	get_parent().add_child(bullet)
 	bullet.startMove()
-	bullets.append(bullet)
+	shotBullets.append(bullet)
+	return bullet
 	
 func hit(var damage):
 	currentArmor -= damage

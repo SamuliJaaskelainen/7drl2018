@@ -1,14 +1,14 @@
 [gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://SingleShot.gd" type="Script" id=1]
-[ext_resource path="res://Sprites/SingleShot.png" type="Texture" id=2]
+[ext_resource path="res://Sprites/RoundShot.png" type="Texture" id=2]
 
 [sub_resource type="RectangleShape2D" id=1]
 
 custom_solver_bias = 0.0
-extents = Vector2( 8.0658, 3.24153 )
+extents = Vector2( 3.32169, 3.24153 )
 
-[node name="SingleShot" type="KinematicBody2D"]
+[node name="SingleShot" type="KinematicBody2D" index="0"]
 
 input_pickable = false
 collision_layer = 4

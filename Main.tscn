@@ -595,7 +595,6 @@ _sections_unfolded = [ "Z Index" ]
 
 [node name="Player" type="KinematicBody2D" parent="." index="1"]
 
-editor/display_folded = true
 position = Vector2( 64, 112 )
 scale = Vector2( 0.25, 0.25 )
 input_pickable = false
@@ -803,9 +802,12 @@ __meta__ = {
 
 shape = SubResource( 7 )
 
-[node name="MovementArea1" type="Sprite" parent="Player" index="4"]
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Player" index="4"]
 
-editor/display_folded = true
+shape = SubResource( 7 )
+
+[node name="MovementArea1" type="Sprite" parent="Player" index="5"]
+
 modulate = Color( 1, 1, 1, 0.0196078 )
 position = Vector2( -256, 0 )
 scale = Vector2( 8, 8 )
@@ -826,9 +828,11 @@ gravity_vec = Vector2( 0, 1 )
 gravity = 98.0
 linear_damp = 0.1
 angular_damp = 1.0
+collision_layer = 524288
+collision_mask = 524288
 audio_bus_override = false
 audio_bus_name = "Master"
-_sections_unfolded = [ "Pickable", "Transform" ]
+_sections_unfolded = [ "Collision", "Pickable", "Transform" ]
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Player/MovementArea1/Area2D" index="0"]
 
