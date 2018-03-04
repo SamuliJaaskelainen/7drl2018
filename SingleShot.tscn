@@ -8,7 +8,7 @@
 custom_solver_bias = 0.0
 extents = Vector2( 8.0658, 3.24153 )
 
-[node name="SingleShot" type="KinematicBody2D"]
+[node name="SingleShot" type="KinematicBody2D" index="0"]
 
 input_pickable = false
 collision_layer = 4
@@ -19,7 +19,10 @@ _sections_unfolded = [ "Angular", "Collision", "Linear", "Material", "Pause", "P
 
 [node name="Sprite" type="Sprite" parent="." index="0"]
 
+z_index = -2
+z_as_relative = false
 texture = ExtResource( 2 )
+_sections_unfolded = [ "Z Index" ]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." index="1"]
 
