@@ -23,7 +23,7 @@ func move(val):
 		print("Lasering %s", $RayCast2D.get_collider().get_name())
 		
 	$Sprite.scale.x = rayLenght
-	
-	if(val > 0.95):
-		killMe = true
+		
+func endMove():
+	killMe = true
 

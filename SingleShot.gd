@@ -8,6 +8,7 @@ var targetPos
 var killMe = false
 
 func startMove():
+	print(dir)
 	lastPos = global_position
 	targetPos = global_position + dir * speed
 
@@ -20,6 +21,9 @@ func move(val):
 			collision.collider.hit(damage)
 		print("bullet hit %s", collision.collider.get_name())
 		killMe = true
+		
+func endMove():
+	pass
 
 func _on_VisibilityNotifier2D_viewport_exited(viewport):
 	killMe = true

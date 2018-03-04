@@ -46,7 +46,7 @@ enum GUN{
 var coreAbilityNames = ["Shield", "Probe", "Teleport", "DamageBoost", "Bomb"]
 var corePowers = [90,10,50,30,60]
 var gunNames = ["Single Shot", "Laser", "Rail Gun", "Spread Shot", "Blow", "Ground Bomb", "Homing", "Charge Shot"]
-var gunPowers = [5,10,20,15,10,15,10,30]
+var gunPowers = [5,10,40,10,10,15,10,30]
 var maxPowers = [100,100,100,100,100]
 var structureNames = ["Small", "Medium", "Large"]
 var hullNames = ["Light", "Medium", "Heavy"]
@@ -77,7 +77,7 @@ var hull = HULL.medium
 var engine = ENGINE.fast
 var thruster = THRUSTER.balanced
 var gun1 = GUN.singleShot
-var gun2 = GUN.laser
+var gun2 = GUN.spreadShot
 
 var currentMovementArea
 var movementAreas
@@ -88,6 +88,8 @@ var gun1Bullet
 var gun2Bullet
 var singleShot = preload("res://SingleShot.tscn")
 var laserShot = preload("res://LaserShot.tscn")
+var railShot = preload("res://RailShot.tscn")
+var spreadShot = preload("res://SpreadShot.tscn")
 
 var levelManager
 
@@ -95,6 +97,8 @@ func _ready():
 	levelManager = get_parent().get_node("LevelManager")
 	bullets.append(singleShot)
 	bullets.append(laserShot)
+	bullets.append(railShot)
+	bullets.append(spreadShot)
 	$ActionUI.hide()
 	Input.set_mouse_mode(Input.MOUSE_MODE_HIDDEN)
 	resolution.x = ProjectSettings.get_setting("display/window/size/width")
@@ -129,6 +133,12 @@ func nextTurn():
 	currentPower += powerPerTurn
 	wallHit = false
 	update_gear_values()
+	
+	for b in shotBullets:
+		b.endMove()
+		if b.killMe:
+			b.queue_free()
+			shotBullets.erase(b)
 	
 func we():
 	# Player's turn logic is handled via ui signals as well
@@ -240,12 +250,12 @@ func base_action():
 func _on_Button1_pressed():
 	currentPower -= gunPowers[gun1]
 	base_action()
-	shoot(gun1Bullet)
+	shoot(gun1Bullet, gun1)
 
 func _on_Button2_pressed():
 	currentPower -= gunPowers[gun2]
 	base_action()
-	shoot(gun2Bullet)
+	shoot(gun2Bullet, gun2)
 
 func _on_Button3_pressed():
 	currentPower -= corePowers[core]
@@ -258,12 +268,25 @@ func _on_Button3_pressed():
 func _on_Button4_pressed():
 	base_action()
 
-func shoot(var gunBullet):
+func shoot(var gunBullet, var gun):
+	if (gun == GUN.spreadShot):
+		createBullet(gunBullet)
+		var bulletUp = createBullet(gunBullet)
+		bulletUp.dir = Vector2(1,0.2)
+		bulletUp.startMove()
+		var bulletDown = createBullet(gunBullet)
+		bulletDown.dir = Vector2(1,-0.2)
+		bulletDown.startMove()
+	else:
+		createBullet(gunBullet)
+	
+func createBullet(var gunBullet):
 	var bullet = gunBullet.instance()
-	bullet.position = Vector2(global_position.x + 10, global_position.y)
+	bullet.position = Vector2(global_position.x + 16, global_position.y)
 	get_parent().add_child(bullet)
 	bullet.startMove()
 	shotBullets.append(bullet)
+	return bullet
 	
 func hit(var damage):
 	currentArmor -= damage
