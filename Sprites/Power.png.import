@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/PlayerShip.png-e9d2f24256eeba43117df9c9eb19b34b.stex"
+path="res://.import/Power.png-2413265315cf8621bede1f5574d12e0a.stex"
 
 [deps]
 
-source_file="res://Sprites/PlayerShip.png"
-source_md5="473b1d81a4837f59f9a3c4532556782d"
+source_file="res://Sprites/Power.png"
+source_md5="6d7d27cfbc9ad52382237cc48df8c389"
 
-dest_files=[ "res://.import/PlayerShip.png-e9d2f24256eeba43117df9c9eb19b34b.stex" ]
-dest_md5="0a4a9061c5bcba4872a3f25e4e64157b"
+dest_files=[ "res://.import/Power.png-2413265315cf8621bede1f5574d12e0a.stex" ]
+dest_md5="d0b0b9c85812d45de29a0fe89e08a97e"
 
 [params]
 

@@ -143,9 +143,9 @@ _sections_unfolded = [ "Extra Spacing", "Font", "Settings" ]
 [sub_resource type="RectangleShape2D" id=7]
 
 custom_solver_bias = 0.0
-extents = Vector2( 27.0807, 13.5443 )
+extents = Vector2( 19.328, 19.4586 )
 
-[node name="Game" type="Node"]
+[node name="Game" type="Node" index="0"]
 
 [node name="BottomUI" type="Node" parent="." index="0"]
 
@@ -802,11 +802,7 @@ __meta__ = {
 
 shape = SubResource( 7 )
 
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="Player" index="4"]
-
-shape = SubResource( 7 )
-
-[node name="MovementArea1" type="Sprite" parent="Player" index="5"]
+[node name="MovementArea1" type="Sprite" parent="Player" index="4"]
 
 modulate = Color( 1, 1, 1, 0.0196078 )
 position = Vector2( -256, 0 )
