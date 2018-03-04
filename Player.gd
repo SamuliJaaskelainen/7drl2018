@@ -33,10 +33,9 @@ enum THRUSTER{
 }
 
 enum GUN{
-	none,
   	singleShot,
-	railGun,
 	laser,
+	railGun,
 	spreadShot,
 	blow,
 	groundBomb,
@@ -46,8 +45,8 @@ enum GUN{
 
 var coreAbilityNames = ["Shield", "Probe", "Teleport", "DamageBoost", "Bomb"]
 var corePowers = [90,10,50,30,60]
-var gunNames = ["None", "Single Shot", "Rail Gun", "Laser", "Spread Shot", "Blow", "Ground Bomb", "Homing", "Charge Shot"]
-var gunPowers = [0,5,20,10,15,10,15,10,30]
+var gunNames = ["Single Shot", "Laser", "Rail Gun", "Spread Shot", "Blow", "Ground Bomb", "Homing", "Charge Shot"]
+var gunPowers = [5,10,20,15,10,15,10,30]
 var maxPowers = [100,100,100,100,100]
 var structureNames = ["Small", "Medium", "Large"]
 var hullNames = ["Light", "Medium", "Heavy"]
@@ -70,6 +69,7 @@ var currentArmor = 0
 var maxArmor = 0
 var wallHit = false
 var money = 0
+var powerPerTurn = 5
 
 var core = CORE.teleport
 var structure = STRUCTURE.medium
@@ -82,13 +82,19 @@ var gun2 = GUN.laser
 var currentMovementArea
 var movementAreas
 
+var shotBullets = []
 var bullets = []
+var gun1Bullet
+var gun2Bullet
 var singleShot = preload("res://SingleShot.tscn")
+var laserShot = preload("res://LaserShot.tscn")
 
 var levelManager
 
 func _ready():
 	levelManager = get_parent().get_node("LevelManager")
+	bullets.append(singleShot)
+	bullets.append(laserShot)
 	$ActionUI.hide()
 	Input.set_mouse_mode(Input.MOUSE_MODE_HIDDEN)
 	resolution.x = ProjectSettings.get_setting("display/window/size/width")
@@ -120,7 +126,7 @@ func _process(delta):
 func nextTurn():
 	my_turn = true
 	currentMovementArea.show()
-	currentPower += 5
+	currentPower += powerPerTurn
 	wallHit = false
 	update_gear_values()
 	
@@ -157,11 +163,11 @@ func go():
 	global_position.x = clamp(global_position.x, 0, resolution.x);
 	global_position.y = clamp(global_position.y, 0, resolution.y - 32);	
 	
-	for b in bullets:
+	for b in shotBullets:
 		b.move(turnVal)
 		if b.killMe:
 			b.queue_free()
-			bullets.erase(b)
+			shotBullets.erase(b)
 			
 	levelManager.moveLevel(turnVal)
 
@@ -185,19 +191,21 @@ func update_gear():
 	tempStr = "Thruster: %s"
 	get_parent().get_node("BottomUI/ThrusterLabel").text = tempStr % [thrusterNames[thruster]]
 	
-	# Max values
+	# Gear values
 	maxArmor = armorValues[hull]
 	maxPower = maxPowers[maxPower]
+	gun1Bullet = bullets[gun1]
+	gun2Bullet = bullets[gun2]
 	
 func update_gear_values():
 	
 	# ActionUI
 	var tempStr = "1) %s [-%s]"
 	tempStr = tempStr % [gunNames[gun1], gunPowers[gun1]]
-	_set_action_button($ActionUI/Button1, tempStr, gun1 == GUN.none or currentPower < gunPowers[gun1])
+	_set_action_button($ActionUI/Button1, tempStr, currentPower < gunPowers[gun1])
 	tempStr = "2) %s [-%s]"
 	tempStr = tempStr % [gunNames[gun2], gunPowers[gun2]]
-	_set_action_button($ActionUI/Button2, tempStr, gun2 == GUN.none or currentPower < gunPowers[gun2])
+	_set_action_button($ActionUI/Button2, tempStr, currentPower < gunPowers[gun2])
 	tempStr = "3) %s [-%s]"
 	tempStr = tempStr % [coreAbilityNames[core], corePowers[core]]
 	_set_action_button($ActionUI/Button3, tempStr, currentPower < corePowers[core])
@@ -224,7 +232,7 @@ func base_action():
 	turnVal = 0.0
 	update_gear_values()
 	
-	for b in bullets:
+	for b in shotBullets:
 		b.startMove()
 		
 	levelManager.startMove()
@@ -232,12 +240,12 @@ func base_action():
 func _on_Button1_pressed():
 	currentPower -= gunPowers[gun1]
 	base_action()
-	shoot()
+	shoot(gun1Bullet)
 
 func _on_Button2_pressed():
 	currentPower -= gunPowers[gun2]
 	base_action()
-	shoot()
+	shoot(gun2Bullet)
 
 func _on_Button3_pressed():
 	currentPower -= corePowers[core]
@@ -250,12 +258,12 @@ func _on_Button3_pressed():
 func _on_Button4_pressed():
 	base_action()
 
-func shoot():
-	var bullet = singleShot.instance()
+func shoot(var gunBullet):
+	var bullet = gunBullet.instance()
 	bullet.position = Vector2(global_position.x + 10, global_position.y)
 	get_parent().add_child(bullet)
 	bullet.startMove()
-	bullets.append(bullet)
+	shotBullets.append(bullet)
 	
 func hit(var damage):
 	currentArmor -= damage
