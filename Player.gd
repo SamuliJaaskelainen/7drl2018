@@ -125,8 +125,23 @@ func nextTurn():
 	update_gear_values()
 	
 func we():
-	# Player's turn logic is handled via ui signals
-	pass
+	# Player's turn logic is handled via ui signals as well
+	# Here we have hotkeys for leet players
+	if $ActionUI.is_visible_in_tree():
+		if Input.is_action_just_pressed("action1") and not $ActionUI/Button1.disabled:
+			_on_Button1_pressed()
+			
+	if $ActionUI.is_visible_in_tree():
+		if Input.is_action_just_pressed("action2") and not $ActionUI/Button2.disabled:
+			_on_Button2_pressed()
+			
+	if $ActionUI.is_visible_in_tree():
+		if Input.is_action_just_pressed("action3") and not $ActionUI/Button3.disabled:
+			_on_Button3_pressed()
+			
+	if $ActionUI.is_visible_in_tree():
+		if Input.is_action_just_pressed("action4") and not $ActionUI/Button4.disabled:
+			_on_Button4_pressed()
 
 func go():
 	var prevPos = global_position
@@ -177,16 +192,16 @@ func update_gear():
 func update_gear_values():
 	
 	# ActionUI
-	var tempStr = "%s [-%s]"
+	var tempStr = "1) %s [-%s]"
 	tempStr = tempStr % [gunNames[gun1], gunPowers[gun1]]
 	_set_action_button($ActionUI/Button1, tempStr, gun1 == GUN.none or currentPower < gunPowers[gun1])
-	tempStr = "%s [-%s]"
+	tempStr = "2) %s [-%s]"
 	tempStr = tempStr % [gunNames[gun2], gunPowers[gun2]]
 	_set_action_button($ActionUI/Button2, tempStr, gun2 == GUN.none or currentPower < gunPowers[gun2])
-	tempStr = "%s [-%s]"
+	tempStr = "3) %s [-%s]"
 	tempStr = tempStr % [coreAbilityNames[core], corePowers[core]]
 	_set_action_button($ActionUI/Button3, tempStr, currentPower < corePowers[core])
-	_set_action_button($ActionUI/Button4, "Only move", false)
+	_set_action_button($ActionUI/Button4, "4) Only move", false)
 	
 	# BottomUI
 	currentPower = clamp(currentPower, 0, maxPower)
