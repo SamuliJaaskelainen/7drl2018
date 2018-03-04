@@ -145,7 +145,7 @@ _sections_unfolded = [ "Extra Spacing", "Font", "Settings" ]
 custom_solver_bias = 0.0
 extents = Vector2( 19.328, 19.4586 )
 
-[node name="Game" type="Node"]
+[node name="Game" type="Node" index="0"]
 
 [node name="BottomUI" type="Node" parent="." index="0"]
 
@@ -599,7 +599,7 @@ position = Vector2( 64, 112 )
 scale = Vector2( 0.25, 0.25 )
 input_pickable = false
 collision_layer = 2
-collision_mask = 1
+collision_mask = 1025
 collision/safe_margin = 0.08
 script = ExtResource( 3 )
 _sections_unfolded = [ "Collision", "Pickable", "Transform", "Visibility", "Z Index", "collision" ]
