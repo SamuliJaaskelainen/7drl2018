@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=2]
+[gd_scene load_steps=16 format=2]
 
 [ext_resource path="res://uni0553-webfont.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://Sprites/UI.png" type="Texture" id=2]
@@ -7,6 +7,7 @@
 [ext_resource path="res://Sprites/PlayerShip.png" type="Texture" id=5]
 [ext_resource path="res://Sprites/MovementCone1.png" type="Texture" id=6]
 [ext_resource path="res://LevelManager.gd" type="Script" id=7]
+[ext_resource path="res://EnemyManager.gd" type="Script" id=8]
 
 [sub_resource type="DynamicFont" id=1]
 
@@ -595,6 +596,7 @@ _sections_unfolded = [ "Z Index" ]
 
 [node name="Player" type="KinematicBody2D" parent="." index="1"]
 
+editor/display_folded = true
 position = Vector2( 64, 112 )
 scale = Vector2( 0.25, 0.25 )
 input_pickable = false
@@ -840,6 +842,10 @@ polygon = PoolVector2Array( -8.6189, -16.3982, -1.78764, -19.0931, 6.67311, -21.
 [node name="LevelManager" type="Node" parent="." index="2"]
 
 script = ExtResource( 7 )
+
+[node name="EnemyManager" type="Node" parent="." index="3"]
+
+script = ExtResource( 8 )
 
 [connection signal="pressed" from="Player/ActionUI/Button1" to="Player" method="_on_Button1_pressed"]
 

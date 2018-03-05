@@ -18,12 +18,12 @@ func setDirection(value):
 	if value.length() > 0:
 		direction = value.normalized()
 
-func canBeDestroyed():
-	return killMe
-
 func startMove():
 	lastPos = global_position
 	targetPos = lastPos + direction * moveSpeed
+	
+func endMove():
+	pass
 
 func move(moveProgressPercentage):
 	var nextPos = lastPos.linear_interpolate(targetPos, moveProgressPercentage)

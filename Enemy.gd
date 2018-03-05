@@ -9,7 +9,7 @@ export(int) var shootingTurnInterval = 1
 # Movement
 var lastPos
 var targetPos
-var direction
+var direction = Vector2(-1, 0)
 export(float) var moveSpeed = 1
 
 # state
@@ -24,31 +24,30 @@ export(String) var playerName = "Player"
 export(float) var animationSpeed = 0.1
 var animationCounter = 0
 
-func _process(delta):
-	var engineSprite = $engine
-	
-	animationCounter += animationSpeed * delta
-	if animationCounter > 1:
-		engineSprite.frame = (engineSprite.frame + 1)
-		print (str(engineSprite.frame))
-		if engineSprite.frame >= engineSprite.vframes - 1:
-			engineSprite.frame = 0
-			
+var enemyManager
+
+# Commented out due crashes
+#func _process(delta):
+	#var engineSprite = $engine
+	#
+	#animationCounter += animationSpeed * delta
+	#if animationCounter > 1:
+	#	engineSprite.frame = (engineSprite.frame + 1)
+	#	print (str(engineSprite.frame))
+	#	if engineSprite.frame >= engineSprite.vframes - 1:
+	#		engineSprite.frame = 0
+	#		
 
 func _ready():
-	# Called every time the node is added to the scene.
-	# Initialization here
 	lastPos = global_position
-	pass
+	enemyManager = get_parent()
 
 func startMove():
 	lastPos = global_position
 	targetPos = lastPos + direction * moveSpeed
-	
-	var childArray = get_children()
-	for child in childArray:
-		if child is bulletScene:
-			child.startMove()
+			
+func endMove():
+	pass
 
 func hit(damageAmount):
 	health -= damageAmount
@@ -65,15 +64,6 @@ func move(var moveProgressPercentage):
 	var shootTarget = getPlayerPos()
 	if shootTarget:
 		shootAt(shootTarget)
-
-	# handle bullets
-	var childArray = get_children()
-	for child in childArray:
-		if child is bulletScene:
-			child.move(moveProgressPercentage)
-			if child.canBeDestroyed():
-				remove_child(child)
-				child.queue_free()
 	
 	if collision:
 		killMe = true
@@ -84,17 +74,18 @@ func shootAt(shootTarget):
 	shootTurnCounter += 1
 	if shootTurnCounter >= shootingTurnInterval:
 		shootTurnCounter = 0
-		var bullet = instance(bulletScene)
-		add_child(bullet)
+		var bullet = bulletScene.instance()
+		enemyManager.add_child(bullet)
+		enemyManager.enemyBullets.append(bullet)
 		var shootDir = lastPos - shootTarget
 		shootDir = shootDir.normalized()
 		bullet.setDirection(shootDir)
 		bullet.setPlayerName(playerName)
+		bullet.startMove()
 		
 func getPlayerPos():
-	if _is_inside_tree():
-		var playerNode = get_node("/root/" + playerName)
-		if playerNode:
-			var playerPos = playerNode.global_position
-			return playerPos
+	var playerNode = get_node("/root/Game/" + playerName)
+	if playerNode:
+		var playerPos = playerNode.global_position
+		return playerPos
 	

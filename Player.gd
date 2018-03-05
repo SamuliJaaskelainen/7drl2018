@@ -92,9 +92,11 @@ var railShot = preload("res://RailShot.tscn")
 var spreadShot = preload("res://SpreadShot.tscn")
 
 var levelManager
+var enemyManager
 
 func _ready():
 	levelManager = get_parent().get_node("LevelManager")
+	enemyManager = get_parent().get_node("EnemyManager")
 	bullets.append(singleShot)
 	bullets.append(laserShot)
 	bullets.append(railShot)
@@ -133,6 +135,7 @@ func nextTurn():
 	currentPower += powerPerTurn
 	wallHit = false
 	update_gear_values()
+	enemyManager.endMove()
 	
 	for b in shotBullets:
 		b.endMove()
@@ -185,6 +188,7 @@ func go():
 			shotBullets.erase(b)
 			
 	levelManager.moveLevel(turnVal)
+	enemyManager.moveEnemies(turnVal)
 
 func update_gear():
 	
@@ -251,6 +255,7 @@ func base_action():
 		b.startMove()
 		
 	levelManager.startMove()
+	enemyManager.startMove()
 	
 func _on_Button1_pressed():
 	currentPower -= gunPowers[gun1]
