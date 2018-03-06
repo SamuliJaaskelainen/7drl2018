@@ -8,7 +8,6 @@ var targetPos
 var killMe = false
 
 func startMove():
-	print(dir)
 	lastPos = global_position
 	targetPos = global_position + dir * speed
 

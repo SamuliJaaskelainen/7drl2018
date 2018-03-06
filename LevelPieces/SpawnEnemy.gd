@@ -14,7 +14,6 @@ func init():
 	enemyManager.add_child(enemy)
 	enemyManager.enemies.append(enemy)
 	enemy.global_position = global_position
-	enemy.startMove()
 	inited = true
 	
 func _process(delta):

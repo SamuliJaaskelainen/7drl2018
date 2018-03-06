@@ -1,6 +1,6 @@
 extends KinematicBody2D
 
-var direction = Vector2(0,0) setget setDirection
+var direction = Vector2(0,0)
 var lastPos
 var targetPos
 
@@ -8,15 +8,9 @@ export var collisionDamage = 10
 export(float) var moveSpeed = 1
 var killMe = false
 
-var playerName = "Player" setget setPlayerName
-
-func setPlayerName(value):
-	if find_node("root/" + value):
-		playerName = value
-
 func setDirection(value):
-	if value.length() > 0:
-		direction = value.normalized()
+	direction = value.normalized()
+	print(direction)
 
 func startMove():
 	lastPos = global_position
@@ -27,12 +21,13 @@ func endMove():
 
 func move(moveProgressPercentage):
 	var nextPos = lastPos.linear_interpolate(targetPos, moveProgressPercentage)
-	var collision = move_and_collide(nextPos - lastPos)
+	var collision = move_and_collide(nextPos - global_position)
 	
 	if collision:
 		killMe = true
-		if collision.collider.get_name() == playerName:
+		if collision.collider.get_name() == "Player":
 			collision.collider.hit(collisionDamage)
 			
 func _on_VisibilityNotifier2D_viewport_exited(viewport):
 	killMe = true
+	

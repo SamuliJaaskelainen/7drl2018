@@ -1,14 +1,14 @@
 [gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://Enemy.gd" type="Script" id=1]
-[ext_resource path="res://Sprites/boxEnemy.png" type="Texture" id=2]
+[ext_resource path="res://Sprites/Enemies/PlayerShipGreenPotato.png" type="Texture" id=2]
 [ext_resource path="res://Sprites/thruster/thruster_animated-1.png" type="Texture" id=3]
 [ext_resource path="res://Sprites/thruster/thruster_animated-2.png" type="Texture" id=4]
 
 [sub_resource type="RectangleShape2D" id=1]
 
 custom_solver_bias = 0.0
-extents = Vector2( 14.0133, 14.1968 )
+extents = Vector2( 7.26871, 9.4817 )
 
 [sub_resource type="SpriteFrames" id=2]
 
@@ -19,22 +19,20 @@ animations = [ {
 "speed": 2.0
 } ]
 
-[node name="KinematicBody2D" type="KinematicBody2D" index="0"]
+[node name="Enemy" type="KinematicBody2D" index="0"]
 
 position = Vector2( 0.581135, 1.35598 )
 input_pickable = false
-collision_layer = 1
-collision_mask = 1
+collision_layer = 8
+collision_mask = 7
 collision/safe_margin = 0.08
 script = ExtResource( 1 )
 _sections_unfolded = [ "Collision", "Pickable", "collision" ]
 bulletSceneFile = "res://EnemyShot.tscn"
-shootingTurnInterval = 1
-moveSpeed = 10.0
+shootingTurnInterval = 3
+moveSpeed = 40.0
 collisionDamage = 10
 health = 10
-playerName = "Player"
-animationSpeed = 0.1
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." index="0"]
 
@@ -48,10 +46,10 @@ texture = ExtResource( 2 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="." index="2"]
 
+visible = false
 position = Vector2( -0.774849, 18.9837 )
 frames = SubResource( 2 )
 animation = "idle"
-frame = 1
 playing = true
 
 

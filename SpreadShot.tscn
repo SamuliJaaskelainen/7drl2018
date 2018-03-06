@@ -8,11 +8,11 @@
 custom_solver_bias = 0.0
 extents = Vector2( 3.32169, 3.24153 )
 
-[node name="SingleShot" type="KinematicBody2D" index="0"]
+[node name="SingleShot" type="KinematicBody2D"]
 
 input_pickable = false
 collision_layer = 4
-collision_mask = 1
+collision_mask = 9
 collision/safe_margin = 0.08
 script = ExtResource( 1 )
 _sections_unfolded = [ "Angular", "Collision", "Linear", "Material", "Pause", "Pickable", "Transform", "Visibility", "Z Index" ]

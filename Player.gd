@@ -171,7 +171,12 @@ func go():
 		if (collision.collider.get_name() == "Power"):
 			currentPower += 30
 			collision.collider.queue_free()
-			print("Power pickup")
+		elif (collision.collider.get_name() == "Armor"):
+			currentArmor += 5
+			collision.collider.queue_free()
+		elif (collision.collider.get_name() == "Money"):
+			money += 10
+			collision.collider.queue_free()
 		elif not wallHit:
 			global_position = prevPos
 			targetPos = prevPos
@@ -235,6 +240,7 @@ func update_gear_values():
 	tempStr = "Power: %d/%d"
 	get_parent().get_node("BottomUI/PowerLabel").text = tempStr % [currentPower, maxPower]
 	tempStr = "Armor: %d/%d"
+	currentArmor = clamp(currentArmor, 0, maxArmor)
 	get_parent().get_node("BottomUI/ArmorLabel").text = tempStr % [currentArmor, maxArmor]
 	tempStr = "Money: %d"
 	get_parent().get_node("BottomUI/MoneyLabel").text = tempStr % [money]
