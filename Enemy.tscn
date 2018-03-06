@@ -19,7 +19,7 @@ animations = [ {
 "speed": 2.0
 } ]
 
-[node name="Enemy" type="KinematicBody2D" index="0"]
+[node name="Enemy" type="KinematicBody2D"]
 
 position = Vector2( 0.581135, 1.35598 )
 input_pickable = false

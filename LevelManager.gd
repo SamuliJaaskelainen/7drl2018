@@ -15,7 +15,7 @@ func generateLevel():
 	createPiece(Vector2(768,128))
 
 func createPiece(var pos):
-	var level = levelPieces[0].instance()
+	var level = levelPieces[randi()%levelPieces.size()].instance()
 	level.position = pos
 	add_child(level)
 	level.startMove()
