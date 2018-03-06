@@ -113,8 +113,7 @@ func _ready():
 	update_gear()
 	currentArmor = maxArmor
 	update_gear_values()
-	
-	shop.show()
+	shop.hide()
 
 func _process(delta):
 	mousePos = get_viewport().get_mouse_position()
@@ -180,6 +179,9 @@ func go():
 			collision.collider.queue_free()
 		elif (collision.collider.get_name() == "Money"):
 			money += 10
+			collision.collider.queue_free()
+		elif (collision.collider.get_name() == "Shop"):
+			shop.show()
 			collision.collider.queue_free()
 		elif not wallHit:
 			global_position = prevPos
