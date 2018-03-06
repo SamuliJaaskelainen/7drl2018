@@ -76,8 +76,8 @@ var structure = STRUCTURE.medium
 var hull = HULL.medium
 var engine = ENGINE.fast
 var thruster = THRUSTER.balanced
-var gun1 = GUN.laser
-var gun2 = GUN.spreadShot
+var gun1 = GUN.singleShot
+var gun2 = GUN.laser
 
 var currentMovementArea
 var movementAreas
@@ -218,10 +218,14 @@ func update_gear():
 	get_parent().get_node("BottomUI/EngineLabel").text = tempStr % [engineNames[engine]]
 	tempStr = "Thruster: %s"
 	get_parent().get_node("BottomUI/ThrusterLabel").text = tempStr % [thrusterNames[thruster]]
+	tempStr = "Gun1: %s"
+	get_parent().get_node("BottomUI/Gun1Label").text = tempStr % [gunNames[gun1]]
+	tempStr = "Gun2: %s"
+	get_parent().get_node("BottomUI/Gun2Label").text = tempStr % [gunNames[gun2]]
 	
 	# Gear values
 	maxArmor = armorValues[hull]
-	maxPower = maxPowers[maxPower]
+	maxPower = maxPowers[core]
 	gun1Bullet = bullets[gun1]
 	gun2Bullet = bullets[gun2]
 	
