@@ -11,7 +11,7 @@
 custom_solver_bias = 0.0
 extents = Vector2( 32, 10 )
 
-[node name="LevelPiece1" type="KinematicBody2D" index="0"]
+[node name="LevelPiece1" type="KinematicBody2D"]
 
 position = Vector2( 256, 128 )
 input_pickable = false
