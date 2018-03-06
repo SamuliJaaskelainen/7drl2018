@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=2]
+[gd_scene load_steps=20 format=2]
 
 [ext_resource path="res://uni0553-webfont.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://Sprites/UI.png" type="Texture" id=2]
@@ -8,6 +8,9 @@
 [ext_resource path="res://Sprites/MovementCone1.png" type="Texture" id=6]
 [ext_resource path="res://LevelManager.gd" type="Script" id=7]
 [ext_resource path="res://EnemyManager.gd" type="Script" id=8]
+[ext_resource path="res://Shop.gd" type="Script" id=9]
+[ext_resource path="res://Styleboxflat.tres" type="StyleBox" id=10]
+[ext_resource path="res://Dynamicfont.tres" type="DynamicFont" id=11]
 
 [sub_resource type="DynamicFont" id=1]
 
@@ -145,6 +148,14 @@ _sections_unfolded = [ "Extra Spacing", "Font", "Settings" ]
 
 custom_solver_bias = 0.0
 extents = Vector2( 19.328, 19.4586 )
+
+[sub_resource type="DynamicFont" id=8]
+
+size = 8
+use_mipmaps = false
+use_filter = false
+font_data = ExtResource( 1 )
+_sections_unfolded = [ "Extra Spacing", "Font", "Font/fallback", "Settings" ]
 
 [node name="Game" type="Node" index="0"]
 
@@ -847,6 +858,237 @@ script = ExtResource( 7 )
 
 script = ExtResource( 8 )
 
+[node name="Shop" type="Control" parent="." index="4"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_right = 512.0
+margin_bottom = 256.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+script = ExtResource( 9 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="ShopItem1" type="RichTextLabel" parent="Shop" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 154.0
+margin_top = 91.0
+margin_right = 221.0
+margin_bottom = 165.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = true
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+custom_styles/normal = ExtResource( 10 )
+custom_fonts/normal_font = SubResource( 8 )
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+bbcode_enabled = false
+bbcode_text = ""
+visible_characters = -1
+percent_visible = 1.0
+meta_underlined = true
+tab_size = 4
+text = "I am test that takes multiple lines of text"
+scroll_active = false
+scroll_following = false
+selection_enabled = false
+override_selected_font_color = false
+_sections_unfolded = [ "Anchor", "BBCode", "Focus", "Grow Direction", "Hint", "Margin", "Material", "Mouse", "Rect", "Size Flags", "Theme", "Visibility", "custom_colors", "custom_constants", "custom_fonts", "custom_styles" ]
+
+[node name="ShopItem2" type="RichTextLabel" parent="Shop" index="1"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 225.0
+margin_top = 91.0
+margin_right = 293.0
+margin_bottom = 165.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = true
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+custom_styles/normal = ExtResource( 10 )
+custom_fonts/normal_font = SubResource( 8 )
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+bbcode_enabled = false
+bbcode_text = ""
+visible_characters = -1
+percent_visible = 1.0
+meta_underlined = true
+tab_size = 4
+text = "I am test that takes multiple lines of text"
+scroll_active = false
+scroll_following = false
+selection_enabled = false
+override_selected_font_color = false
+_sections_unfolded = [ "Anchor", "BBCode", "Focus", "Grow Direction", "Hint", "Margin", "Material", "Mouse", "Rect", "Size Flags", "Theme", "Visibility", "custom_colors", "custom_constants", "custom_fonts", "custom_styles" ]
+
+[node name="ShopItem3" type="RichTextLabel" parent="Shop" index="2"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 296.0
+margin_top = 91.0
+margin_right = 364.0
+margin_bottom = 165.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = true
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+custom_styles/normal = ExtResource( 10 )
+custom_fonts/normal_font = SubResource( 8 )
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+bbcode_enabled = false
+bbcode_text = ""
+visible_characters = -1
+percent_visible = 1.0
+meta_underlined = true
+tab_size = 4
+text = "I am test that takes multiple lines of text"
+scroll_active = false
+scroll_following = false
+selection_enabled = false
+override_selected_font_color = false
+_sections_unfolded = [ "Anchor", "BBCode", "Focus", "Grow Direction", "Hint", "Margin", "Material", "Mouse", "Rect", "Size Flags", "Theme", "Visibility", "custom_colors", "custom_constants", "custom_fonts", "custom_styles" ]
+
+[node name="ShopItem1Buy" type="Button" parent="Shop" index="3"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 154.0
+margin_top = 164.0
+margin_right = 221.0
+margin_bottom = 184.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+custom_styles/normal = ExtResource( 10 )
+custom_fonts/font = ExtResource( 11 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+group = null
+text = "BUY"
+flat = false
+align = 1
+_sections_unfolded = [ "custom_colors", "custom_constants", "custom_fonts", "custom_styles" ]
+
+[node name="ShopItem2Buy" type="Button" parent="Shop" index="4"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 225.0
+margin_top = 164.0
+margin_right = 293.0
+margin_bottom = 184.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+custom_styles/normal = ExtResource( 10 )
+custom_fonts/font = ExtResource( 11 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+group = null
+text = "BUY"
+flat = false
+align = 1
+_sections_unfolded = [ "custom_colors", "custom_constants", "custom_fonts", "custom_styles" ]
+
+[node name="ShopItem3Buy" type="Button" parent="Shop" index="5"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 296.0
+margin_top = 164.0
+margin_right = 364.0
+margin_bottom = 184.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+custom_styles/normal = ExtResource( 10 )
+custom_fonts/font = ExtResource( 11 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+group = null
+text = "BUY"
+flat = false
+align = 1
+_sections_unfolded = [ "custom_colors", "custom_constants", "custom_fonts", "custom_styles" ]
+
+[node name="ShopClose" type="Button" parent="Shop" index="6"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 226.0
+margin_top = 189.0
+margin_right = 293.0
+margin_bottom = 209.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+custom_styles/normal = ExtResource( 10 )
+custom_fonts/font = ExtResource( 11 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+group = null
+text = "CLOSE"
+flat = false
+align = 1
+_sections_unfolded = [ "custom_colors", "custom_constants", "custom_fonts", "custom_styles" ]
+
 [connection signal="pressed" from="Player/ActionUI/Button1" to="Player" method="_on_Button1_pressed"]
 
 [connection signal="pressed" from="Player/ActionUI/Button2" to="Player" method="_on_Button2_pressed"]
@@ -856,5 +1098,13 @@ script = ExtResource( 8 )
 [connection signal="pressed" from="Player/ActionUI/Button4" to="Player" method="_on_Button4_pressed"]
 
 [connection signal="input_event" from="Player/MovementArea1/Area2D" to="Player" method="_on_Area2D_input_event"]
+
+[connection signal="pressed" from="Shop/ShopItem1Buy" to="Shop" method="_on_ShopItem1Buy_pressed"]
+
+[connection signal="pressed" from="Shop/ShopItem2Buy" to="Shop" method="_on_ShopItem2Buy_pressed"]
+
+[connection signal="pressed" from="Shop/ShopItem3Buy" to="Shop" method="_on_ShopItem3Buy_pressed"]
+
+[connection signal="pressed" from="Shop/ShopClose" to="Shop" method="_on_ShopClose_pressed"]
 
 

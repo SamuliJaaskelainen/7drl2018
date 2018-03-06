@@ -93,10 +93,12 @@ var spreadShot = preload("res://SpreadShot.tscn")
 
 var levelManager
 var enemyManager
+var shop
 
 func _ready():
 	levelManager = get_parent().get_node("LevelManager")
 	enemyManager = get_parent().get_node("EnemyManager")
+	shop = get_parent().get_node("Shop")
 	bullets.append(singleShot)
 	bullets.append(laserShot)
 	bullets.append(railShot)
@@ -111,6 +113,8 @@ func _ready():
 	update_gear()
 	currentArmor = maxArmor
 	update_gear_values()
+	
+	shop.show()
 
 func _process(delta):
 	mousePos = get_viewport().get_mouse_position()
