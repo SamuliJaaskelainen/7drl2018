@@ -86,10 +86,10 @@ var shotBullets = []
 var bullets = []
 var gun1Bullet
 var gun2Bullet
-var singleShot = preload("res://SingleShot.tscn")
-var laserShot = preload("res://LaserShot.tscn")
-var railShot = preload("res://RailShot.tscn")
-var spreadShot = preload("res://SpreadShot.tscn")
+var singleShot = preload("res://Guns/SingleShot.tscn")
+var laserShot = preload("res://Guns/LaserShot.tscn")
+var railShot = preload("res://Guns/RailShot.tscn")
+var spreadShot = preload("res://Guns/SpreadShot.tscn")
 
 var levelManager
 var enemyManager

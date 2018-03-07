@@ -1,7 +1,7 @@
 extends KinematicBody2D
 
 # include
-export(String, FILE, "*.tscn") var bulletSceneFile = "res://EnemyShot.tscn"
+export(String, FILE, "*.tscn") var bulletSceneFile = "res://Enemies/EnemyShot.tscn"
 var bulletScene = load(bulletSceneFile)
 
 export(int) var shootingTurnInterval = 1

@@ -1,9 +1,10 @@
 [gd_scene load_steps=7 format=2]
 
-[ext_resource path="res://Enemy.gd" type="Script" id=1]
+[ext_resource path="res://Enemies/Enemy.gd" type="Script" id=1]
 [ext_resource path="res://Sprites/Enemies/PlayerShipGreenPotato.png" type="Texture" id=2]
 [ext_resource path="res://Sprites/thruster/thruster_animated-1.png" type="Texture" id=3]
 [ext_resource path="res://Sprites/thruster/thruster_animated-2.png" type="Texture" id=4]
+
 
 [sub_resource type="RectangleShape2D" id=1]
 

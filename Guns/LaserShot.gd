@@ -1,11 +1,10 @@
-extends "res://SingleShot.gd"
+extends "res://Guns/SingleShot.gd"
 
 var offset = Vector2(0,-4)
 var lastDelta
 
 func startMove():
 	lastDelta = 0
-	damage = 20
 
 func _process(delta):
 	lastDelta = delta
@@ -17,7 +16,7 @@ func move(val):
 	$RayCast2D.global_position = playerPos + offset
 	$Sprite.global_position = playerPos + offset
 	if $RayCast2D.is_colliding():
-		if ($RayCast2D.get_collider().get_name() == "Enemy"):
+		if "Enemy" in $RayCast2D.get_collider().get_name():
 			$RayCast2D.get_collider().hit(damage * lastDelta)
 		rayLenght = $RayCast2D.get_collision_point().x - playerPos.x
 		print("Lasering %s", $RayCast2D.get_collider().get_name())

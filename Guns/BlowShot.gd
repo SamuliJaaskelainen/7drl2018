@@ -1,4 +1,4 @@
-extends "res://SingleShot.gd"
+extends "res://Guns/SingleShot.gd"
 
 func _ready():
 	damage = 10

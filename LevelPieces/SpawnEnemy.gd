@@ -3,12 +3,14 @@ extends Position2D
 export(int) var enemyId = 0
 export(float) var spawnValue = 0.5
 var enemyAssets = []
-var enemy1 = preload("res://Enemy.tscn")
+var enemy1 = preload("res://Enemies/Enemy.tscn")
+var enemy2 = preload("res://Enemies/EnemyMine.tscn")
 var inited = false
 
 
 func _ready():
 	enemyAssets.append(enemy1)
+	enemyAssets.append(enemy2)
 	
 func init():
 	inited = true

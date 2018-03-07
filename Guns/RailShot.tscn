@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=2]
 
-[ext_resource path="res://RailShot.gd" type="Script" id=1]
+[ext_resource path="res://Guns/RailShot.gd" type="Script" id=1]
 [ext_resource path="res://Sprites/Rail.png" type="Texture" id=2]
 
 [sub_resource type="RectangleShape2D" id=1]
@@ -8,7 +8,7 @@
 custom_solver_bias = 0.0
 extents = Vector2( 1, 3.24153 )
 
-[node name="RailShot" type="KinematicBody2D" index="0"]
+[node name="RailShot" type="KinematicBody2D"]
 
 position = Vector2( 32, 0 )
 input_pickable = false
@@ -17,6 +17,8 @@ collision_mask = 9
 collision/safe_margin = 0.08
 script = ExtResource( 1 )
 _sections_unfolded = [ "Angular", "Collision", "Linear", "Material", "Pause", "Pickable", "Transform", "Visibility", "Z Index", "collision" ]
+damage = 80.0
+speed = 0.0
 
 [node name="Sprite" type="Sprite" parent="." index="0"]
 

@@ -3,9 +3,9 @@ extends Position2D
 export(int) var pickupId = 0
 export(float) var spawnValue = 0.5
 var pickupAssets = []
-var pickupPower = preload("res://PickupPower.tscn")
-var pickupArmor = preload("res://PickupArmor.tscn")
-var pickupMoney = preload("res://PickupMoney.tscn")
+var pickupPower = preload("res://Pickups/PickupPower.tscn")
+var pickupArmor = preload("res://Pickups/PickupArmor.tscn")
+var pickupMoney = preload("res://Pickups/PickupMoney.tscn")
 var inited = false
 
 func _ready():
