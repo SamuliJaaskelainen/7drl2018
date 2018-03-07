@@ -11,7 +11,7 @@
 custom_solver_bias = 0.0
 extents = Vector2( 32, 10 )
 
-[node name="LevelPiece1" type="KinematicBody2D" index="0"]
+[node name="LevelPiece1" type="KinematicBody2D"]
 
 position = Vector2( 256, 128 )
 input_pickable = false
@@ -131,7 +131,28 @@ script = ExtResource( 4 )
 enemyId = 2
 spawnValue = 0.99
 
-[node name="Sprite" type="Sprite" parent="." index="13"]
+[node name="SpawnEnemy10" type="Position2D" parent="." index="13"]
+
+position = Vector2( -200, 64 )
+script = ExtResource( 4 )
+enemyId = 3
+spawnValue = 0.99
+
+[node name="SpawnEnemy11" type="Position2D" parent="." index="14"]
+
+position = Vector2( -176, 64 )
+script = ExtResource( 4 )
+enemyId = 3
+spawnValue = 0.99
+
+[node name="SpawnEnemy12" type="Position2D" parent="." index="15"]
+
+position = Vector2( -152, 64 )
+script = ExtResource( 4 )
+enemyId = 3
+spawnValue = 0.99
+
+[node name="Sprite" type="Sprite" parent="." index="16"]
 
 position = Vector2( -64, -80 )
 z_index = -4
