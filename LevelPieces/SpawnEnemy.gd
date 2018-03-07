@@ -5,12 +5,14 @@ export(float) var spawnValue = 0.5
 var enemyAssets = []
 var enemy1 = preload("res://Enemies/Enemy.tscn")
 var enemy2 = preload("res://Enemies/EnemyMine.tscn")
+var enemy3 = preload("res://Enemies/EnemyHead.tscn")
 var inited = false
 
 
 func _ready():
 	enemyAssets.append(enemy1)
 	enemyAssets.append(enemy2)
+	enemyAssets.append(enemy3)
 	
 func init():
 	inited = true
@@ -24,5 +26,5 @@ func init():
 	
 	
 func _process(delta):
-	if not inited:
+	if not inited and global_position.x <= 520:
 		init()
