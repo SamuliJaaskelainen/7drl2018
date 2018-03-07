@@ -11,12 +11,26 @@ var levelPieces = []
 # Each piece var needs to point to different level piece
 # MIGI ADD NEW PIECES HERE
 var piece1 = preload("res://LevelPieces/LevelPiece1.tscn")
+var piece2 = preload("res://LevelPieces/LevelPiece2.tscn")
+var piece3 = preload("res://LevelPieces/LevelPiece3.tscn")
+var piece4 = preload("res://LevelPieces/LevelPiece4.tscn")
+var piece5 = preload("res://LevelPieces/LevelPiece5.tscn")
+var piece6 = preload("res://LevelPieces/LevelPiece6.tscn")
+var piece7 = preload("res://LevelPieces/LevelPiece7.tscn")
+var piece8 = preload("res://LevelPieces/LevelPiece8.tscn")
 
 func _ready():
 	# Here add pieces that you want to use to levelPieces list
 	# Comment out with #-sign pieces you don't want in your random pool
 	# MIGI COMMENT OUT PIECES YOU DON'T WANT TO TEST
 	levelPieces.append(piece1)
+	#levelPieces.append(piece2)
+	#levelPieces.append(piece3)
+	#levelPieces.append(piece4)
+	#levelPieces.append(piece5)
+	#levelPieces.append(piece6)
+	#levelPieces.append(piece7)
+	#levelPieces.append(piece8)
 	
 	# Once all pieces are added we generate initial level
 	generateLevel()

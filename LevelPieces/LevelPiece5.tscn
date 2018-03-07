@@ -5,7 +5,7 @@
 [ext_resource path="res://LevelPieces/SpawnPickup.gd" type="Script" id=3]
 [ext_resource path="res://LevelPieces/SpawnEnemy.gd" type="Script" id=4]
 
-[node name="LevelPiece3" type="KinematicBody2D" index="0"]
+[node name="LevelPiece3" type="KinematicBody2D"]
 
 position = Vector2( 256, 128 )
 input_pickable = false

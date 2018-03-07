@@ -171,16 +171,16 @@ func go():
 	var collision = move_and_collide(nextPos - global_position)
 	
 	if collision:
-		if (collision.collider.get_name() == "Power"):
+		if "Power" in collision.collider.get_name():
 			currentPower += 30
 			collision.collider.queue_free()
-		elif (collision.collider.get_name() == "Armor"):
+		elif "Armor" in collision.collider.get_name():
 			currentArmor += 5
 			collision.collider.queue_free()
-		elif (collision.collider.get_name() == "Money"):
+		elif "Money" in collision.collider.get_name():
 			money += 10
 			collision.collider.queue_free()
-		elif (collision.collider.get_name() == "Shop"):
+		elif "Shop" in collision.collider.get_name():
 			shop.show()
 			collision.collider.queue_free()
 		elif not wallHit:

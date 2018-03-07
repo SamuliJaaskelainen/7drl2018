@@ -9,11 +9,13 @@ extents = Vector2( 7.77171, 9.25495 )
 
 [node name="Armor" type="KinematicBody2D"]
 
+z_index = -2
+z_as_relative = false
 input_pickable = false
 collision_layer = 1024
 collision_mask = 1024
 collision/safe_margin = 0.08
-_sections_unfolded = [ "Collision", "Material", "Pause", "Pickable", "Transform", "Visibility" ]
+_sections_unfolded = [ "Collision", "Material", "Pause", "Pickable", "Transform", "Visibility", "Z Index" ]
 __meta__ = {
 "_edit_group_": true
 }

@@ -1,6 +1,7 @@
 extends Position2D
 
 export(int) var pickupId = 0
+export(float) var spawnValue = 0.5
 var pickupAssets = []
 var pickupPower = preload("res://PickupPower.tscn")
 var pickupArmor = preload("res://PickupArmor.tscn")
@@ -13,10 +14,13 @@ func _ready():
 	pickupAssets.append(pickupMoney)
 
 func init():
-	var pickup = pickupAssets[pickupId].instance()
-	get_parent().add_child(pickup)
-	pickup.global_position = global_position
 	inited = true
+	
+	if rand_range(0.0, 1.0) < spawnValue:
+		var pickup = pickupAssets[pickupId].instance()
+		get_parent().add_child(pickup)
+		pickup.global_position = global_position
+
 	
 func _process(delta):
 	if not inited:

@@ -1,16 +1,10 @@
- - Levels
- - Enemies
- - Loot
-	- Money
-	- Power
-	- Gear
  - Different guns
 	- Single shot
 	- Whole turn
 	- Chargeable
  - Different core abilities
  - Different movement areas
- - Shop
+ - Shop money check
  - Game over screen
 	- Restart
 	- Back to menu
