@@ -4,11 +4,11 @@ var offset = Vector2(0,-4)
 var lastDelta
 
 func startMove():
-	pass
+	lastDelta = 0
+	damage = 20
 
 func _process(delta):
 	lastDelta = delta
-	damage = 20
 
 func move(val):
 	$RayCast2D.force_raycast_update()

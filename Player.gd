@@ -76,8 +76,8 @@ var structure = STRUCTURE.medium
 var hull = HULL.medium
 var engine = ENGINE.fast
 var thruster = THRUSTER.balanced
-var gun1 = GUN.laser
-var gun2 = GUN.spreadShot
+var gun1 = GUN.singleShot
+var gun2 = GUN.laser
 
 var currentMovementArea
 var movementAreas
@@ -93,10 +93,12 @@ var spreadShot = preload("res://SpreadShot.tscn")
 
 var levelManager
 var enemyManager
+var shop
 
 func _ready():
 	levelManager = get_parent().get_node("LevelManager")
 	enemyManager = get_parent().get_node("EnemyManager")
+	shop = get_parent().get_node("Shop")
 	bullets.append(singleShot)
 	bullets.append(laserShot)
 	bullets.append(railShot)
@@ -111,6 +113,7 @@ func _ready():
 	update_gear()
 	currentArmor = maxArmor
 	update_gear_values()
+	shop.hide()
 
 func _process(delta):
 	mousePos = get_viewport().get_mouse_position()
@@ -177,6 +180,9 @@ func go():
 		elif (collision.collider.get_name() == "Money"):
 			money += 10
 			collision.collider.queue_free()
+		elif (collision.collider.get_name() == "Shop"):
+			shop.show()
+			collision.collider.queue_free()
 		elif not wallHit:
 			global_position = prevPos
 			targetPos = prevPos
@@ -214,10 +220,14 @@ func update_gear():
 	get_parent().get_node("BottomUI/EngineLabel").text = tempStr % [engineNames[engine]]
 	tempStr = "Thruster: %s"
 	get_parent().get_node("BottomUI/ThrusterLabel").text = tempStr % [thrusterNames[thruster]]
+	tempStr = "Gun1: %s"
+	get_parent().get_node("BottomUI/Gun1Label").text = tempStr % [gunNames[gun1]]
+	tempStr = "Gun2: %s"
+	get_parent().get_node("BottomUI/Gun2Label").text = tempStr % [gunNames[gun2]]
 	
 	# Gear values
 	maxArmor = armorValues[hull]
-	maxPower = maxPowers[maxPower]
+	maxPower = maxPowers[core]
 	gun1Bullet = bullets[gun1]
 	gun2Bullet = bullets[gun2]
 	
