@@ -1,0 +1,74 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://LevelPiece.gd" type="Script" id=1]
+[ext_resource path="res://TerrainAutoTile.tres" type="TileSet" id=2]
+[ext_resource path="res://LevelPieces/SpawnPickup.gd" type="Script" id=3]
+[ext_resource path="res://LevelPieces/SpawnEnemy.gd" type="Script" id=4]
+
+[node name="LevelPiece3" type="KinematicBody2D" index="0"]
+
+position = Vector2( 256, 128 )
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+collision/safe_margin = 0.08
+script = ExtResource( 1 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="TileMap2" type="TileMap" parent="." index="0"]
+
+z_index = -2
+z_as_relative = false
+mode = 0
+tile_set = ExtResource( 2 )
+cell_size = Vector2( 16, 16 )
+cell_quadrant_size = 16
+cell_custom_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+cell_half_offset = 2
+cell_tile_origin = 0
+cell_y_sort = false
+cell_clip_uv = false
+collision_use_kinematic = false
+collision_friction = 1.0
+collision_bounce = 0.0
+collision_layer = 1
+collision_mask = 1
+occluder_light_mask = 1
+format = 1
+tile_data = PoolIntArray( -458766, 0, 1, -458765, 0, 65536, -458764, 0, 2, -524287, 0, 1, -524286, 0, 2, -524279, 0, 1, -524278, 0, 65536, -524277, 0, 65536, -524276, 0, 65536, -524275, 0, 65536, -524274, 0, 2, -393230, 0, 131073, -393229, 0, 196619, -393228, 0, 131074, -458751, 0, 131073, -458750, 0, 131074, -458743, 0, 131073, -458742, 0, 196619, -458741, 0, 196619, -458740, 0, 196619, -458739, 0, 3, -458738, 0, 65538, -327694, 0, 131073, -327693, 0, 3, -327692, 0, 65538, -393215, 0, 65537, -393214, 0, 65538, -393207, 0, 65546, -393206, 0, 131072, -393205, 0, 131072, -393204, 0, 131072, -393203, 0, 65545, -262158, 0, 65537, -262157, 0, 65545, -327671, 0, 65541, -327667, 0, 131077, -196621, 0, 65541, -262137, 0, 196608, -262136, 0, 10, -262135, 0, 11, -131085, 0, 131077, -196600, 0, 65537, -196599, 0, 65538, -9, 0, 1, -8, 0, 2, -65535, 0, 5, 65527, 0, 131073, 65528, 0, 131074, 1, 0, 8, 2, 0, 2, 131063, 0, 131073, 131064, 0, 131074, 65537, 0, 131073, 65538, 0, 131074, 65542, 0, 1, 65543, 0, 2, 196599, 0, 131073, 196600, 0, 131079, 196601, 0, 2, 131073, 0, 65537, 131074, 0, 65545, 131078, 0, 131073, 131079, 0, 131074, 262135, 0, 131073, 262136, 0, 196619, 262137, 0, 131074, 196610, 0, 131077, 196614, 0, 131073, 196615, 0, 131079, 196616, 0, 65536, 196617, 0, 2, 327664, 0, 1, 327665, 0, 65536, 327666, 0, 2, 327671, 0, 65537, 327672, 0, 131072, 327673, 0, 65538, 262150, 0, 131073, 262151, 0, 3, 262152, 0, 131072, 262153, 0, 65538, 393200, 0, 131073, 393201, 0, 196619, 393202, 0, 131074, 327686, 0, 131073, 327687, 0, 131074, 327694, 0, 1, 327695, 0, 2, 458736, 0, 131073, 458737, 0, 196619, 458738, 0, 131074, 458750, 0, 1, 458751, 0, 2, 393222, 0, 131073, 393223, 0, 131074, 393230, 0, 131073, 393231, 0, 131074, 524272, 0, 65537, 524273, 0, 131072, 524274, 0, 65538, 524279, 0, 196608, 524280, 0, 196609, 524281, 0, 196610, 524286, 0, 65537, 524287, 0, 65547, 458752, 0, 196610, 458758, 0, 65537, 458759, 0, 65538, 458765, 0, 196608, 458766, 0, 65544, 458767, 0, 65538 )
+_sections_unfolded = [ "Cell", "Z Index" ]
+
+[node name="SpawnPickup" type="Position2D" parent="." index="1"]
+
+position = Vector2( 141.861, 38.2153 )
+script = ExtResource( 3 )
+_sections_unfolded = [ "Material", "Transform", "Visibility", "Z Index" ]
+pickupId = 0
+
+[node name="SpawnPickup2" type="Position2D" parent="." index="2"]
+
+position = Vector2( 126.73, -73.6393 )
+script = ExtResource( 3 )
+_sections_unfolded = [ "Material", "Transform", "Visibility", "Z Index" ]
+pickupId = 0
+
+[node name="SpawnPickup3" type="Position2D" parent="." index="3"]
+
+position = Vector2( -118.593, 102.518 )
+script = ExtResource( 3 )
+_sections_unfolded = [ "Material", "Transform", "Visibility", "Z Index" ]
+pickupId = 0
+
+[node name="SpawnEnemy" type="Position2D" parent="." index="4"]
+
+position = Vector2( -66.2185, -83.5448 )
+script = ExtResource( 4 )
+pickupId = 0
+
+[node name="SpawnEnemy2" type="Position2D" parent="." index="5"]
+
+position = Vector2( 226.657, 30.4713 )
+script = ExtResource( 4 )
+pickupId = 0
+
+
