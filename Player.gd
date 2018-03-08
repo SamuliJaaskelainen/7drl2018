@@ -77,7 +77,7 @@ var hull = HULL.medium
 var engine = ENGINE.fast
 var thruster = THRUSTER.balanced
 var gun1 = GUN.singleShot
-var gun2 = GUN.laser
+var gun2 = GUN.blow
 
 var currentMovementArea
 var movementAreas
@@ -90,6 +90,7 @@ var singleShot = preload("res://Guns/SingleShot.tscn")
 var laserShot = preload("res://Guns/LaserShot.tscn")
 var railShot = preload("res://Guns/RailShot.tscn")
 var spreadShot = preload("res://Guns/SpreadShot.tscn")
+var blowShot = preload("res://Guns/BlowShot.tscn")
 
 var levelManager
 var enemyManager
@@ -104,6 +105,7 @@ func _ready():
 	bullets.append(laserShot)
 	bullets.append(railShot)
 	bullets.append(spreadShot)
+	bullets.append(blowShot)
 	$ActionUI.hide()
 	Input.set_mouse_mode(Input.MOUSE_MODE_HIDDEN)
 	resolution.x = ProjectSettings.get_setting("display/window/size/width")

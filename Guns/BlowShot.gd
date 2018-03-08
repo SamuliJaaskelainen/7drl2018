@@ -8,8 +8,8 @@ func startMove():
 	pass
 
 func move(val):
-	var playerPos = get_parent().find_node("Player").global_position
-	
+	if(val > 0.33):
+		killMe = true
 		
 func endMove():
 	killMe = true
