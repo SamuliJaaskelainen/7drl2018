@@ -96,6 +96,7 @@ var enemyManager
 var shop
 
 func _ready():
+	randomize()
 	levelManager = get_parent().get_node("LevelManager")
 	enemyManager = get_parent().get_node("EnemyManager")
 	shop = get_parent().get_node("Shop")

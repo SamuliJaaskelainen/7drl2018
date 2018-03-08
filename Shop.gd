@@ -20,33 +20,61 @@ var gunTexts = ["Single shot","Laser","Rail shot","Spread shot","Blow","Ground b
 
 var player 
 
-func show():
+func _ready():
 	player = get_parent().get_node("Player")
+
+func show():
+	
 	boughtAmount = 0
 	items = []
 	itemTypes = []
-	addItem(player.GUN.spreadShot, player.GUN, $ShopItem1, $ShopItem1Buy)
-	addItem(player.HULL.light, player.HULL, $ShopItem2, $ShopItem2Buy)
-	addItem(player.ENGINE.slow, player.ENGINE, $ShopItem3, $ShopItem3Buy)
+	addItem($ShopItem1, $ShopItem1Buy)
+	addItem($ShopItem2, $ShopItem2Buy)
+	addItem($ShopItem3, $ShopItem3Buy)
 	visible = true
 	
-func addItem(var item, var type, var shopItem, var shopItemBuy):
-	items.append(item)
-	itemTypes.append(type)
+func addItem(var shopItem, var shopItemBuy):
+	
+	var item
+	var type
+	var r = randi() % 6
+	print(r)
+
+	match r:
+		0:
+			type = player.CORE
+		1:
+			type = player.STRUCTURE
+		2:
+			type = player.HULL
+		3:
+			type = player.ENGINE
+		4:
+			type = player.THRUSTER
+		5:
+			type = player.GUN
 	
 	match type:
 		player.CORE:
+			item = randi()%coreTexts.size()
 			shopItem.text = coreTexts[item]
 		player.STRUCTURE:
+			item = randi()%structureTexts.size()
 			shopItem.text = structureTexts[item]
 		player.HULL:
+			item = randi()%hullTexts.size()
 			shopItem.text = hullTexts[item]
 		player.ENGINE:
+			item = randi()%engineTexts.size()
 			shopItem.text = engineTexts[item]
 		player.THRUSTER:
+			item = randi()%thrusterTexts.size()
 			shopItem.text = thrusterTexts[item]
 		player.GUN:
+			item = randi()%gunTexts.size()
 			shopItem.text = gunTexts[item]
+	
+	items.append(item)
 	
 	shopItemBuy.text = "BUY ["
 	match type:
