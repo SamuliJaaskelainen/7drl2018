@@ -43,7 +43,7 @@ func hit(damageAmount):
 func canBeDestroyed():
 	return killMe
 
-func move(var moveProgressPercentage):
+func move(moveProgressPercentage):
 	if(!targetPos):
 		return
 	

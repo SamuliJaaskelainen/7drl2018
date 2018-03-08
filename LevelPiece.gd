@@ -11,7 +11,7 @@ func startMove():
 	lastPos = global_position
 	targetPos = global_position + dir * speed
 
-func move(var val):
+func move(val):
 	global_position = lastPos.linear_interpolate(targetPos, val)
 	
 	if global_position.x < -pieceWidth:

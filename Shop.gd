@@ -33,7 +33,7 @@ func show():
 	addItem($ShopItem3, $ShopItem3Buy)
 	visible = true
 	
-func addItem(var shopItem, var shopItemBuy):
+func addItem(shopItem, shopItemBuy):
 	
 	var item
 	var type
@@ -110,7 +110,7 @@ func _on_ShopItem3Buy_pressed():
 func _on_ShopClose_pressed():
 	hide()
 	
-func buyItem(var item, var type, var shopItem, var shopItemBuy):
+func buyItem(item, type, shopItem, shopItemBuy):
 	
 	match type:
 		player.CORE:

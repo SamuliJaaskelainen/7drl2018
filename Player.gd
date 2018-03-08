@@ -306,7 +306,7 @@ func skip_turn():
 	targetPos = global_position
 	base_action();
 
-func shoot(var gunBullet, var gun):
+func shoot(gunBullet, gun):
 	if (gun == GUN.spreadShot):
 		createBullet(gunBullet)
 		var bulletUp = createBullet(gunBullet)
@@ -318,7 +318,7 @@ func shoot(var gunBullet, var gun):
 	else:
 		createBullet(gunBullet)
 	
-func createBullet(var gunBullet):
+func createBullet(gunBullet):
 	var bullet = gunBullet.instance()
 	bullet.position = Vector2(global_position.x + 16, global_position.y)
 	get_parent().add_child(bullet)
@@ -326,7 +326,7 @@ func createBullet(var gunBullet):
 	shotBullets.append(bullet)
 	return bullet
 	
-func hit(var damage):
+func hit(damage):
 	currentArmor -= damage
 	if(currentArmor <= 0):
 		currentArmor = 0
