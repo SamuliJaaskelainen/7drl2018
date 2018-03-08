@@ -54,6 +54,8 @@ func addItem(var shopItem, var shopItemBuy):
 		5:
 			type = player.GUN
 	
+	itemTypes.append(type)
+	
 	match type:
 		player.CORE:
 			item = randi()%coreTexts.size()
