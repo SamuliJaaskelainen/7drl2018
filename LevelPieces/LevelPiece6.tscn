@@ -1,11 +1,17 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://LevelPiece.gd" type="Script" id=1]
 [ext_resource path="res://TerrainAutoTile.tres" type="TileSet" id=2]
 [ext_resource path="res://LevelPieces/SpawnPickup.gd" type="Script" id=3]
-[ext_resource path="res://LevelPieces/SpawnEnemy.gd" type="Script" id=4]
+[ext_resource path="res://Sprites/Shop.png" type="Texture" id=4]
+[ext_resource path="res://LevelPieces/SpawnEnemy.gd" type="Script" id=5]
 
-[node name="LevelPiece6" type="KinematicBody2D"]
+[sub_resource type="RectangleShape2D" id=1]
+
+custom_solver_bias = 0.0
+extents = Vector2( 32, 10 )
+
+[node name="LevelPiece6" type="KinematicBody2D" index="0"]
 
 position = Vector2( 256, 128 )
 input_pickable = false
@@ -44,17 +50,181 @@ position = Vector2( 28.2366, 22.3274 )
 script = ExtResource( 3 )
 _sections_unfolded = [ "Material", "Transform", "Visibility", "Z Index" ]
 pickupId = 0
+spawnValue = 0.3
 
-[node name="SpawnEnemy" type="Position2D" parent="." index="2"]
+[node name="SpawnPickup2" type="Position2D" parent="." index="2"]
 
-position = Vector2( -91.0832, -0.8237 )
-script = ExtResource( 4 )
-pickupId = 0
+position = Vector2( 46.7683, 22.3274 )
+script = ExtResource( 3 )
+_sections_unfolded = [ "Material", "Transform", "Visibility", "Z Index" ]
+pickupId = 1
+spawnValue = 0.3
 
-[node name="SpawnEnemy2" type="Position2D" parent="." index="3"]
+[node name="SpawnPickup3" type="Position2D" parent="." index="3"]
 
-position = Vector2( 169.183, -20.9589 )
-script = ExtResource( 4 )
-pickupId = 0
+position = Vector2( 67.2507, 22.3274 )
+script = ExtResource( 3 )
+_sections_unfolded = [ "Material", "Transform", "Visibility", "Z Index" ]
+pickupId = 2
+spawnValue = 0.3
+
+[node name="Sprite" type="Sprite" parent="." index="4"]
+
+editor/display_folded = true
+position = Vector2( 128.145, 16.5599 )
+z_index = -4
+texture = ExtResource( 4 )
+_sections_unfolded = [ "Z Index" ]
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Shop" type="StaticBody2D" parent="Sprite" index="0"]
+
+input_pickable = false
+collision_layer = 1024
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+_sections_unfolded = [ "Collision", "Pickable", "Transform", "Z Index" ]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite/Shop" index="0"]
+
+shape = SubResource( 1 )
+
+[node name="Wave1" type="Node" parent="." index="5"]
+
+[node name="SpawnEnemy" type="Position2D" parent="Wave1" index="0"]
+
+position = Vector2( 160.04, 128.639 )
+script = ExtResource( 5 )
+enemyId = 0
+spawnValue = 0.5
+
+[node name="SpawnEnemy2" type="Position2D" parent="Wave1" index="1"]
+
+position = Vector2( 122.489, 116.935 )
+script = ExtResource( 5 )
+enemyId = 2
+spawnValue = 0.5
+
+[node name="SpawnEnemy3" type="Position2D" parent="Wave1" index="2"]
+
+position = Vector2( 122.489, 136.442 )
+script = ExtResource( 5 )
+enemyId = 2
+spawnValue = 0.5
+
+[node name="SpawnEnemy4" type="Position2D" parent="Wave1" index="3"]
+
+position = Vector2( 122.489, 157.9 )
+script = ExtResource( 5 )
+enemyId = 2
+spawnValue = 0.5
+
+[node name="Wave2" type="Node" parent="." index="6"]
+
+[node name="SpawnEnemy3" type="Position2D" parent="Wave2" index="0"]
+
+position = Vector2( 348.771, 121.324 )
+script = ExtResource( 5 )
+enemyId = 3
+spawnValue = 0.5
+
+[node name="SpawnEnemy4" type="Position2D" parent="Wave2" index="1"]
+
+position = Vector2( 366.815, 121.324 )
+script = ExtResource( 5 )
+enemyId = 3
+spawnValue = 0.5
+
+[node name="SpawnEnemy5" type="Position2D" parent="Wave2" index="2"]
+
+position = Vector2( 386.81, 121.324 )
+script = ExtResource( 5 )
+enemyId = 3
+spawnValue = 0.5
+
+[node name="RandomEnemies" type="Node" parent="." index="7"]
+
+[node name="SpawnEnemy2" type="Position2D" parent="RandomEnemies" index="0"]
+
+position = Vector2( 425.183, 107.041 )
+script = ExtResource( 5 )
+enemyId = 0
+spawnValue = 0.5
+
+[node name="SpawnEnemy3" type="Position2D" parent="RandomEnemies" index="1"]
+
+position = Vector2( 240.841, 112.406 )
+script = ExtResource( 5 )
+enemyId = 1
+spawnValue = 0.5
+
+[node name="SpawnEnemy4" type="Position2D" parent="RandomEnemies" index="2"]
+
+position = Vector2( 257.103, 132.4 )
+scale = Vector2( 1.21191, 1 )
+script = ExtResource( 5 )
+enemyId = 1
+spawnValue = 0.5
+
+[node name="SpawnEnemy5" type="Position2D" parent="RandomEnemies" index="3"]
+
+position = Vector2( 281.974, 114.844 )
+scale = Vector2( 1.21191, 1 )
+script = ExtResource( 5 )
+enemyId = 1
+spawnValue = 0.5
+
+[node name="SpawnEnemy6" type="Position2D" parent="RandomEnemies" index="4"]
+
+position = Vector2( 309.772, 129.962 )
+scale = Vector2( 1.21191, 1 )
+script = ExtResource( 5 )
+enemyId = 1
+spawnValue = 0.5
+
+[node name="SpawnEnemy7" type="Position2D" parent="RandomEnemies" index="5"]
+
+position = Vector2( 321.476, 115.332 )
+scale = Vector2( 1.21191, 1 )
+script = ExtResource( 5 )
+enemyId = 1
+spawnValue = 0.5
+
+[node name="SpawnEnemy8" type="Position2D" parent="RandomEnemies" index="6"]
+
+position = Vector2( 438.519, 129.474 )
+scale = Vector2( 1.21191, 1 )
+script = ExtResource( 5 )
+enemyId = 1
+spawnValue = 0.5
+
+[node name="SpawnEnemy9" type="Position2D" parent="RandomEnemies" index="7"]
+
+position = Vector2( 465.341, 126.548 )
+scale = Vector2( 1.21191, 1 )
+script = ExtResource( 5 )
+enemyId = 1
+spawnValue = 0.5
+
+[node name="SpawnEnemy10" type="Position2D" parent="RandomEnemies" index="8"]
+
+position = Vector2( 484.36, 135.814 )
+scale = Vector2( 1.21191, 1 )
+script = ExtResource( 5 )
+enemyId = 1
+spawnValue = 0.5
+
+[node name="SpawnEnemy11" type="Position2D" parent="RandomEnemies" index="9"]
+
+position = Vector2( 501.429, 122.159 )
+scale = Vector2( 1.21191, 1 )
+script = ExtResource( 5 )
+enemyId = 1
+spawnValue = 0.5
 
 

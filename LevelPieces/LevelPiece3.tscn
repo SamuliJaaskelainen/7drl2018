@@ -5,7 +5,7 @@
 [ext_resource path="res://LevelPieces/SpawnPickup.gd" type="Script" id=3]
 [ext_resource path="res://LevelPieces/SpawnEnemy.gd" type="Script" id=4]
 
-[node name="LevelPiece3" type="KinematicBody2D"]
+[node name="LevelPiece3" type="KinematicBody2D" index="0"]
 
 position = Vector2( 256, 128 )
 input_pickable = false
@@ -59,107 +59,99 @@ spawnValue = 0.5
 position = Vector2( -118.593, 102.518 )
 script = ExtResource( 3 )
 _sections_unfolded = [ "Material", "Transform", "Visibility", "Z Index" ]
-pickupId = 0
+pickupId = 2
 spawnValue = 0.5
 
 [node name="Wave1" type="Node" parent="." index="4"]
-
-editor/display_folded = true
 
 [node name="SpawnEnemy" type="Position2D" parent="Wave1" index="0"]
 
 position = Vector2( 189.781, 44.4552 )
 script = ExtResource( 4 )
-enemyId = 0
+enemyId = 3
 spawnValue = 0.8
 
 [node name="SpawnEnemy2" type="Position2D" parent="Wave1" index="1"]
 
 position = Vector2( 221.122, 67.6907 )
 script = ExtResource( 4 )
-enemyId = 0
+enemyId = 3
 spawnValue = 0.8
 
 [node name="SpawnEnemy3" type="Position2D" parent="Wave1" index="2"]
 
 position = Vector2( 251.923, 90.9261 )
 script = ExtResource( 4 )
-enemyId = 0
+enemyId = 3
 spawnValue = 0.8
 
 [node name="SpawnEnemy4" type="Position2D" parent="Wave1" index="3"]
 
 position = Vector2( 288.667, 63.3678 )
 script = ExtResource( 4 )
-enemyId = 0
+enemyId = 3
 spawnValue = 0.5
 
 [node name="Wave2" type="Node" parent="." index="5"]
-
-editor/display_folded = true
 
 [node name="SpawnEnemy2" type="Position2D" parent="Wave2" index="0"]
 
 position = Vector2( 189.782, 224.936 )
 script = ExtResource( 4 )
-enemyId = 0
+enemyId = 3
 spawnValue = 0.8
 
 [node name="SpawnEnemy3" type="Position2D" parent="Wave2" index="1"]
 
 position = Vector2( 237.334, 206.563 )
 script = ExtResource( 4 )
-enemyId = 0
+enemyId = 2
 spawnValue = 0.8
 
 [node name="SpawnEnemy4" type="Position2D" parent="Wave2" index="2"]
 
 position = Vector2( 282.184, 211.426 )
 script = ExtResource( 4 )
-enemyId = 0
+enemyId = 3
 spawnValue = 0.8
 
 [node name="SpawnEnemy5" type="Position2D" parent="Wave2" index="3"]
 
 position = Vector2( 322.17, 210.886 )
 script = ExtResource( 4 )
-enemyId = 0
+enemyId = 2
 spawnValue = 0.8
 
 [node name="Wave3" type="Node" parent="." index="6"]
-
-editor/display_folded = true
 
 [node name="SpawnEnemy2" type="Position2D" parent="Wave3" index="0"]
 
 position = Vector2( 435.105, 127.13 )
 script = ExtResource( 4 )
-enemyId = 0
+enemyId = 2
 spawnValue = 0.4
 
 [node name="SpawnEnemy3" type="Position2D" parent="Wave3" index="1"]
 
 position = Vector2( 461.583, 149.826 )
 script = ExtResource( 4 )
-enemyId = 0
+enemyId = 2
 spawnValue = 0.6
 
 [node name="SpawnEnemy4" type="Position2D" parent="Wave3" index="2"]
 
 position = Vector2( 491.843, 169.819 )
 script = ExtResource( 4 )
-enemyId = 0
+enemyId = 2
 spawnValue = 0.8
 
 [node name="RandomEnemies" type="Node" parent="." index="7"]
-
-editor/display_folded = true
 
 [node name="SpawnEnemy5" type="Position2D" parent="RandomEnemies" index="0"]
 
 position = Vector2( 349.188, 114.162 )
 script = ExtResource( 4 )
-enemyId = 0
+enemyId = 2
 spawnValue = 0.2
 
 [node name="SpawnEnemy6" type="Position2D" parent="RandomEnemies" index="1"]

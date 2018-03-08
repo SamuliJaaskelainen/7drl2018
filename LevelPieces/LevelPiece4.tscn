@@ -1,11 +1,17 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://LevelPiece.gd" type="Script" id=1]
 [ext_resource path="res://TerrainAutoTile.tres" type="TileSet" id=2]
 [ext_resource path="res://LevelPieces/SpawnPickup.gd" type="Script" id=3]
 [ext_resource path="res://LevelPieces/SpawnEnemy.gd" type="Script" id=4]
+[ext_resource path="res://Sprites/Shop.png" type="Texture" id=5]
 
-[node name="LevelPiece4" type="KinematicBody2D"]
+[sub_resource type="RectangleShape2D" id=1]
+
+custom_solver_bias = 0.0
+extents = Vector2( 32, 10 )
+
+[node name="LevelPiece4" type="KinematicBody2D" index="0"]
 
 position = Vector2( 256, 128 )
 input_pickable = false
@@ -51,7 +57,7 @@ spawnValue = 0.5
 position = Vector2( -30.5139, 74.4193 )
 script = ExtResource( 3 )
 _sections_unfolded = [ "Material", "Transform", "Visibility", "Z Index" ]
-pickupId = 0
+pickupId = 1
 spawnValue = 0.5
 
 [node name="SpawnPickup3" type="Position2D" parent="." index="3"]
@@ -59,7 +65,7 @@ spawnValue = 0.5
 position = Vector2( -194.783, -59.5898 )
 script = ExtResource( 3 )
 _sections_unfolded = [ "Material", "Transform", "Visibility", "Z Index" ]
-pickupId = 0
+pickupId = 2
 spawnValue = 0.5
 
 [node name="Wave1" type="Node" parent="." index="4"]
@@ -70,21 +76,21 @@ editor/display_folded = true
 
 position = Vector2( 260.029, 94.1684 )
 script = ExtResource( 4 )
-enemyId = 0
+enemyId = 3
 spawnValue = 0.9
 
 [node name="SpawnEnemy2" type="Position2D" parent="Wave1" index="1"]
 
 position = Vector2( 276.78, 110.379 )
 script = ExtResource( 4 )
-enemyId = 0
+enemyId = 3
 spawnValue = 0.8
 
 [node name="SpawnEnemy3" type="Position2D" parent="Wave1" index="2"]
 
 position = Vector2( 291.91, 126.05 )
 script = ExtResource( 4 )
-enemyId = 0
+enemyId = 3
 spawnValue = 0.7
 
 [node name="Wave2" type="Node" parent="." index="5"]
@@ -95,21 +101,21 @@ editor/display_folded = true
 
 position = Vector2( 201.67, 227.097 )
 script = ExtResource( 4 )
-enemyId = 0
+enemyId = 3
 spawnValue = 0.8
 
 [node name="SpawnEnemy3" type="Position2D" parent="Wave2" index="1"]
 
 position = Vector2( 228.147, 224.395 )
 script = ExtResource( 4 )
-enemyId = 0
+enemyId = 2
 spawnValue = 0.7
 
 [node name="SpawnEnemy4" type="Position2D" parent="Wave2" index="2"]
 
 position = Vector2( 257.327, 221.693 )
 script = ExtResource( 4 )
-enemyId = 0
+enemyId = 2
 spawnValue = 0.6
 
 [node name="SpawnEnemy5" type="Position2D" parent="Wave2" index="3"]
@@ -123,31 +129,33 @@ spawnValue = 0.5
 
 position = Vector2( 309.201, 223.855 )
 script = ExtResource( 4 )
-enemyId = 0
+enemyId = 1
 spawnValue = 0.4
 
 [node name="SpawnEnemy7" type="Position2D" parent="Wave2" index="5"]
 
 position = Vector2( 337.3, 230.879 )
 script = ExtResource( 4 )
-enemyId = 0
+enemyId = 1
 spawnValue = 0.3
 
 [node name="SpawnEnemy8" type="Position2D" parent="Wave2" index="6"]
 
 position = Vector2( 361.616, 221.153 )
 script = ExtResource( 4 )
-enemyId = 0
+enemyId = 1
 spawnValue = 0.2
 
 [node name="SpawnEnemy9" type="Position2D" parent="Wave2" index="7"]
 
 position = Vector2( 387.553, 227.097 )
 script = ExtResource( 4 )
-enemyId = 0
+enemyId = 1
 spawnValue = 0.1
 
 [node name="RandomEnemies" type="Node" parent="." index="6"]
+
+editor/display_folded = true
 
 [node name="SpawnEnemy2" type="Position2D" parent="RandomEnemies" index="0"]
 
@@ -160,14 +168,14 @@ spawnValue = 0.8
 
 position = Vector2( 205.452, 24.462 )
 script = ExtResource( 4 )
-enemyId = 0
+enemyId = 2
 spawnValue = 0.7
 
 [node name="SpawnEnemy4" type="Position2D" parent="RandomEnemies" index="2"]
 
 position = Vector2( 275.699, 16.8969 )
 script = ExtResource( 4 )
-enemyId = 0
+enemyId = 3
 spawnValue = 0.6
 
 [node name="SpawnEnemy5" type="Position2D" parent="RandomEnemies" index="3"]
@@ -181,28 +189,53 @@ spawnValue = 0.5
 
 position = Vector2( 486.979, 127.671 )
 script = ExtResource( 4 )
-enemyId = 0
+enemyId = 1
 spawnValue = 0.4
 
 [node name="SpawnEnemy7" type="Position2D" parent="RandomEnemies" index="5"]
 
 position = Vector2( 83.8712, 125.509 )
 script = ExtResource( 4 )
-enemyId = 0
+enemyId = 1
 spawnValue = 0.3
 
 [node name="SpawnEnemy8" type="Position2D" parent="RandomEnemies" index="6"]
 
 position = Vector2( 151.416, 216.83 )
 script = ExtResource( 4 )
-enemyId = 0
+enemyId = 1
 spawnValue = 0.2
 
 [node name="SpawnEnemy9" type="Position2D" parent="RandomEnemies" index="7"]
 
 position = Vector2( 317.307, 110.379 )
 script = ExtResource( 4 )
-enemyId = 0
+enemyId = 1
 spawnValue = 0.1
+
+[node name="Sprite" type="Sprite" parent="." index="7"]
+
+position = Vector2( 175.92, 16.7243 )
+z_index = -4
+texture = ExtResource( 5 )
+_sections_unfolded = [ "Z Index" ]
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Shop" type="StaticBody2D" parent="Sprite" index="0"]
+
+input_pickable = false
+collision_layer = 1024
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+_sections_unfolded = [ "Collision", "Pickable", "Transform", "Z Index" ]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite/Shop" index="0"]
+
+shape = SubResource( 1 )
 
 
