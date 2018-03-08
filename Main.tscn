@@ -157,7 +157,7 @@ use_filter = false
 font_data = ExtResource( 1 )
 _sections_unfolded = [ "Extra Spacing", "Font", "Font/fallback", "Settings" ]
 
-[node name="Game" type="Node"]
+[node name="Game" type="Node" index="0"]
 
 [node name="BottomUI" type="Node" parent="." index="0"]
 
@@ -607,7 +607,6 @@ _sections_unfolded = [ "Z Index" ]
 
 [node name="Player" type="KinematicBody2D" parent="." index="1"]
 
-editor/display_folded = true
 position = Vector2( 64, 112 )
 scale = Vector2( 0.25, 0.25 )
 input_pickable = false

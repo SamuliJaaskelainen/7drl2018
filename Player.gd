@@ -149,21 +149,24 @@ func nextTurn():
 func we():
 	# Player's turn logic is handled via ui signals as well
 	# Here we have hotkeys for leet players
-	if $ActionUI.is_visible_in_tree():
-		if Input.is_action_just_pressed("action1") and not $ActionUI/Button1.disabled:
-			_on_Button1_pressed()
+	#if $ActionUI.is_visible_in_tree():
+	if Input.is_action_just_pressed("action1") and not $ActionUI/Button1.disabled:
+		_on_Button1_pressed()
 			
-	if $ActionUI.is_visible_in_tree():
-		if Input.is_action_just_pressed("action2") and not $ActionUI/Button2.disabled:
-			_on_Button2_pressed()
+	#if $ActionUI.is_visible_in_tree():
+	if Input.is_action_just_pressed("action2") and not $ActionUI/Button2.disabled:
+		_on_Button2_pressed()
 			
-	if $ActionUI.is_visible_in_tree():
-		if Input.is_action_just_pressed("action3") and not $ActionUI/Button3.disabled:
-			_on_Button3_pressed()
+	#if $ActionUI.is_visible_in_tree():
+	if Input.is_action_just_pressed("action3") and not $ActionUI/Button3.disabled:
+		_on_Button3_pressed()
 			
-	if $ActionUI.is_visible_in_tree():
-		if Input.is_action_just_pressed("action4") and not $ActionUI/Button4.disabled:
-			_on_Button4_pressed()
+	#if $ActionUI.is_visible_in_tree():
+	if Input.is_action_just_pressed("action4") and not $ActionUI/Button4.disabled:
+		_on_Button4_pressed()
+		
+	if Input.is_action_just_pressed("skip"):
+		skip_turn()
 
 func go():
 	var prevPos = global_position
@@ -261,7 +264,8 @@ func _set_action_button(var button, var name, var disabled):
 
 func base_action():
 	my_turn = false
-	targetPos = $ActionUI.rect_global_position
+	if $ActionUI.visible:
+		targetPos = $ActionUI.rect_global_position
 	$ActionUI.hide()
 	currentMovementArea.hide()
 	turnVal = 0.0
@@ -294,6 +298,11 @@ func _on_Button3_pressed():
 func _on_Button4_pressed():
 	base_action()
 
+func skip_turn():
+	oldPos = global_position
+	targetPos = global_position
+	base_action();
+
 func shoot(var gunBullet, var gun):
 	if (gun == GUN.spreadShot):
 		createBullet(gunBullet)
@@ -321,6 +330,8 @@ func hit(var damage):
 		get_tree().reload_current_scene()
 
 func _on_Area2D_input_event(viewport, event, shape_idx):
+	targetPos = mousePos
+	oldPos = global_position
 	if Input.is_action_just_pressed("press"):
 		$ActionUI.rect_global_position = mousePos;
 		$ActionUI.show()
