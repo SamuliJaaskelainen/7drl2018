@@ -44,6 +44,7 @@ position = Vector2( 141.861, 38.2153 )
 script = ExtResource( 3 )
 _sections_unfolded = [ "Material", "Transform", "Visibility", "Z Index" ]
 pickupId = 0
+spawnValue = 0.5
 
 [node name="SpawnPickup2" type="Position2D" parent="." index="2"]
 
@@ -51,6 +52,7 @@ position = Vector2( 128, -80 )
 script = ExtResource( 3 )
 _sections_unfolded = [ "Material", "Transform", "Visibility", "Z Index" ]
 pickupId = 1
+spawnValue = 0.5
 
 [node name="SpawnPickup3" type="Position2D" parent="." index="3"]
 
@@ -58,17 +60,127 @@ position = Vector2( -118.593, 102.518 )
 script = ExtResource( 3 )
 _sections_unfolded = [ "Material", "Transform", "Visibility", "Z Index" ]
 pickupId = 0
+spawnValue = 0.5
 
-[node name="SpawnEnemy" type="Position2D" parent="." index="4"]
+[node name="Wave1" type="Node" parent="." index="4"]
 
-position = Vector2( -66.2185, -83.5448 )
+editor/display_folded = true
+
+[node name="SpawnEnemy" type="Position2D" parent="Wave1" index="0"]
+
+position = Vector2( 189.781, 44.4552 )
 script = ExtResource( 4 )
-pickupId = 0
+enemyId = 0
+spawnValue = 0.8
 
-[node name="SpawnEnemy2" type="Position2D" parent="." index="5"]
+[node name="SpawnEnemy2" type="Position2D" parent="Wave1" index="1"]
 
-position = Vector2( 226.657, 30.4713 )
+position = Vector2( 221.122, 67.6907 )
 script = ExtResource( 4 )
-pickupId = 0
+enemyId = 0
+spawnValue = 0.8
+
+[node name="SpawnEnemy3" type="Position2D" parent="Wave1" index="2"]
+
+position = Vector2( 251.923, 90.9261 )
+script = ExtResource( 4 )
+enemyId = 0
+spawnValue = 0.8
+
+[node name="SpawnEnemy4" type="Position2D" parent="Wave1" index="3"]
+
+position = Vector2( 288.667, 63.3678 )
+script = ExtResource( 4 )
+enemyId = 0
+spawnValue = 0.5
+
+[node name="Wave2" type="Node" parent="." index="5"]
+
+editor/display_folded = true
+
+[node name="SpawnEnemy2" type="Position2D" parent="Wave2" index="0"]
+
+position = Vector2( 189.782, 224.936 )
+script = ExtResource( 4 )
+enemyId = 0
+spawnValue = 0.8
+
+[node name="SpawnEnemy3" type="Position2D" parent="Wave2" index="1"]
+
+position = Vector2( 237.334, 206.563 )
+script = ExtResource( 4 )
+enemyId = 0
+spawnValue = 0.8
+
+[node name="SpawnEnemy4" type="Position2D" parent="Wave2" index="2"]
+
+position = Vector2( 282.184, 211.426 )
+script = ExtResource( 4 )
+enemyId = 0
+spawnValue = 0.8
+
+[node name="SpawnEnemy5" type="Position2D" parent="Wave2" index="3"]
+
+position = Vector2( 322.17, 210.886 )
+script = ExtResource( 4 )
+enemyId = 0
+spawnValue = 0.8
+
+[node name="Wave3" type="Node" parent="." index="6"]
+
+editor/display_folded = true
+
+[node name="SpawnEnemy2" type="Position2D" parent="Wave3" index="0"]
+
+position = Vector2( 435.105, 127.13 )
+script = ExtResource( 4 )
+enemyId = 0
+spawnValue = 0.4
+
+[node name="SpawnEnemy3" type="Position2D" parent="Wave3" index="1"]
+
+position = Vector2( 461.583, 149.826 )
+script = ExtResource( 4 )
+enemyId = 0
+spawnValue = 0.6
+
+[node name="SpawnEnemy4" type="Position2D" parent="Wave3" index="2"]
+
+position = Vector2( 491.843, 169.819 )
+script = ExtResource( 4 )
+enemyId = 0
+spawnValue = 0.8
+
+[node name="RandomEnemies" type="Node" parent="." index="7"]
+
+editor/display_folded = true
+
+[node name="SpawnEnemy5" type="Position2D" parent="RandomEnemies" index="0"]
+
+position = Vector2( 349.188, 114.162 )
+script = ExtResource( 4 )
+enemyId = 0
+spawnValue = 0.2
+
+[node name="SpawnEnemy6" type="Position2D" parent="RandomEnemies" index="1"]
+
+position = Vector2( 251.383, 137.397 )
+script = ExtResource( 4 )
+enemyId = 0
+spawnValue = 0.2
+
+[node name="SpawnEnemy7" type="Position2D" parent="RandomEnemies" index="2"]
+
+position = Vector2( 88.7349, 131.453 )
+script = ExtResource( 4 )
+enemyId = 0
+spawnValue = 0.2
+
+[node name="SpawnEnemy8" type="Position2D" parent="RandomEnemies" index="3"]
+
+position = Vector2( 498.868, 107.678 )
+script = ExtResource( 4 )
+enemyId = 0
+spawnValue = 0.2
 
 

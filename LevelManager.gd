@@ -27,10 +27,10 @@ func _ready():
 	#levelPieces.append(piece2)
 	#levelPieces.append(piece3)
 	#levelPieces.append(piece4)
-	#levelPieces.append(piece5)
-	#levelPieces.append(piece6)
-	#levelPieces.append(piece7)
-	#levelPieces.append(piece8)
+	levelPieces.append(piece5)
+	levelPieces.append(piece6)
+	levelPieces.append(piece7)
+	levelPieces.append(piece8)
 	
 	# Once all pieces are added we generate initial level
 	generateLevel()
