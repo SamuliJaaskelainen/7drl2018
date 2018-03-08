@@ -152,6 +152,13 @@ script = ExtResource( 4 )
 enemyId = 3
 spawnValue = 0.99
 
+[node name="Timer" type="Timer" parent="SpawnEnemy12" index="0"]
+
+process_mode = 1
+wait_time = 1.0
+one_shot = false
+autostart = false
+
 [node name="Sprite" type="Sprite" parent="." index="16"]
 
 position = Vector2( -64, -80 )

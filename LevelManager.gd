@@ -46,8 +46,10 @@ func generateLevel():
 # Pick a piece and spawn it, this is called when current piece goes out of screen
 func createPiece(pos):
 	var level = levelPieces[randi()%levelPieces.size()].instance()
-	level.position = pos
 	add_child(level)
+	print("Create level piece")
+	level.global_position = pos
+	print(pos)
 	level.startMove()
 	currentLevel.append(level)
 
