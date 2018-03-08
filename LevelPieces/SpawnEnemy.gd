@@ -21,7 +21,7 @@ func init():
 	
 	if rand_range(0.0, 1.0) < spawnValue:
 		var enemy = enemyAssets[enemyId].instance()
-		var enemyManager = get_parent().get_parent().get_parent().get_node("EnemyManager")
+		var enemyManager = $"/root/Game/EnemyManager"
 		enemyManager.add_child(enemy)
 		enemyManager.enemies.append(enemy)
 		enemy.global_position = global_position

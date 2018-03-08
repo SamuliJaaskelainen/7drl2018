@@ -24,9 +24,9 @@ func _ready():
 	# Comment out with #-sign pieces you don't want in your random pool
 	# MIGI COMMENT OUT PIECES YOU DON'T WANT TO TEST
 	levelPieces.append(piece1)
-	#levelPieces.append(piece2)
-	#levelPieces.append(piece3)
-	#levelPieces.append(piece4)
+	levelPieces.append(piece2)
+	levelPieces.append(piece3)
+	levelPieces.append(piece4)
 	levelPieces.append(piece5)
 	levelPieces.append(piece6)
 	levelPieces.append(piece7)
