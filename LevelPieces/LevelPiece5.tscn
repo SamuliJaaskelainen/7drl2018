@@ -5,7 +5,7 @@
 [ext_resource path="res://LevelPieces/SpawnPickup.gd" type="Script" id=3]
 [ext_resource path="res://LevelPieces/SpawnEnemy.gd" type="Script" id=4]
 
-[node name="LevelPiece3" type="KinematicBody2D"]
+[node name="LevelPiece3" type="KinematicBody2D" index="0"]
 
 position = Vector2( 256, 128 )
 input_pickable = false
@@ -64,7 +64,7 @@ spawnValue = 0.5
 
 [node name="Wave1" type="Position2D" parent="." index="4"]
 
-editor/display_folded = true
+position = Vector2( -247.485, -128.606 )
 
 [node name="SpawnEnemy" type="Position2D" parent="Wave1" index="0"]
 
@@ -104,6 +104,7 @@ spawnValue = 0.5
 [node name="Wave2" type="Position2D" parent="." index="5"]
 
 editor/display_folded = true
+position = Vector2( -280.987, -138.332 )
 
 [node name="SpawnEnemy2" type="Position2D" parent="Wave2" index="0"]
 
@@ -142,7 +143,7 @@ spawnValue = 0.5
 
 [node name="RandomEnemies" type="Position2D" parent="." index="6"]
 
-editor/display_folded = true
+position = Vector2( -271.26, -138.332 )
 
 [node name="SpawnEnemy6" type="Position2D" parent="RandomEnemies" index="0"]
 

@@ -54,6 +54,8 @@ spawnValue = 0.5
 
 [node name="Wave1" type="Position2D" parent="." index="2"]
 
+position = Vector2( -340.967, -213.442 )
+
 [node name="SpawnEnemy" type="Position2D" parent="Wave1" index="0"]
 
 position = Vector2( 338.381, 163.335 )
@@ -84,6 +86,9 @@ spawnValue = 0.9
 
 [node name="Wave2" type="Position2D" parent="." index="3"]
 
+editor/display_folded = true
+position = Vector2( -277.204, -122.662 )
+
 [node name="SpawnEnemy" type="Position2D" parent="Wave2" index="0"]
 
 position = Vector2( 422.136, 133.075 )
@@ -112,9 +117,10 @@ script = ExtResource( 4 )
 enemyId = 1
 spawnValue = 0.9
 
-[node name="RandomEnemies" type="Node" parent="." index="4"]
+[node name="RandomEnemies" type="Position2D" parent="." index="4"]
 
 editor/display_folded = true
+position = Vector2( -246.404, -120.5 )
 
 [node name="SpawnEnemy2" type="Position2D" parent="RandomEnemies" index="0"]
 
@@ -169,13 +175,11 @@ spawnValue = 0.5
 
 position = Vector2( 445.912, 50.9395 )
 script = ExtResource( 4 )
-_sections_unfolded = [ "Transform" ]
 enemyId = 1
 spawnValue = 0.5
 
 [node name="Sprite" type="Sprite" parent="." index="5"]
 
-editor/display_folded = true
 position = Vector2( 88.3813, 33.4755 )
 z_index = -4
 texture = ExtResource( 5 )

@@ -71,6 +71,7 @@ spawnValue = 0.5
 [node name="Wave1" type="Position2D" parent="." index="4"]
 
 editor/display_folded = true
+position = Vector2( -263.695, -129.686 )
 
 [node name="SpawnEnemy" type="Position2D" parent="Wave1" index="0"]
 
@@ -96,6 +97,7 @@ spawnValue = 0.7
 [node name="Wave2" type="Position2D" parent="." index="5"]
 
 editor/display_folded = true
+position = Vector2( -255.59, -128.065 )
 
 [node name="SpawnEnemy2" type="Position2D" parent="Wave2" index="0"]
 
@@ -156,6 +158,7 @@ spawnValue = 0.1
 [node name="RandomEnemies" type="Position2D" parent="." index="6"]
 
 editor/display_folded = true
+position = Vector2( -262.074, -124.823 )
 
 [node name="SpawnEnemy2" type="Position2D" parent="RandomEnemies" index="0"]
 
@@ -215,7 +218,6 @@ spawnValue = 0.1
 
 [node name="Sprite" type="Sprite" parent="." index="7"]
 
-editor/display_folded = true
 position = Vector2( 175.92, 16.7243 )
 z_index = -4
 texture = ExtResource( 5 )

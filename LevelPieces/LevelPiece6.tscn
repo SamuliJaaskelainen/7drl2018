@@ -11,7 +11,7 @@
 custom_solver_bias = 0.0
 extents = Vector2( 32, 10 )
 
-[node name="LevelPiece6" type="KinematicBody2D"]
+[node name="LevelPiece6" type="KinematicBody2D" index="0"]
 
 position = Vector2( 256, 128 )
 input_pickable = false
@@ -96,7 +96,7 @@ shape = SubResource( 1 )
 
 [node name="Wave1" type="Position2D" parent="." index="5"]
 
-editor/display_folded = true
+position = Vector2( -262.075, -125.118 )
 
 [node name="SpawnEnemy" type="Position2D" parent="Wave1" index="0"]
 
@@ -128,7 +128,7 @@ spawnValue = 0.5
 
 [node name="Wave2" type="Position2D" parent="." index="6"]
 
-editor/display_folded = true
+position = Vector2( -229.115, -128.823 )
 
 [node name="SpawnEnemy3" type="Position2D" parent="Wave2" index="0"]
 
@@ -153,7 +153,7 @@ spawnValue = 0.5
 
 [node name="RandomEnemies" type="Position2D" parent="." index="7"]
 
-editor/display_folded = true
+position = Vector2( -259.725, -125.86 )
 
 [node name="SpawnEnemy2" type="Position2D" parent="RandomEnemies" index="0"]
 

@@ -70,6 +70,8 @@ spawnValue = 0.5
 
 [node name="Wave1" type="Position2D" parent="." index="4"]
 
+position = Vector2( -250.868, -132.764 )
+
 [node name="SpawnEnemy" type="Position2D" parent="Wave1" index="0"]
 
 position = Vector2( 94.1371, 144.962 )
@@ -107,7 +109,7 @@ spawnValue = 0.5
 
 [node name="Wave2" type="Position2D" parent="." index="5"]
 
-editor/display_folded = true
+position = Vector2( -256.569, -127.877 )
 
 [node name="SpawnEnemy2" type="Position2D" parent="Wave2" index="0"]
 
@@ -139,7 +141,7 @@ spawnValue = 0.5
 
 [node name="RandomEnemies" type="Position2D" parent="." index="6"]
 
-editor/display_folded = true
+position = Vector2( -258.198, -124.619 )
 
 [node name="SpawnEnemy3" type="Position2D" parent="RandomEnemies" index="0"]
 
