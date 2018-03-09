@@ -9,14 +9,14 @@ var structurePrices = [1,2,3]
 var hullPrices = [1,2,3]
 var enginePrices = [1,2,3]
 var thrusterPrices = [1,2,3]
-var gunPrices = [1,2,3,4,5,6,7,8]
+var gunPrices = [1,2,3,4,5,6,7]
 
 var coreTexts = ["Shield","Probe","Teleport","Damage boost","Bomb"]
 var structureTexts = ["Small","Medium","Large"]
 var hullTexts = ["Light","Medium","Heavy"]
 var engineTexts = ["Slow","Medium","Fast"]
 var thrusterTexts = ["Agile","Balanced","Fast"]
-var gunTexts = ["Single shot","Laser","Rail shot","Spread shot","Blow","Ground bomb","Homing","Charge"]
+var gunTexts = ["Single shot","Laser","Rail shot","Spread shot","Blow","Ground bomb","Charge"]
 
 var player 
 
