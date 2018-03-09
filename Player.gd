@@ -81,6 +81,7 @@ var gun2 = GUN.blow
 
 var currentMovementArea
 var movementAreas
+var canDoAction = false
 
 var shotBullets = []
 var bullets = []
@@ -150,6 +151,9 @@ func nextTurn():
 			shotBullets.erase(b)
 	
 func we():
+	if not canDoAction:
+		return
+	
 	# Player's turn logic is handled via ui signals as well
 	# Here we have hotkeys for leet players
 	#if $ActionUI.is_visible_in_tree():
@@ -272,6 +276,7 @@ func base_action():
 	$ActionUI.hide()
 	currentMovementArea.hide()
 	turnVal = 0.0
+	canDoAction = false
 	update_gear_values()
 	
 	for b in shotBullets:
@@ -333,6 +338,7 @@ func hit(damage):
 		get_tree().reload_current_scene()
 
 func _on_Area2D_input_event(viewport, event, shape_idx):
+	canDoAction = true
 	targetPos = mousePos
 	oldPos = global_position
 	if Input.is_action_just_pressed("press"):
