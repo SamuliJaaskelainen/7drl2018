@@ -18,6 +18,8 @@ var piece5 = preload("res://LevelPieces/LevelPiece5.tscn")
 var piece6 = preload("res://LevelPieces/LevelPiece6.tscn")
 var piece7 = preload("res://LevelPieces/LevelPiece7.tscn")
 var piece8 = preload("res://LevelPieces/LevelPiece8.tscn")
+var piece9 = preload("res://LevelPieces/LevelPiece9.tscn")
+var piece10 = preload("res://LevelPieces/LevelPiece10.tscn")
 
 func _ready():
 	# Here add pieces that you want to use to levelPieces list

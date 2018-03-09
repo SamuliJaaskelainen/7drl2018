@@ -5,7 +5,6 @@
 [ext_resource path="res://Sprites/thruster/thruster_animated-1.png" type="Texture" id=3]
 [ext_resource path="res://Sprites/thruster/thruster_animated-2.png" type="Texture" id=4]
 
-
 [sub_resource type="RectangleShape2D" id=1]
 
 custom_solver_bias = 0.0
@@ -20,7 +19,7 @@ animations = [ {
 "speed": 2.0
 } ]
 
-[node name="Enemy" type="KinematicBody2D"]
+[node name="Enemy" type="KinematicBody2D" index="0"]
 
 position = Vector2( 0.581135, 1.35598 )
 input_pickable = false
@@ -33,7 +32,7 @@ bulletSceneFile = "res://EnemyShot.tscn"
 shootingTurnInterval = 3
 moveSpeed = 40.0
 collisionDamage = 10
-health = 10
+health = 3
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." index="0"]
 

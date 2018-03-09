@@ -1,0 +1,200 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://LevelPiece.gd" type="Script" id=1]
+[ext_resource path="res://TerrainAutoTile.tres" type="TileSet" id=2]
+[ext_resource path="res://LevelPieces/SpawnPickup.gd" type="Script" id=3]
+[ext_resource path="res://LevelPieces/SpawnEnemy.gd" type="Script" id=4]
+[ext_resource path="res://Sprites/Shop.png" type="Texture" id=5]
+
+[sub_resource type="RectangleShape2D" id=1]
+
+custom_solver_bias = 0.0
+extents = Vector2( 32, 10 )
+
+[node name="LevelPiece8" type="KinematicBody2D" index="0"]
+
+position = Vector2( 256, 128 )
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+collision/safe_margin = 0.08
+script = ExtResource( 1 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="TileMap2" type="TileMap" parent="." index="0"]
+
+z_index = -2
+z_as_relative = false
+mode = 0
+tile_set = ExtResource( 2 )
+cell_size = Vector2( 16, 16 )
+cell_quadrant_size = 16
+cell_custom_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+cell_half_offset = 2
+cell_tile_origin = 0
+cell_y_sort = false
+cell_clip_uv = false
+collision_use_kinematic = false
+collision_friction = 1.0
+collision_bounce = 0.0
+collision_layer = 1
+collision_mask = 1
+occluder_light_mask = 1
+format = 1
+tile_data = PoolIntArray( -524299, 0, 6, -524298, 0, 196610, -524292, 0, 1, -524291, 0, 2, -524289, 0, 1, -589824, 0, 2, -589821, 0, 5, -589810, 0, 196608, -589809, 0, 7, -458763, 0, 131077, -458756, 0, 65537, -458755, 0, 65545, -458753, 0, 131073, -524288, 0, 131074, -524285, 0, 65541, -524273, 0, 65541, -393219, 0, 65541, -393217, 0, 131073, -458752, 0, 131074, -458749, 0, 131077, -458737, 0, 131077, -327683, 0, 131077, -327681, 0, 65546, -393216, 0, 65538, -262145, 0, 65541, -327670, 0, 196608, -327669, 0, 196609, -327668, 0, 196609, -327667, 0, 196610, -196621, 0, 5, -196609, 0, 65541, -131085, 0, 65542, -131084, 0, 196609, -131083, 0, 196609, -131082, 0, 196609, -131081, 0, 196610, -131074, 0, 196608, -131073, 0, 196612, -65537, 0, 131077, -65533, 0, 196608, -65532, 0, 196609, -65531, 0, 196609, -65530, 0, 196610, 131067, 0, 196608, 131068, 0, 196609, 131069, 0, 196609, 131070, 0, 196609, 131071, 0, 196609, 65536, 0, 196610, 65546, 0, 196608, 65547, 0, 196609, 65548, 0, 196609, 65549, 0, 196609, 65550, 0, 196610, 196611, 0, 196608, 196612, 0, 196609, 196613, 0, 196609, 196614, 0, 196609, 196615, 0, 196610, 327666, 0, 196608, 327667, 0, 196610, 327671, 0, 196608, 327672, 0, 196609, 327673, 0, 196609, 327674, 0, 196609, 327675, 0, 196609, 327676, 0, 196610, 458751, 0, 1, 393216, 0, 2, 393222, 0, 5, 524272, 0, 196608, 524273, 0, 196609, 524274, 0, 196609, 524275, 0, 196609, 524276, 0, 196609, 524277, 0, 196609, 524278, 0, 196609, 524279, 0, 196609, 524280, 0, 196609, 524281, 0, 196609, 524282, 0, 196609, 524283, 0, 196609, 524284, 0, 196609, 524285, 0, 196609, 524286, 0, 196609, 524287, 0, 65544, 458752, 0, 65538, 458755, 0, 196608, 458756, 0, 196609, 458757, 0, 196609, 458758, 0, 196611, 458759, 0, 196609, 458760, 0, 196610, 458762, 0, 196608, 458763, 0, 196609, 458764, 0, 196609, 458765, 0, 196609, 458766, 0, 196609, 458767, 0, 196610 )
+_sections_unfolded = [ "Cell", "Z Index" ]
+
+[node name="SpawnPickup" type="Position2D" parent="." index="1"]
+
+position = Vector2( -208.208, 53.3702 )
+script = ExtResource( 3 )
+_sections_unfolded = [ "Material", "Transform", "Visibility", "Z Index" ]
+pickupId = 2
+spawnValue = 0.5
+
+[node name="SpawnPickup2" type="Position2D" parent="." index="2"]
+
+position = Vector2( -58.6449, 53.9767 )
+script = ExtResource( 3 )
+_sections_unfolded = [ "Material", "Transform", "Visibility", "Z Index" ]
+pickupId = 1
+spawnValue = 0.5
+
+[node name="SpawnPickup3" type="Position2D" parent="." index="3"]
+
+position = Vector2( 83.6707, 102.905 )
+script = ExtResource( 3 )
+_sections_unfolded = [ "Material", "Transform", "Visibility", "Z Index" ]
+pickupId = 0
+spawnValue = 0.5
+
+[node name="Wave1" type="Position2D" parent="." index="4"]
+
+editor/display_folded = true
+position = Vector2( -250.868, -132.764 )
+
+[node name="SpawnEnemy" type="Position2D" parent="Wave1" index="0"]
+
+position = Vector2( 149.82, 138.975 )
+script = ExtResource( 4 )
+enemyId = 0
+spawnValue = 0.5
+
+[node name="SpawnEnemy2" type="Position2D" parent="Wave1" index="1"]
+
+position = Vector2( 186.24, 38.9262 )
+script = ExtResource( 4 )
+enemyId = 2
+spawnValue = 0.5
+
+[node name="SpawnEnemy3" type="Position2D" parent="Wave1" index="2"]
+
+position = Vector2( 285.486, 130.389 )
+script = ExtResource( 4 )
+enemyId = 2
+spawnValue = 0.5
+
+[node name="SpawnEnemy4" type="Position2D" parent="Wave1" index="3"]
+
+position = Vector2( 223.919, 113.648 )
+script = ExtResource( 4 )
+enemyId = 3
+spawnValue = 0.5
+
+[node name="SpawnEnemy5" type="Position2D" parent="Wave1" index="4"]
+
+position = Vector2( 221.16, 70.8597 )
+script = ExtResource( 4 )
+enemyId = 3
+spawnValue = 0.5
+
+[node name="Wave2" type="Position2D" parent="." index="5"]
+
+position = Vector2( -279.92, -156.018 )
+
+[node name="SpawnEnemy2" type="Position2D" parent="Wave2" index="0"]
+
+position = Vector2( 424.418, 176.973 )
+script = ExtResource( 4 )
+enemyId = 0
+spawnValue = 0.5
+
+[node name="SpawnEnemy3" type="Position2D" parent="Wave2" index="1"]
+
+position = Vector2( 473.257, 110.219 )
+script = ExtResource( 4 )
+enemyId = 0
+spawnValue = 0.5
+
+[node name="SpawnEnemy4" type="Position2D" parent="Wave2" index="2"]
+
+position = Vector2( 502.134, 59.9143 )
+script = ExtResource( 4 )
+enemyId = 0
+spawnValue = 0.5
+
+[node name="SpawnEnemy5" type="Position2D" parent="Wave2" index="3"]
+
+position = Vector2( 508.549, 237.986 )
+script = ExtResource( 4 )
+enemyId = 0
+spawnValue = 0.5
+
+[node name="RandomEnemies" type="Position2D" parent="." index="6"]
+
+position = Vector2( -258.198, -124.619 )
+
+[node name="SpawnEnemy3" type="Position2D" parent="RandomEnemies" index="0"]
+
+position = Vector2( 295.721, 148.56 )
+script = ExtResource( 4 )
+enemyId = 1
+spawnValue = 0.5
+
+[node name="SpawnEnemy4" type="Position2D" parent="RandomEnemies" index="1"]
+
+position = Vector2( 406.503, 169.574 )
+script = ExtResource( 4 )
+enemyId = 1
+spawnValue = 0.5
+
+[node name="SpawnEnemy5" type="Position2D" parent="RandomEnemies" index="2"]
+
+position = Vector2( 395.494, 118.507 )
+script = ExtResource( 4 )
+enemyId = 1
+spawnValue = 0.5
+
+[node name="SpawnEnemy6" type="Position2D" parent="RandomEnemies" index="3"]
+
+position = Vector2( 295.873, 57.1287 )
+script = ExtResource( 4 )
+enemyId = 1
+spawnValue = 0.5
+
+[node name="Sprite" type="Sprite" parent="." index="7"]
+
+position = Vector2( -161.067, -61.6202 )
+z_index = -4
+texture = ExtResource( 5 )
+_sections_unfolded = [ "Z Index" ]
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Shop" type="StaticBody2D" parent="Sprite" index="0"]
+
+input_pickable = false
+collision_layer = 1024
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+_sections_unfolded = [ "Collision", "Pickable", "Transform", "Z Index" ]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite/Shop" index="0"]
+
+shape = SubResource( 1 )
+
+

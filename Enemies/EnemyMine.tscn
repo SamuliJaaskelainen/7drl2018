@@ -8,7 +8,7 @@
 custom_solver_bias = 0.0
 extents = Vector2( 8.14108, 8.16507 )
 
-[node name="Enemy" type="KinematicBody2D"]
+[node name="Enemy" type="KinematicBody2D" index="0"]
 
 position = Vector2( 0.581135, 1.35598 )
 input_pickable = false
@@ -21,7 +21,7 @@ bulletSceneFile = "res://Enemies/EnemyShot.tscn"
 shootingTurnInterval = 0
 moveSpeed = 30.0
 collisionDamage = 30
-health = 5
+health = 30
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." index="0"]
 

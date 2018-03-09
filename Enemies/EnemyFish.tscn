@@ -21,7 +21,7 @@ bulletSceneFile = "res://Enemies/EnemyShot.tscn"
 shootingTurnInterval = 0
 moveSpeed = 50.0
 collisionDamage = 5
-health = 1
+health = 10
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." index="0"]
 
