@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/MovementCone1.png-92f6be8fcf519f5198d890c7437c5717.stex"
+path="res://.import/MovementCone2.png-a847a10b4af468ac3d9f8889d28ec8db.stex"
 
 [deps]
 
-source_file="res://Sprites/MovementCone1.png"
-source_md5="db6ab7bdc6d97b2b29ccfef508c2ba3a"
+source_file="res://Sprites/MovementCone2.png"
+source_md5="14c987922e2cc6ca3fe24eca1c33cd81"
 
-dest_files=[ "res://.import/MovementCone1.png-92f6be8fcf519f5198d890c7437c5717.stex" ]
-dest_md5="ff0528daa92514f20a4d53fcefea8449"
+dest_files=[ "res://.import/MovementCone2.png-a847a10b4af468ac3d9f8889d28ec8db.stex" ]
+dest_md5="2e20e6c6266c20e02e6bf376b979f94a"
 
 [params]
 

@@ -8,6 +8,9 @@ func startMove():
 	pass
 
 func move(val):
+	if killMe:
+		return
+	
 	if(val > 0.33):
 		killMe = true
 		

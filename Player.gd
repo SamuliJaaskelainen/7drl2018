@@ -28,8 +28,9 @@ enum ENGINE{
 
 enum THRUSTER{
   	agile,
-	balanced,
-	fast
+	wide,
+	experimental,
+	balanced
 }
 
 enum GUN{
@@ -39,20 +40,19 @@ enum GUN{
 	spreadShot,
 	blow,
 	groundBomb,
-	homing,
 	chargeShot
 }
 
 var coreAbilityNames = ["Shield", "Probe", "Teleport", "DamageBoost", "Bomb"]
 var corePowers = [90,10,50,30,60]
-var gunNames = ["Single Shot", "Laser", "Rail Gun", "Spread Shot", "Blow", "Ground Bomb", "Homing", "Charge Shot"]
-var gunPowers = [5,10,40,20,10,15,10,30]
+var gunNames = ["Single Shot", "Laser", "Rail Gun", "Spread Shot", "Blow", "Ground Bomb", "Charge Shot"]
+var gunPowers = [5,10,40,20,10,15,30]
 var maxPowers = [100,100,100,100,100]
 var structureNames = ["Small", "Medium", "Large"]
 var hullNames = ["Light", "Medium", "Heavy"]
 var engineNames = ["Slow", "Medium", "Fast"]
-var thrusterNames = ["Agile", "Balanced", "Fast"]
-var movementScales = [0.75,1,1.25]
+var thrusterNames = ["Agile", "Wide", "Experimental", "Balanced"]
+var movementScales = [0.9,1,1.1]
 var start_movement_scale
 var armorValues = [80,100,120]
 
@@ -62,6 +62,8 @@ var oldPos = Vector2()
 var targetPos = Vector2()
 var turnVal = 0.0
 var turn_time = 0.33
+var charge = false
+var charge_turns = 0
 var my_turn = true;
 var currentPower = 20
 var maxPower = 0
@@ -73,14 +75,15 @@ var powerPerTurn = 5
 
 var core = CORE.teleport
 var structure = STRUCTURE.medium
-var hull = HULL.medium
-var engine = ENGINE.fast
+var hull = HULL.light
+var engine = ENGINE.slow
 var thruster = THRUSTER.balanced
 var gun1 = GUN.singleShot
-var gun2 = GUN.blow
+var gun2 = GUN.laser
 
 var currentMovementArea
 var movementAreas
+var canDoAction = false
 
 var shotBullets = []
 var bullets = []
@@ -91,6 +94,8 @@ var laserShot = preload("res://Guns/LaserShot.tscn")
 var railShot = preload("res://Guns/RailShot.tscn")
 var spreadShot = preload("res://Guns/SpreadShot.tscn")
 var blowShot = preload("res://Guns/BlowShot.tscn")
+var groundBomb = preload("res://Guns/DropBomb.tscn")
+var chargeShot = preload("res://Guns/ChargeShot.tscn")
 
 var levelManager
 var enemyManager
@@ -106,13 +111,14 @@ func _ready():
 	bullets.append(railShot)
 	bullets.append(spreadShot)
 	bullets.append(blowShot)
+	bullets.append(groundBomb)	
+	bullets.append(chargeShot)
 	$ActionUI.hide()
 	Input.set_mouse_mode(Input.MOUSE_MODE_HIDDEN)
 	resolution.x = ProjectSettings.get_setting("display/window/size/width")
 	resolution.y = ProjectSettings.get_setting("display/window/size/height")
-	movementAreas = [$MovementArea1, $MovementArea1, $MovementArea1]
-	currentMovementArea = $MovementArea1
-	start_movement_scale = currentMovementArea.scale.x
+	movementAreas = [$MovementArea1, $MovementArea2, $MovementArea3, $MovementArea4]
+	start_movement_scale = $MovementArea1.scale.x
 	update_gear()
 	currentArmor = maxArmor
 	update_gear_values()
@@ -150,6 +156,9 @@ func nextTurn():
 			shotBullets.erase(b)
 	
 func we():
+	if not canDoAction:
+		return
+	
 	# Player's turn logic is handled via ui signals as well
 	# Here we have hotkeys for leet players
 	#if $ActionUI.is_visible_in_tree():
@@ -210,7 +219,8 @@ func go():
 func update_gear():
 	
 	# Movement area
-	currentMovementArea.hide()
+	for m in movementAreas: 
+		m.hide()
 	currentMovementArea = movementAreas[thruster]
 	currentMovementArea.scale = Vector2(start_movement_scale * movementScales[engine], currentMovementArea.scale.y)
 	currentMovementArea.show()
@@ -241,15 +251,27 @@ func update_gear_values():
 	
 	# ActionUI
 	var tempStr = "1) %s [-%s]"
-	tempStr = tempStr % [gunNames[gun1], gunPowers[gun1]]
-	_set_action_button($ActionUI/Button1, tempStr, currentPower < gunPowers[gun1])
-	tempStr = "2) %s [-%s]"
-	tempStr = tempStr % [gunNames[gun2], gunPowers[gun2]]
-	_set_action_button($ActionUI/Button2, tempStr, currentPower < gunPowers[gun2])
-	tempStr = "3) %s [-%s]"
-	tempStr = tempStr % [coreAbilityNames[core], corePowers[core]]
-	_set_action_button($ActionUI/Button3, tempStr, currentPower < corePowers[core])
-	_set_action_button($ActionUI/Button4, "4) Only move", false)
+	if charge:
+		tempStr = tempStr % [gunNames[gun1], gunPowers[gun1]]
+		_set_action_button($ActionUI/Button1, tempStr, gun1 != GUN.chargeShot)
+		tempStr = "2) %s [-%s]"
+		tempStr = tempStr % [gunNames[gun2], gunPowers[gun2]]
+		_set_action_button($ActionUI/Button2, tempStr, gun2 != GUN.chargeShot)
+		tempStr = "3) %s [-%s]"
+		tempStr = tempStr % [coreAbilityNames[core], corePowers[core]]
+		_set_action_button($ActionUI/Button3, tempStr, true)
+		_set_action_button($ActionUI/Button4, "4) Only move", charge_turns > 3)
+	else:
+		# ActionUI
+		tempStr = tempStr % [gunNames[gun1], gunPowers[gun1]]
+		_set_action_button($ActionUI/Button1, tempStr, currentPower < gunPowers[gun1])
+		tempStr = "2) %s [-%s]"
+		tempStr = tempStr % [gunNames[gun2], gunPowers[gun2]]
+		_set_action_button($ActionUI/Button2, tempStr, currentPower < gunPowers[gun2])
+		tempStr = "3) %s [-%s]"
+		tempStr = tempStr % [coreAbilityNames[core], corePowers[core]]
+		_set_action_button($ActionUI/Button3, tempStr, currentPower < corePowers[core])
+		_set_action_button($ActionUI/Button4, "4) Only move", false)
 	
 	# BottomUI
 	currentPower = clamp(currentPower, 0, maxPower)
@@ -272,7 +294,11 @@ func base_action():
 	$ActionUI.hide()
 	currentMovementArea.hide()
 	turnVal = 0.0
+	canDoAction = false
 	update_gear_values()
+	
+	if charge:
+		charge_turns += 1
 	
 	for b in shotBullets:
 		b.startMove()
@@ -281,14 +307,16 @@ func base_action():
 	enemyManager.startMove()
 	
 func _on_Button1_pressed():
-	currentPower -= gunPowers[gun1]
-	base_action()
+	if not charge:
+		currentPower -= gunPowers[gun1]
 	shoot(gun1Bullet, gun1)
+	base_action()
 
 func _on_Button2_pressed():
-	currentPower -= gunPowers[gun2]
-	base_action()
+	if not charge:
+		currentPower -= gunPowers[gun2]
 	shoot(gun2Bullet, gun2)
+	base_action()
 
 func _on_Button3_pressed():
 	currentPower -= corePowers[core]
@@ -315,6 +343,22 @@ func shoot(gunBullet, gun):
 		var bulletDown = createBullet(gunBullet)
 		bulletDown.dir = Vector2(1,-0.2)
 		bulletDown.startMove()
+	if (gun == GUN.groundBomb):
+		var bulletUp = createBullet(groundBomb)
+		bulletUp.dir = Vector2(1,0.8)
+		bulletUp.startMove()
+		var bulletDown = createBullet(groundBomb)
+		bulletDown.dir = Vector2(1,-0.8)
+		bulletDown.startMove()
+	if (gun == GUN.chargeShot):
+		if charge_turns <= 0:
+			charge = true
+		else:
+			charge = false
+			charge_turns = 0
+			var bullet = createBullet(gunBullet)
+			bullet.damage *= charge_turns
+			bullet.startMove()
 	else:
 		createBullet(gunBullet)
 	
@@ -333,6 +377,7 @@ func hit(damage):
 		get_tree().reload_current_scene()
 
 func _on_Area2D_input_event(viewport, event, shape_idx):
+	canDoAction = true
 	targetPos = mousePos
 	oldPos = global_position
 	if Input.is_action_just_pressed("press"):

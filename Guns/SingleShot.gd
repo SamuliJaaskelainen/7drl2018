@@ -12,6 +12,9 @@ func startMove():
 	targetPos = global_position + dir * speed
 
 func move(val):
+	if killMe:
+		return
+	
 	var nextPos = lastPos.linear_interpolate(targetPos, val)
 	var collision = move_and_collide(nextPos - global_position)
 	

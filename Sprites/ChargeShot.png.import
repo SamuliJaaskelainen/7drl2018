@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/MovementCone1.png-92f6be8fcf519f5198d890c7437c5717.stex"
+path="res://.import/ChargeShot.png-76f60aee26f8c4b50152a6e40c5c818a.stex"
 
 [deps]
 
-source_file="res://Sprites/MovementCone1.png"
-source_md5="db6ab7bdc6d97b2b29ccfef508c2ba3a"
+source_file="res://Sprites/ChargeShot.png"
+source_md5="c7608e1ecf641a92d2a5746273f4fa3b"
 
-dest_files=[ "res://.import/MovementCone1.png-92f6be8fcf519f5198d890c7437c5717.stex" ]
-dest_md5="ff0528daa92514f20a4d53fcefea8449"
+dest_files=[ "res://.import/ChargeShot.png-76f60aee26f8c4b50152a6e40c5c818a.stex" ]
+dest_md5="4ba2fa514d28ac01b24ceb7a381c7c6b"
 
 [params]
 

@@ -1,14 +1,14 @@
 [gd_scene load_steps=4 format=2]
 
-[ext_resource path="res://Guns/SingleShot.gd" type="Script" id=1]
-[ext_resource path="res://Sprites/RoundShot.png" type="Texture" id=2]
+[ext_resource path="res://Guns/DropBomb.gd" type="Script" id=1]
+[ext_resource path="res://Sprites/BombShot.png" type="Texture" id=2]
 
 [sub_resource type="RectangleShape2D" id=1]
 
 custom_solver_bias = 0.0
-extents = Vector2( 3.32169, 3.24153 )
+extents = Vector2( 8.0658, 7.17057 )
 
-[node name="SingleShot" type="KinematicBody2D" index="0"]
+[node name="BombShot" type="KinematicBody2D"]
 
 input_pickable = false
 collision_layer = 4
@@ -16,8 +16,8 @@ collision_mask = 9
 collision/safe_margin = 0.08
 script = ExtResource( 1 )
 _sections_unfolded = [ "Angular", "Collision", "Linear", "Material", "Pause", "Pickable", "Transform", "Visibility", "Z Index" ]
-damage = 10
-speed = 120
+damage = 20.0
+speed = 20.0
 
 [node name="Sprite" type="Sprite" parent="." index="0"]
 
