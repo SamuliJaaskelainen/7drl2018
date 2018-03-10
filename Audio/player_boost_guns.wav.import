@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/player_boost_guns.wav-78f927c15d33a2d83e7420ba43f673e1.sample"
+
+[deps]
+
+source_file="res://Audio/player_boost_guns.wav"
+source_md5="723851a212e28a0ea46f4434e912a4d0"
+
+dest_files=[ "res://.import/player_boost_guns.wav-78f927c15d33a2d83e7420ba43f673e1.sample" ]
+dest_md5="cd64a5d2ffeb70f2e8b66005b7d8f316"
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=false
+compress/mode=0
