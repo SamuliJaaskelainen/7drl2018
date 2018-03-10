@@ -404,7 +404,6 @@ func _on_Area2D_input_event(viewport, event, shape_idx):
 	if not $ActionUI.visible:
 		$Target.global_position = mousePos
 		var movementDistanceX = mousePos.x - global_position.x
-		print(movementDistanceX)
 		$Target.modulate = Color(0,0,0) if movementDistanceX < -30 else Color(1,1,1)
 	if Input.is_action_just_pressed("press"):
 		$ActionUI.rect_global_position = mousePos;

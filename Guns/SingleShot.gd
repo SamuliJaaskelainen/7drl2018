@@ -21,7 +21,7 @@ func move(val):
 	if collision:
 		if "Enemy" in collision.collider.get_name():
 			collision.collider.hit(damage)
-		print("bullet hit %s", collision.collider.get_name())
+		#print("bullet hit %s", collision.collider.get_name())
 		killMe = true
 		
 func endMove():

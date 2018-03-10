@@ -20,7 +20,7 @@ func move(val):
 			if "Enemy" in $RayCast2D.get_collider().get_name():
 				$RayCast2D.get_collider().hit(damage)
 			rayLenght = $RayCast2D.get_collision_point().x - playerPos.x
-			print("Railing %s", $RayCast2D.get_collider().get_name())
+			#print("Railing %s", $RayCast2D.get_collider().get_name())
 		$Sprite.scale.x = rayLenght
 	
 func endMove():
