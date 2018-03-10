@@ -8,7 +8,7 @@
 custom_solver_bias = 0.0
 extents = Vector2( 8.0658, 7.17057 )
 
-[node name="BombShot" type="KinematicBody2D"]
+[node name="BombShot" type="KinematicBody2D" index="0"]
 
 input_pickable = false
 collision_layer = 4
@@ -16,7 +16,7 @@ collision_mask = 9
 collision/safe_margin = 0.08
 script = ExtResource( 1 )
 _sections_unfolded = [ "Angular", "Collision", "Linear", "Material", "Pause", "Pickable", "Transform", "Visibility", "Z Index" ]
-damage = 20.0
+damage = 10.0
 speed = 20.0
 
 [node name="Sprite" type="Sprite" parent="." index="0"]
