@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/player_teleport.wav-69a004947a11e01605e9be78b328e24e.sample"
+
+[deps]
+
+source_file="res://Audio/player_teleport.wav"
+source_md5="9b89230266d62a251dc886692bd953ae"
+
+dest_files=[ "res://.import/player_teleport.wav-69a004947a11e01605e9be78b328e24e.sample" ]
+dest_md5="c086aef3c9cee9b35db53798f0241a12"
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=false
+compress/mode=0

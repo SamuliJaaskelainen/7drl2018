@@ -20,9 +20,11 @@ var thrusterTexts = ["THRUSTER: Agile","THRUSTER: Wide","THRUSTER: Experimental"
 var gunTexts = ["GUN: Single shot","GUN: Laser","GUN: Rail shot","GUN: Spread shot","GUN: Blow","GUN: Ground bomb","Charge"]
 
 var player 
+var audioManager
 
 func _ready():
 	player = get_parent().get_node("Player")
+	audioManager = $"/root/Game/AudioManager"
 
 func show():
 	
@@ -128,13 +130,16 @@ func _on_ShopItem4BuySlot2_pressed():
 	buyItem(items[3], itemTypes[3], $ShopItem4, $ShopItem4BuySlot1, itemPrices[3], 2)
 
 func _on_ShopClose_pressed():
+	audioManager.PlayAudio("ui_select_action_from_action_menu")
 	hide()
 	
 func buyItem(item, type, shopItem, shopItemBuy, price, gunID):
 	
 	if player.money < price:
+		audioManager.PlayAudio("hit_bullet_hits_ground")
 		return
 		
+	audioManager.PlayAudio("ui_buy_from_shop")
 	player.money -= price
 	
 	match type:

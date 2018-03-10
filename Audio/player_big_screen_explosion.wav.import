@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/player_big_screen_explosion.wav-faa63a0616f46cb86e0fed77852e9ff4.sample"
+
+[deps]
+
+source_file="res://Audio/player_big_screen_explosion.wav"
+source_md5="b7bb3979677aeeb27f146a39b3f594af"
+
+dest_files=[ "res://.import/player_big_screen_explosion.wav-faa63a0616f46cb86e0fed77852e9ff4.sample" ]
+dest_md5="04a167bee81463840886a150d8df5e70"
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=false
+compress/mode=0

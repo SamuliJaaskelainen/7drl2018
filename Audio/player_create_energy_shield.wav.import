@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/player_create_energy_shield.wav-76f220fff53303a0f72586c989171743.sample"
+
+[deps]
+
+source_file="res://Audio/player_create_energy_shield.wav"
+source_md5="fed6d0f7e48bed69fe0bc2e9d32ed1ec"
+
+dest_files=[ "res://.import/player_create_energy_shield.wav-76f220fff53303a0f72586c989171743.sample" ]
+dest_md5="4022fd80d3088fce418d9d9c49d1a8e8"
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=false
+compress/mode=0

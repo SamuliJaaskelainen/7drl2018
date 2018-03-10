@@ -23,6 +23,7 @@ func move(val):
 			collision.collider.hit(damage)
 		#print("bullet hit %s", collision.collider.get_name())
 		killMe = true
+		$"/root/Game/AudioManager".PlayAudio("hit_bullet_hits_ground")
 		
 func endMove():
 	pass

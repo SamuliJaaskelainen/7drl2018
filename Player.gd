@@ -98,12 +98,14 @@ var blowShot = preload("res://Guns/BlowShot.tscn")
 var groundBomb = preload("res://Guns/DropBomb.tscn")
 var chargeShot = preload("res://Guns/ChargeShot.tscn")
 
+var audioManager
 var levelManager
 var enemyManager
 var shop
 
 func _ready():
 	randomize()
+	audioManager = get_parent().get_node("AudioManager")
 	levelManager = get_parent().get_node("LevelManager")
 	enemyManager = get_parent().get_node("EnemyManager")
 	shop = get_parent().get_node("Shop")
@@ -199,6 +201,7 @@ func go():
 			money += 10
 			collision.collider.queue_free()
 		elif "Shop" in collision.collider.get_name():
+			audioManager.PlayAudio("ui_shop_opens")
 			shop.show()
 			collision.collider.queue_free()
 		elif not wallHit:
@@ -274,7 +277,6 @@ func update_gear_values():
 		_set_action_button($ActionUI/Button3, tempStr, true)
 		_set_action_button($ActionUI/Button4, "4) Only move", charge_turns > 3)
 	else:
-		# ActionUI
 		tempStr = tempStr % [gunNames[gun1], gunPowers[gun1]]
 		_set_action_button($ActionUI/Button1, tempStr, currentPower < gunPowers[gun1])
 		tempStr = "2) %s [-%s]"
@@ -300,6 +302,7 @@ func _set_action_button(var button, var name, var disabled):
 	button.disabled = disabled
 
 func base_action():
+	audioManager.PlayAudio("ui_select_action_from_action_menu")
 	my_turn = false
 	if $ActionUI.visible:
 		targetPos = $ActionUI.rect_global_position
@@ -312,6 +315,7 @@ func base_action():
 	
 	if charge:
 		charge_turns += 1
+		audioManager.PlayAudio("gun_prepare_charge")
 	
 	for b in shotBullets:
 		b.startMove()
@@ -336,29 +340,36 @@ func _on_Button3_pressed():
 	base_action()
 	match core:
 		CORE.teleport:
+			audioManager.PlayAudio("player_teleport")
 			oldPos = targetPos
 			global_position = targetPos	
 		CORE.bomb:
+			audioManager.PlayAudio("player_big_screen_explosion")
 			for e in enemyManager.enemies:
 				e.hit(10)
 			for b in enemyManager.enemyBullets:
 				b.queue_free()
 				enemyManager.enemyBullets.erase(b)
 		CORE.shield:
+			audioManager.PlayAudio("player_create_energy_shield")
 			$Shield.show()
 		CORE.damageBoost:
+			audioManager.PlayAudio("player_boost_guns")
 			damageBoost = 1.5
 
 func _on_Button4_pressed():
+	audioManager.PlayAudio("player_ship_moves")
 	base_action()
 
 func skip_turn():
+	audioManager.PlayAudio("player_ship_moves")
 	oldPos = global_position
 	targetPos = global_position
 	base_action();
 
 func shoot(gunBullet, gun):
 	if (gun == GUN.spreadShot):
+		audioManager.PlayAudio("gun_spread_shot")
 		createBullet(gunBullet)
 		var bulletUp = createBullet(gunBullet)
 		bulletUp.dir = Vector2(1,0.2)
@@ -366,24 +377,36 @@ func shoot(gunBullet, gun):
 		var bulletDown = createBullet(gunBullet)
 		bulletDown.dir = Vector2(1,-0.2)
 		bulletDown.startMove()
-	if (gun == GUN.groundBomb):
+	elif (gun == GUN.groundBomb):
+		audioManager.PlayAudio("gun_drop_bomb")
 		var bulletUp = createBullet(groundBomb)
 		bulletUp.dir = Vector2(1,0.8)
 		bulletUp.startMove()
 		var bulletDown = createBullet(groundBomb)
 		bulletDown.dir = Vector2(1,-0.8)
 		bulletDown.startMove()
-	if (gun == GUN.chargeShot):
+	elif (gun == GUN.chargeShot):
 		if charge_turns <= 0:
 			charge = true
 		else:
 			charge = false
+			audioManager.PlayAudio("gun_shoot_charge")
 			charge_turns = 0
 			var bullet = createBullet(gunBullet)
 			bullet.damage *= charge_turns
 			bullet.startMove()
+	elif (gun == GUN.railGun):
+		audioManager.PlayAudio("gun_shoot_rail_gun")
+		createBullet(gunBullet)
+	elif (gun == GUN.laser):
+		audioManager.PlayAudio("gun_shoot_laser")
+		createBullet(gunBullet)
+	elif (gun == GUN.blow):
+		audioManager.PlayAudio("gun_shoot_blow")
+		createBullet(gunBullet)
 	else:
 		createBullet(gunBullet)
+		audioManager.PlayAudio("gun_single_shot")
 		
 	damageBoost = 1
 	
@@ -401,6 +424,7 @@ func hit(damage):
 		$Shield.hide()
 		return
 	
+	audioManager.PlayAudio("player_ship_takes_damage")
 	currentArmor -= damage
 	if(currentArmor <= 0):
 		currentArmor = 0
@@ -416,6 +440,7 @@ func _on_Area2D_input_event(viewport, event, shape_idx):
 		var movementDistanceX = mousePos.x - global_position.x
 		$Target.modulate = Color(0,0,0) if movementDistanceX < -30 else Color(1,1,1)
 	if Input.is_action_just_pressed("press"):
+		audioManager.PlayAudio("ui_open_action_menu")
 		$ActionUI.rect_global_position = mousePos;
 		$ActionUI.show()
 		oldPos = global_position

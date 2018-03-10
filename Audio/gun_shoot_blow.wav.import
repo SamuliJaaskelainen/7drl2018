@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/gun_shoot_blow.wav-4d92dd09b41d26ff973fe9a5a107876b.sample"
+
+[deps]
+
+source_file="res://Audio/gun_shoot_blow.wav"
+source_md5="cdb3de66b4de0baa27f1de129237b28d"
+
+dest_files=[ "res://.import/gun_shoot_blow.wav-4d92dd09b41d26ff973fe9a5a107876b.sample" ]
+dest_md5="6867018d26987f04694bf6b1160791b3"
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=false
+compress/mode=0

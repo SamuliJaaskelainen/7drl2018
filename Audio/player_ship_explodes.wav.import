@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/player_ship_explodes.wav-b9921841427714216a8279acd3df10d5.sample"
+
+[deps]
+
+source_file="res://Audio/player_ship_explodes.wav"
+source_md5="fe99009e508e483b34bf558d8d6d6b52"
+
+dest_files=[ "res://.import/player_ship_explodes.wav-b9921841427714216a8279acd3df10d5.sample" ]
+dest_md5="2b630b50e865a2718ebc9ff3a66af4a9"
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=false
+compress/mode=0

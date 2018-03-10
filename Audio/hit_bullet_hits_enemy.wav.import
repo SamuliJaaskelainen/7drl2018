@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/hit_bullet_hits_enemy.wav-c6ac9c677238e3ef6b89e9ee44fefcdb.sample"
+
+[deps]
+
+source_file="res://Audio/hit_bullet_hits_enemy.wav"
+source_md5="37ddac33848799428081e3247ae979c2"
+
+dest_files=[ "res://.import/hit_bullet_hits_enemy.wav-c6ac9c677238e3ef6b89e9ee44fefcdb.sample" ]
+dest_md5="4725c6e4420a29be373ddfd870a3d98c"
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=false
+compress/mode=0
