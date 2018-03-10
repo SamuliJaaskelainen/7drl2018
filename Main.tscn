@@ -68,7 +68,7 @@ use_filter = false
 font_data = ExtResource( 3 )
 _sections_unfolded = [ "Extra Spacing", "Font", "Font/fallback", "Settings" ]
 
-[node name="Game" type="Node"]
+[node name="Game" type="Node" index="0"]
 
 [node name="Sky" type="Sprite" parent="." index="0"]
 

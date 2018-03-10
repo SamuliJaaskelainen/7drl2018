@@ -39,20 +39,20 @@ func _ready():
 	# Here add pieces that you want to use to levelPieces list
 	# Comment out with #-sign pieces you don't want in your random pool
 	# MIGI COMMENT OUT PIECES YOU DON'T WANT TO TEST
-	allLevelPieces.append(piece1)
-	allLevelPieces.append(piece1)
-	allLevelPieces.append(piece1)
-	allLevelPieces.append(piece1)
-	allLevelPieces.append(piece1)
-	allLevelPieces.append(piece1)
-	#levelieces.push_back(piece7)
-	allLevelPieces.append(piece1)
-	allLevelPieces.append(piece1)
-	allLevelPieces.append(piece1)
-	allLevelPieces.append(piece1)
-	allLevelPieces.append(piece1)
-	allLevelPieces.append(piece1)
-	allLevelPieces.append(piece1)
+	#allLevelPieces.append(piece1)
+	allLevelPieces.append(piece2)
+	allLevelPieces.append(piece3)
+	allLevelPieces.append(piece4)
+	allLevelPieces.append(piece5)
+	allLevelPieces.append(piece6)
+	allLevelPieces.append(piece7)
+	allLevelPieces.append(piece8)
+	allLevelPieces.append(piece9)
+	allLevelPieces.append(piece10)
+	allLevelPieces.append(piece11)
+	allLevelPieces.append(piece12)
+	allLevelPieces.append(piece13)
+	allLevelPieces.append(piece14)
 	
 	# Add initial pool
 	for i in startPoolSize:
