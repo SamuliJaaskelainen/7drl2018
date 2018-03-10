@@ -11,7 +11,7 @@
 custom_solver_bias = 0.0
 extents = Vector2( 32, 10 )
 
-[node name="LevelPiece8" type="KinematicBody2D" index="0"]
+[node name="LevelPiece8" type="KinematicBody2D"]
 
 position = Vector2( 256, 128 )
 input_pickable = false
@@ -101,21 +101,21 @@ position = Vector2( -264.8, -156.647 )
 position = Vector2( 227.495, 221.509 )
 script = ExtResource( 4 )
 enemyId = 2
-spawnValue = 0.5
+spawnValue = 0.9
 
 [node name="SpawnEnemy3" type="Position2D" parent="Wave1" index="1"]
 
 position = Vector2( 426.019, 237.448 )
 script = ExtResource( 4 )
 enemyId = 2
-spawnValue = 0.5
+spawnValue = 0.9
 
 [node name="SpawnEnemy5" type="Position2D" parent="Wave1" index="2"]
 
 position = Vector2( 168.771, 73.2368 )
 script = ExtResource( 4 )
 enemyId = 2
-spawnValue = 0.5
+spawnValue = 0.9
 
 [node name="Wave2" type="Position2D" parent="." index="8"]
 
@@ -130,42 +130,42 @@ position = Vector2( -258.198, -124.619 )
 position = Vector2( 276.486, 142.197 )
 script = ExtResource( 4 )
 enemyId = 1
-spawnValue = 0.5
+spawnValue = 0.9
 
 [node name="SpawnEnemy4" type="Position2D" parent="RandomEnemies" index="1"]
 
 position = Vector2( 433.197, 63.8232 )
 script = ExtResource( 4 )
 enemyId = 1
-spawnValue = 0.5
+spawnValue = 0.9
 
 [node name="SpawnEnemy5" type="Position2D" parent="RandomEnemies" index="2"]
 
 position = Vector2( 360.033, 205.307 )
 script = ExtResource( 4 )
 enemyId = 1
-spawnValue = 0.5
+spawnValue = 0.9
 
 [node name="SpawnEnemy6" type="Position2D" parent="RandomEnemies" index="3"]
 
 position = Vector2( 492.648, 104.92 )
 script = ExtResource( 4 )
 enemyId = 1
-spawnValue = 0.5
+spawnValue = 0.9
 
 [node name="SpawnEnemy7" type="Position2D" parent="RandomEnemies" index="4"]
 
 position = Vector2( 159.681, 191.203 )
 script = ExtResource( 4 )
 enemyId = 1
-spawnValue = 0.5
+spawnValue = 0.9
 
 [node name="SpawnEnemy8" type="Position2D" parent="RandomEnemies" index="5"]
 
 position = Vector2( 210.423, 72.7304 )
 script = ExtResource( 4 )
 enemyId = 1
-spawnValue = 0.5
+spawnValue = 0.9
 
 [node name="Sprite" type="Sprite" parent="." index="10"]
 
