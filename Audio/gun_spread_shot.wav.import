@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/gun_spread_shot.wav-b7445b6a05afbf5f1f69c9fcf7eac5fb.sample"
+
+[deps]
+
+source_file="res://Audio/gun_spread_shot.wav"
+source_md5="4ab1928a3988ba9be372cfa87ffd8d02"
+
+dest_files=[ "res://.import/gun_spread_shot.wav-b7445b6a05afbf5f1f69c9fcf7eac5fb.sample" ]
+dest_md5="81385f5d4c32e16631ad3ae96315ce34"
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=false
+compress/mode=0

@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/player_ship_moves.wav-f7b9880594d6d65b758b3e7fef0c9dcf.sample"
+
+[deps]
+
+source_file="res://Audio/player_ship_moves.wav"
+source_md5="266f73123874a0c8347c0361a07f160a"
+
+dest_files=[ "res://.import/player_ship_moves.wav-f7b9880594d6d65b758b3e7fef0c9dcf.sample" ]
+dest_md5="1b736fef5b2a242f3b9391df75e30ffd"
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=false
+compress/mode=0

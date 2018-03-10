@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/gun_shoot_charge.wav-0cb847f07bd8160b9650d9a3c2e9b894.sample"
+
+[deps]
+
+source_file="res://Audio/gun_shoot_charge.wav"
+source_md5="228e353b4303d58bf1da24dfa311e941"
+
+dest_files=[ "res://.import/gun_shoot_charge.wav-0cb847f07bd8160b9650d9a3c2e9b894.sample" ]
+dest_md5="d4eed8f8a65774f7b42a241b1de5de77"
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=false
+compress/mode=0

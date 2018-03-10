@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/gun_prepare_charge.wav-861cdb7466ecc14fe45e3755cd781764.sample"
+
+[deps]
+
+source_file="res://Audio/gun_prepare_charge.wav"
+source_md5="2d5910b985852e464f54959bec7f9547"
+
+dest_files=[ "res://.import/gun_prepare_charge.wav-861cdb7466ecc14fe45e3755cd781764.sample" ]
+dest_md5="cb01a9d05a477be763eec8f4a4a87a65"
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=false
+compress/mode=0
