@@ -1,20 +1,21 @@
-[gd_scene load_steps=24 format=2]
+[gd_scene load_steps=25 format=2]
 
 [ext_resource path="res://uni0553-webfont.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://Sprites/UI.png" type="Texture" id=2]
 [ext_resource path="res://Player.gd" type="Script" id=3]
 [ext_resource path="res://Sprites/Shield.png" type="Texture" id=4]
 [ext_resource path="res://Sprites/Cursor.png" type="Texture" id=5]
-[ext_resource path="res://Sprites/PlayerShip.png" type="Texture" id=6]
-[ext_resource path="res://Sprites/MovementCone1.png" type="Texture" id=7]
-[ext_resource path="res://Sprites/MovementCone2.png" type="Texture" id=8]
-[ext_resource path="res://Sprites/MovementCone3.png" type="Texture" id=9]
-[ext_resource path="res://Sprites/MovementCone4.png" type="Texture" id=10]
-[ext_resource path="res://LevelManager.gd" type="Script" id=11]
-[ext_resource path="res://Enemies/EnemyManager.gd" type="Script" id=12]
-[ext_resource path="res://Shop.gd" type="Script" id=13]
-[ext_resource path="res://Styleboxflat.tres" type="StyleBox" id=14]
-[ext_resource path="res://Dynamicfont.tres" type="DynamicFont" id=15]
+[ext_resource path="res://Sprites/Target.png" type="Texture" id=6]
+[ext_resource path="res://Sprites/PlayerShip.png" type="Texture" id=7]
+[ext_resource path="res://Sprites/MovementCone1.png" type="Texture" id=8]
+[ext_resource path="res://Sprites/MovementCone2.png" type="Texture" id=9]
+[ext_resource path="res://Sprites/MovementCone3.png" type="Texture" id=10]
+[ext_resource path="res://Sprites/MovementCone4.png" type="Texture" id=11]
+[ext_resource path="res://LevelManager.gd" type="Script" id=12]
+[ext_resource path="res://Enemies/EnemyManager.gd" type="Script" id=13]
+[ext_resource path="res://Shop.gd" type="Script" id=14]
+[ext_resource path="res://Styleboxflat.tres" type="StyleBox" id=15]
+[ext_resource path="res://Dynamicfont.tres" type="DynamicFont" id=16]
 
 [sub_resource type="DynamicFont" id=1]
 
@@ -637,15 +638,25 @@ texture = ExtResource( 5 )
 centered = false
 _sections_unfolded = [ "Offset", "Visibility", "Z Index" ]
 
-[node name="Sprite" type="Sprite" parent="Player" index="2"]
+[node name="Target" type="Sprite" parent="Player" index="2"]
+
+position = Vector2( 42.3766, -127.647 )
+scale = Vector2( 4, 4 )
+z_index = 9
+z_as_relative = false
+texture = ExtResource( 6 )
+offset = Vector2( 0.5, 0.5 )
+_sections_unfolded = [ "Offset", "Transform", "Z Index" ]
+
+[node name="Sprite" type="Sprite" parent="Player" index="3"]
 
 scale = Vector2( 4, 4 )
 z_index = -3
 z_as_relative = false
-texture = ExtResource( 6 )
+texture = ExtResource( 7 )
 _sections_unfolded = [ "Transform", "Z Index" ]
 
-[node name="ActionUI" type="Control" parent="Player" index="3"]
+[node name="ActionUI" type="Control" parent="Player" index="4"]
 
 editor/display_folded = true
 anchor_left = 0.0
@@ -818,17 +829,17 @@ __meta__ = {
 "_edit_group_": true
 }
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Player" index="4"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player" index="5"]
 
 shape = SubResource( 7 )
 
-[node name="MovementArea1" type="Sprite" parent="Player" index="5"]
+[node name="MovementArea1" type="Sprite" parent="Player" index="6"]
 
 editor/display_folded = true
 modulate = Color( 1, 1, 1, 0.0196078 )
 position = Vector2( -256, 0 )
 scale = Vector2( 8, 8 )
-texture = ExtResource( 7 )
+texture = ExtResource( 8 )
 centered = false
 offset = Vector2( 0, -32 )
 _sections_unfolded = [ "Animation", "Offset", "Region", "Transform", "Visibility", "Z Index" ]
@@ -857,13 +868,13 @@ scale = Vector2( 1.01957, 1 )
 build_mode = 0
 polygon = PoolVector2Array( -8.15368, -16.3949, -0.681744, -19.314, 8.95498, -21.3076, 26.6223, -21.45, 30.463, -19.7412, 30.463, 21.9095, 26.8318, 23.4047, 9.65329, 23.6183, -6.89672, 18.2784, -19.3985, 11.3029, -24.475, 7.41721, -27.9858, 2.47252, -27.9159, -2.51133, -22.6786, -8.13597, -15.9748, -12.2654 )
 
-[node name="MovementArea2" type="Sprite" parent="Player" index="6"]
+[node name="MovementArea2" type="Sprite" parent="Player" index="7"]
 
 editor/display_folded = true
 modulate = Color( 1, 1, 1, 0.0196078 )
 position = Vector2( -211.573, 0 )
 scale = Vector2( 8, 8 )
-texture = ExtResource( 8 )
+texture = ExtResource( 9 )
 centered = false
 offset = Vector2( 0, -32 )
 _sections_unfolded = [ "Animation", "Offset", "Region", "Transform", "Visibility", "Z Index" ]
@@ -892,13 +903,13 @@ scale = Vector2( 1.01957, 1 )
 build_mode = 0
 polygon = PoolVector2Array( 1.97185, 23.9031, 9.86278, 15.0033, 17.0554, 10.0195, 30.7423, 3.54049, 30.7423, -2.44014, 17.4744, -8.99034, 11.3991, -13.6182, -1.51971, -27.1458, -6.47773, -31.3465, -19.2569, -31.6313, -26.3098, -19.5276, -31.6868, -4.57607, -31.8963, 5.17804, -28.1254, 16.4273, -19.3267, 32.162, -6.75706, 32.4468 )
 
-[node name="MovementArea3" type="Sprite" parent="Player" index="7"]
+[node name="MovementArea3" type="Sprite" parent="Player" index="8"]
 
 editor/display_folded = true
 modulate = Color( 1, 1, 1, 0.0196078 )
 position = Vector2( -256, 0 )
 scale = Vector2( 8, 8 )
-texture = ExtResource( 9 )
+texture = ExtResource( 10 )
 centered = false
 offset = Vector2( 0, -32 )
 _sections_unfolded = [ "Animation", "Offset", "Region", "Transform", "Visibility", "Z Index" ]
@@ -927,13 +938,13 @@ scale = Vector2( 1.01957, 1 )
 build_mode = 0
 polygon = PoolVector2Array( -14.7178, -13.9742, -10.6676, -18.8868, -7.38554, -29.2817, -5.5001, -31.3465, 3.29864, -31.5601, 6.30138, -27.6442, 11.6784, -17.6053, 14.9605, -15.3981, 20.547, -13.9742, 25.7843, -12.835, 28.7172, -10.2007, 29.625, -7.21039, 29.4854, 8.45314, 28.9267, 11.1586, 26.9016, 13.3658, 23.6195, 14.2914, 14.6811, 16.3561, 11.2594, 18.5632, 8.74548, 24.7574, 3.22881, 32.6604, -5.5001, 32.3756, -7.45537, 30.3109, -11.2961, 19.2752, -12.4134, 16.7121, -15.2765, 14.5049, -23.3769, 14.2914, -27.0081, 12.4402, -29.0332, 8.38194, -29.1031, -7.70878, -27.0081, -11.4823, -22.9579, -13.6182 )
 
-[node name="MovementArea4" type="Sprite" parent="Player" index="8"]
+[node name="MovementArea4" type="Sprite" parent="Player" index="9"]
 
 editor/display_folded = true
 modulate = Color( 1, 1, 1, 0.0196078 )
 position = Vector2( -235.495, 0 )
 scale = Vector2( 8, 8 )
-texture = ExtResource( 10 )
+texture = ExtResource( 11 )
 centered = false
 offset = Vector2( 0, -32 )
 _sections_unfolded = [ "Animation", "Offset", "Region", "Transform", "Visibility", "Z Index" ]
@@ -964,11 +975,11 @@ polygon = PoolVector2Array( -0.402412, -24.5827, 6.02206, -24.3691, 10.2119, -22
 
 [node name="LevelManager" type="Node" parent="." index="2"]
 
-script = ExtResource( 11 )
+script = ExtResource( 12 )
 
 [node name="EnemyManager" type="Node" parent="." index="3"]
 
-script = ExtResource( 12 )
+script = ExtResource( 13 )
 
 [node name="Shop" type="Control" parent="." index="4"]
 
@@ -984,7 +995,7 @@ mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-script = ExtResource( 13 )
+script = ExtResource( 14 )
 __meta__ = {
 "_edit_group_": true
 }
@@ -1005,7 +1016,7 @@ mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-custom_styles/normal = ExtResource( 14 )
+custom_styles/normal = ExtResource( 15 )
 custom_fonts/normal_font = SubResource( 8 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 bbcode_enabled = false
@@ -1037,7 +1048,7 @@ mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-custom_styles/normal = ExtResource( 14 )
+custom_styles/normal = ExtResource( 15 )
 custom_fonts/normal_font = SubResource( 8 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 bbcode_enabled = false
@@ -1069,7 +1080,7 @@ mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-custom_styles/normal = ExtResource( 14 )
+custom_styles/normal = ExtResource( 15 )
 custom_fonts/normal_font = SubResource( 8 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 bbcode_enabled = false
@@ -1101,7 +1112,7 @@ mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-custom_styles/normal = ExtResource( 14 )
+custom_styles/normal = ExtResource( 15 )
 custom_fonts/normal_font = SubResource( 8 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 bbcode_enabled = false
@@ -1134,8 +1145,8 @@ mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-custom_styles/normal = ExtResource( 14 )
-custom_fonts/font = ExtResource( 15 )
+custom_styles/normal = ExtResource( 15 )
+custom_fonts/font = ExtResource( 16 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 toggle_mode = false
 enabled_focus_mode = 2
@@ -1163,8 +1174,8 @@ mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-custom_styles/normal = ExtResource( 14 )
-custom_fonts/font = ExtResource( 15 )
+custom_styles/normal = ExtResource( 15 )
+custom_fonts/font = ExtResource( 16 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 toggle_mode = false
 enabled_focus_mode = 2
@@ -1192,8 +1203,8 @@ mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-custom_styles/normal = ExtResource( 14 )
-custom_fonts/font = ExtResource( 15 )
+custom_styles/normal = ExtResource( 15 )
+custom_fonts/font = ExtResource( 16 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 toggle_mode = false
 enabled_focus_mode = 2
@@ -1221,8 +1232,8 @@ mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-custom_styles/normal = ExtResource( 14 )
-custom_fonts/font = ExtResource( 15 )
+custom_styles/normal = ExtResource( 15 )
+custom_fonts/font = ExtResource( 16 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 toggle_mode = false
 enabled_focus_mode = 2
@@ -1250,8 +1261,8 @@ mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-custom_styles/normal = ExtResource( 14 )
-custom_fonts/font = ExtResource( 15 )
+custom_styles/normal = ExtResource( 15 )
+custom_fonts/font = ExtResource( 16 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 toggle_mode = false
 enabled_focus_mode = 2
@@ -1279,8 +1290,8 @@ mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-custom_styles/normal = ExtResource( 14 )
-custom_fonts/font = ExtResource( 15 )
+custom_styles/normal = ExtResource( 15 )
+custom_fonts/font = ExtResource( 16 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 toggle_mode = false
 enabled_focus_mode = 2

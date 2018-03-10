@@ -124,6 +124,7 @@ func _ready():
 	update_gear_values()
 	shop.hide()
 	$Shield.hide()
+	$Target.hide()
 
 func _process(delta):
 	mousePos = get_viewport().get_mouse_position()
@@ -296,6 +297,7 @@ func base_action():
 	currentMovementArea.hide()
 	turnVal = 0.0
 	canDoAction = false
+	$Target.hide()
 	update_gear_values()
 	
 	if charge:
@@ -398,6 +400,12 @@ func _on_Area2D_input_event(viewport, event, shape_idx):
 	canDoAction = true
 	targetPos = mousePos
 	oldPos = global_position
+	$Target.show()
+	if not $ActionUI.visible:
+		$Target.global_position = mousePos
+		var movementDistanceX = mousePos.x - global_position.x
+		print(movementDistanceX)
+		$Target.modulate = Color(0,0,0) if movementDistanceX < -30 else Color(1,1,1)
 	if Input.is_action_just_pressed("press"):
 		$ActionUI.rect_global_position = mousePos;
 		$ActionUI.show()
