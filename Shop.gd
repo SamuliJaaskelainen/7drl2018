@@ -144,6 +144,7 @@ func buyItem(item, type, shopItem, shopItemBuy, price, gunID):
 			player.structure = item
 		player.HULL:
 			player.hull = item
+			player.currentArmor = player.armorValues[item]
 		player.ENGINE:
 			player.engine = item
 		player.THRUSTER:
