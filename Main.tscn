@@ -1,32 +1,35 @@
-[gd_scene load_steps=32 format=2]
+[gd_scene load_steps=31 format=2]
 
 [ext_resource path="res://Sprites/Sky.png" type="Texture" id=1]
-[ext_resource path="res://uni0553-webfont.ttf" type="DynamicFontData" id=2]
-[ext_resource path="res://Sprites/UI.png" type="Texture" id=3]
-[ext_resource path="res://Player.gd" type="Script" id=4]
-[ext_resource path="res://Sprites/Shield.png" type="Texture" id=5]
-[ext_resource path="res://Sprites/Cursor.png" type="Texture" id=6]
-[ext_resource path="res://Sprites/Target.png" type="Texture" id=7]
-[ext_resource path="res://Sprites/Ships/PlayerShip.png" type="Texture" id=8]
-[ext_resource path="res://Sprites/Ships/PipeShip.png" type="Texture" id=9]
-[ext_resource path="res://Sprites/Ships/ShipFatso.png" type="Texture" id=10]
-[ext_resource path="res://Sprites/Ships/ShipMultiHull.png" type="Texture" id=11]
-[ext_resource path="res://Sprites/MovementCone1.png" type="Texture" id=12]
-[ext_resource path="res://Sprites/MovementCone2.png" type="Texture" id=13]
-[ext_resource path="res://Sprites/MovementCone3.png" type="Texture" id=14]
-[ext_resource path="res://Sprites/MovementCone4.png" type="Texture" id=15]
-[ext_resource path="res://LevelManager.gd" type="Script" id=16]
-[ext_resource path="res://Enemies/EnemyManager.gd" type="Script" id=17]
-[ext_resource path="res://Shop.gd" type="Script" id=18]
-[ext_resource path="res://Styleboxflat.tres" type="StyleBox" id=19]
-[ext_resource path="res://Dynamicfont.tres" type="DynamicFont" id=20]
+[ext_resource path="res://Dynamicfont.tres" type="DynamicFont" id=2]
+[ext_resource path="res://uni0553-webfont.ttf" type="DynamicFontData" id=3]
+[ext_resource path="res://Sprites/UI.png" type="Texture" id=4]
+[ext_resource path="res://Player.gd" type="Script" id=5]
+[ext_resource path="res://Sprites/Shield.png" type="Texture" id=6]
+[ext_resource path="res://Sprites/Cursor.png" type="Texture" id=7]
+[ext_resource path="res://Sprites/Target.png" type="Texture" id=8]
+[ext_resource path="res://Sprites/Ships/PlayerShip.png" type="Texture" id=9]
+[ext_resource path="res://Sprites/Ships/PipeShip.png" type="Texture" id=10]
+[ext_resource path="res://Sprites/Ships/ShipFatso.png" type="Texture" id=11]
+[ext_resource path="res://Sprites/Ships/ShipMultiHull.png" type="Texture" id=12]
+[ext_resource path="res://StyleboxflatHover.tres" type="StyleBox" id=13]
+[ext_resource path="res://StyleboxflatSelect.tres" type="StyleBox" id=14]
+[ext_resource path="res://StyleboxflatDisabled.tres" type="StyleBox" id=15]
+[ext_resource path="res://Styleboxflat.tres" type="StyleBox" id=16]
+[ext_resource path="res://Sprites/MovementCone1.png" type="Texture" id=17]
+[ext_resource path="res://Sprites/MovementCone2.png" type="Texture" id=18]
+[ext_resource path="res://Sprites/MovementCone3.png" type="Texture" id=19]
+[ext_resource path="res://Sprites/MovementCone4.png" type="Texture" id=20]
+[ext_resource path="res://LevelManager.gd" type="Script" id=21]
+[ext_resource path="res://Enemies/EnemyManager.gd" type="Script" id=22]
+[ext_resource path="res://Shop.gd" type="Script" id=23]
 
 [sub_resource type="DynamicFont" id=1]
 
 size = 8
 use_mipmaps = false
 use_filter = false
-font_data = ExtResource( 2 )
+font_data = ExtResource( 3 )
 _sections_unfolded = [ "Font", "Settings" ]
 
 [sub_resource type="CircleShape2D" id=2]
@@ -49,128 +52,12 @@ extents = Vector2( 27.4911, 23.0952 )
 custom_solver_bias = 0.0
 extents = Vector2( 27.2704, 22.9849 )
 
-[sub_resource type="StyleBoxFlat" id=6]
-
-content_margin_left = -1.0
-content_margin_right = -1.0
-content_margin_top = -1.0
-content_margin_bottom = -1.0
-bg_color = Color( 1, 0.84375, 0, 1 )
-draw_center = true
-border_width_left = 2
-border_width_top = 2
-border_width_right = 2
-border_width_bottom = 2
-border_color = Color( 0, 0, 0, 1 )
-border_blend = false
-corner_radius_top_left = 0
-corner_radius_top_right = 0
-corner_radius_bottom_right = 0
-corner_radius_bottom_left = 0
-corner_detail = 8
-expand_margin_left = 0.0
-expand_margin_right = 0.0
-expand_margin_top = 0.0
-expand_margin_bottom = 0.0
-shadow_color = Color( 0, 0, 0, 0.6 )
-shadow_size = 0
-anti_aliasing = false
-anti_aliasing_size = 1
-_sections_unfolded = [ "Border", "Border Width", "Corner Radius", "Expand Margin", "Shadow" ]
-
-[sub_resource type="StyleBoxFlat" id=7]
-
-content_margin_left = -1.0
-content_margin_right = -1.0
-content_margin_top = -1.0
-content_margin_bottom = -1.0
-bg_color = Color( 0.945313, 1, 0, 1 )
-draw_center = true
-border_width_left = 2
-border_width_top = 2
-border_width_right = 2
-border_width_bottom = 2
-border_color = Color( 0, 0, 0, 1 )
-border_blend = false
-corner_radius_top_left = 0
-corner_radius_top_right = 0
-corner_radius_bottom_right = 0
-corner_radius_bottom_left = 0
-corner_detail = 8
-expand_margin_left = 0.0
-expand_margin_right = 0.0
-expand_margin_top = 0.0
-expand_margin_bottom = 0.0
-shadow_color = Color( 0, 0, 0, 0.6 )
-shadow_size = 0
-anti_aliasing = false
-anti_aliasing_size = 1
-_sections_unfolded = [ "Anti Aliasing", "Border", "Border Width", "Corner Radius", "Expand Margin", "Shadow" ]
-
-[sub_resource type="StyleBoxFlat" id=8]
-
-content_margin_left = -1.0
-content_margin_right = -1.0
-content_margin_top = -1.0
-content_margin_bottom = -1.0
-bg_color = Color( 0.242188, 0.242188, 0.242188, 1 )
-draw_center = true
-border_width_left = 2
-border_width_top = 2
-border_width_right = 2
-border_width_bottom = 2
-border_color = Color( 0, 0, 0, 1 )
-border_blend = false
-corner_radius_top_left = 0
-corner_radius_top_right = 0
-corner_radius_bottom_right = 0
-corner_radius_bottom_left = 0
-corner_detail = 8
-expand_margin_left = 0.0
-expand_margin_right = 0.0
-expand_margin_top = 0.0
-expand_margin_bottom = 0.0
-shadow_color = Color( 0, 0, 0, 0.6 )
-shadow_size = 0
-anti_aliasing = false
-anti_aliasing_size = 1
-_sections_unfolded = [ "Anti Aliasing", "Border", "Border Width", "Corner Radius", "Expand Margin", "Shadow" ]
-
-[sub_resource type="StyleBoxFlat" id=9]
-
-content_margin_left = -1.0
-content_margin_right = -1.0
-content_margin_top = -1.0
-content_margin_bottom = -1.0
-bg_color = Color( 1, 1, 1, 1 )
-draw_center = true
-border_width_left = 2
-border_width_top = 2
-border_width_right = 2
-border_width_bottom = 2
-border_color = Color( 0, 0, 0, 1 )
-border_blend = false
-corner_radius_top_left = 0
-corner_radius_top_right = 0
-corner_radius_bottom_right = 0
-corner_radius_bottom_left = 0
-corner_detail = 8
-expand_margin_left = 0.0
-expand_margin_right = 0.0
-expand_margin_top = 0.0
-expand_margin_bottom = 0.0
-shadow_color = Color( 0, 0, 0, 0.6 )
-shadow_size = 0
-anti_aliasing = false
-anti_aliasing_size = 1
-_sections_unfolded = [ "Anti Aliasing", "Border", "Border Width", "Corner Radius", "Expand Margin", "Shadow" ]
-
 [sub_resource type="DynamicFont" id=10]
 
 size = 8
 use_mipmaps = false
 use_filter = false
-font_data = ExtResource( 2 )
+font_data = ExtResource( 3 )
 _sections_unfolded = [ "Extra Spacing", "Font", "Settings" ]
 
 [sub_resource type="DynamicFont" id=11]
@@ -178,7 +65,7 @@ _sections_unfolded = [ "Extra Spacing", "Font", "Settings" ]
 size = 8
 use_mipmaps = false
 use_filter = false
-font_data = ExtResource( 2 )
+font_data = ExtResource( 3 )
 _sections_unfolded = [ "Extra Spacing", "Font", "Font/fallback", "Settings" ]
 
 [node name="Game" type="Node" index="0"]
@@ -211,10 +98,10 @@ mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-custom_fonts/normal_font = SubResource( 1 )
-custom_colors/default_color = Color( 0, 0, 0, 1 )
-custom_colors/selection_color = Color( 0, 0, 0, 1 )
-custom_colors/font_color_selected = Color( 0, 0, 0, 1 )
+custom_fonts/normal_font = ExtResource( 2 )
+custom_colors/default_color = Color( 0.296875, 0.280114, 0.253967, 1 )
+custom_colors/selection_color = Color( 0.296875, 0.280114, 0.253967, 1 )
+custom_colors/font_color_selected = Color( 0.296875, 0.280114, 0.253967, 1 )
 bbcode_enabled = false
 bbcode_text = ""
 visible_characters = -1
@@ -226,7 +113,7 @@ scroll_active = false
 scroll_following = false
 selection_enabled = false
 override_selected_font_color = false
-_sections_unfolded = [ "custom_fonts" ]
+_sections_unfolded = [ "custom_colors", "custom_fonts" ]
 
 [node name="ArmorLabel" type="RichTextLabel" parent="BottomUI" index="1"]
 
@@ -245,9 +132,9 @@ mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
 custom_fonts/normal_font = SubResource( 1 )
-custom_colors/default_color = Color( 0, 0, 0, 1 )
-custom_colors/selection_color = Color( 0, 0, 0, 1 )
-custom_colors/font_color_selected = Color( 0, 0, 0, 1 )
+custom_colors/default_color = Color( 0.296875, 0.280114, 0.253967, 1 )
+custom_colors/selection_color = Color( 0.296875, 0.280114, 0.253967, 1 )
+custom_colors/font_color_selected = Color( 0.296875, 0.280114, 0.253967, 1 )
 bbcode_enabled = false
 bbcode_text = ""
 visible_characters = -1
@@ -278,9 +165,9 @@ mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
 custom_fonts/normal_font = SubResource( 1 )
-custom_colors/default_color = Color( 0, 0, 0, 1 )
-custom_colors/selection_color = Color( 0, 0, 0, 1 )
-custom_colors/font_color_selected = Color( 0, 0, 0, 1 )
+custom_colors/default_color = Color( 0.296875, 0.280114, 0.253967, 1 )
+custom_colors/selection_color = Color( 0.296875, 0.280114, 0.253967, 1 )
+custom_colors/font_color_selected = Color( 0.296875, 0.280114, 0.253967, 1 )
 bbcode_enabled = false
 bbcode_text = ""
 visible_characters = -1
@@ -311,9 +198,9 @@ mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
 custom_fonts/normal_font = SubResource( 1 )
-custom_colors/default_color = Color( 0, 0, 0, 1 )
-custom_colors/selection_color = Color( 0, 0, 0, 1 )
-custom_colors/font_color_selected = Color( 0, 0, 0, 1 )
+custom_colors/default_color = Color( 0.296875, 0.280114, 0.253967, 1 )
+custom_colors/selection_color = Color( 0.296875, 0.280114, 0.253967, 1 )
+custom_colors/font_color_selected = Color( 0.296875, 0.280114, 0.253967, 1 )
 bbcode_enabled = false
 bbcode_text = ""
 visible_characters = -1
@@ -344,9 +231,9 @@ mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
 custom_fonts/normal_font = SubResource( 1 )
-custom_colors/default_color = Color( 0, 0, 0, 1 )
-custom_colors/selection_color = Color( 0, 0, 0, 1 )
-custom_colors/font_color_selected = Color( 0, 0, 0, 1 )
+custom_colors/default_color = Color( 0.296875, 0.280114, 0.253967, 1 )
+custom_colors/selection_color = Color( 0.296875, 0.280114, 0.253967, 1 )
+custom_colors/font_color_selected = Color( 0.296875, 0.280114, 0.253967, 1 )
 bbcode_enabled = false
 bbcode_text = ""
 visible_characters = -1
@@ -377,9 +264,9 @@ mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
 custom_fonts/normal_font = SubResource( 1 )
-custom_colors/default_color = Color( 0, 0, 0, 1 )
-custom_colors/selection_color = Color( 0, 0, 0, 1 )
-custom_colors/font_color_selected = Color( 0, 0, 0, 1 )
+custom_colors/default_color = Color( 0.296875, 0.280114, 0.253967, 1 )
+custom_colors/selection_color = Color( 0.296875, 0.280114, 0.253967, 1 )
+custom_colors/font_color_selected = Color( 0.296875, 0.280114, 0.253967, 1 )
 bbcode_enabled = false
 bbcode_text = ""
 visible_characters = -1
@@ -410,9 +297,9 @@ mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
 custom_fonts/normal_font = SubResource( 1 )
-custom_colors/default_color = Color( 0, 0, 0, 1 )
-custom_colors/selection_color = Color( 0, 0, 0, 1 )
-custom_colors/font_color_selected = Color( 0, 0, 0, 1 )
+custom_colors/default_color = Color( 0.296875, 0.280114, 0.253967, 1 )
+custom_colors/selection_color = Color( 0.296875, 0.280114, 0.253967, 1 )
+custom_colors/font_color_selected = Color( 0.296875, 0.280114, 0.253967, 1 )
 bbcode_enabled = false
 bbcode_text = ""
 visible_characters = -1
@@ -443,9 +330,9 @@ mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
 custom_fonts/normal_font = SubResource( 1 )
-custom_colors/default_color = Color( 0, 0, 0, 1 )
-custom_colors/selection_color = Color( 0, 0, 0, 1 )
-custom_colors/font_color_selected = Color( 0, 0, 0, 1 )
+custom_colors/default_color = Color( 0.296875, 0.280114, 0.253967, 1 )
+custom_colors/selection_color = Color( 0.296875, 0.280114, 0.253967, 1 )
+custom_colors/font_color_selected = Color( 0.296875, 0.280114, 0.253967, 1 )
 bbcode_enabled = false
 bbcode_text = ""
 visible_characters = -1
@@ -476,9 +363,9 @@ mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
 custom_fonts/normal_font = SubResource( 1 )
-custom_colors/default_color = Color( 0, 0, 0, 1 )
-custom_colors/selection_color = Color( 0, 0, 0, 1 )
-custom_colors/font_color_selected = Color( 0, 0, 0, 1 )
+custom_colors/default_color = Color( 0.296875, 0.280114, 0.253967, 1 )
+custom_colors/selection_color = Color( 0.296875, 0.280114, 0.253967, 1 )
+custom_colors/font_color_selected = Color( 0.296875, 0.280114, 0.253967, 1 )
 bbcode_enabled = false
 bbcode_text = ""
 visible_characters = -1
@@ -490,7 +377,7 @@ scroll_active = false
 scroll_following = false
 selection_enabled = false
 override_selected_font_color = false
-_sections_unfolded = [ "custom_fonts" ]
+_sections_unfolded = [ "custom_colors", "custom_fonts" ]
 
 [node name="Gun2Label" type="RichTextLabel" parent="BottomUI" index="9"]
 
@@ -509,9 +396,9 @@ mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
 custom_fonts/normal_font = SubResource( 1 )
-custom_colors/default_color = Color( 0, 0, 0, 1 )
-custom_colors/selection_color = Color( 0, 0, 0, 1 )
-custom_colors/font_color_selected = Color( 0, 0, 0, 1 )
+custom_colors/default_color = Color( 0.296875, 0.280114, 0.253967, 1 )
+custom_colors/selection_color = Color( 0.296875, 0.280114, 0.253967, 1 )
+custom_colors/font_color_selected = Color( 0.296875, 0.280114, 0.253967, 1 )
 bbcode_enabled = false
 bbcode_text = ""
 visible_characters = -1
@@ -529,112 +416,112 @@ _sections_unfolded = [ "custom_fonts" ]
 
 position = Vector2( 16, 272 )
 z_index = -1
-texture = ExtResource( 3 )
+texture = ExtResource( 4 )
 _sections_unfolded = [ "Z Index" ]
 
 [node name="UISprite2" type="Sprite" parent="BottomUI" index="11"]
 
 position = Vector2( 48, 272 )
 z_index = -1
-texture = ExtResource( 3 )
+texture = ExtResource( 4 )
 _sections_unfolded = [ "Z Index" ]
 
 [node name="UISprite3" type="Sprite" parent="BottomUI" index="12"]
 
 position = Vector2( 80, 272 )
 z_index = -1
-texture = ExtResource( 3 )
+texture = ExtResource( 4 )
 _sections_unfolded = [ "Z Index" ]
 
 [node name="UISprite4" type="Sprite" parent="BottomUI" index="13"]
 
 position = Vector2( 112, 272 )
 z_index = -1
-texture = ExtResource( 3 )
+texture = ExtResource( 4 )
 _sections_unfolded = [ "Z Index" ]
 
 [node name="UISprite5" type="Sprite" parent="BottomUI" index="14"]
 
 position = Vector2( 144, 272 )
 z_index = -1
-texture = ExtResource( 3 )
+texture = ExtResource( 4 )
 _sections_unfolded = [ "Z Index" ]
 
 [node name="UISprite6" type="Sprite" parent="BottomUI" index="15"]
 
 position = Vector2( 176, 272 )
 z_index = -1
-texture = ExtResource( 3 )
+texture = ExtResource( 4 )
 _sections_unfolded = [ "Z Index" ]
 
 [node name="UISprite7" type="Sprite" parent="BottomUI" index="16"]
 
 position = Vector2( 208, 272 )
 z_index = -1
-texture = ExtResource( 3 )
+texture = ExtResource( 4 )
 _sections_unfolded = [ "Z Index" ]
 
 [node name="UISprite8" type="Sprite" parent="BottomUI" index="17"]
 
 position = Vector2( 240, 272 )
 z_index = -1
-texture = ExtResource( 3 )
+texture = ExtResource( 4 )
 _sections_unfolded = [ "Z Index" ]
 
 [node name="UISprite9" type="Sprite" parent="BottomUI" index="18"]
 
 position = Vector2( 272, 272 )
 z_index = -1
-texture = ExtResource( 3 )
+texture = ExtResource( 4 )
 _sections_unfolded = [ "Z Index" ]
 
 [node name="UISprite10" type="Sprite" parent="BottomUI" index="19"]
 
 position = Vector2( 304, 272 )
 z_index = -1
-texture = ExtResource( 3 )
+texture = ExtResource( 4 )
 _sections_unfolded = [ "Z Index" ]
 
 [node name="UISprite11" type="Sprite" parent="BottomUI" index="20"]
 
 position = Vector2( 336, 272 )
 z_index = -1
-texture = ExtResource( 3 )
+texture = ExtResource( 4 )
 _sections_unfolded = [ "Z Index" ]
 
 [node name="UISprite12" type="Sprite" parent="BottomUI" index="21"]
 
 position = Vector2( 368, 272 )
 z_index = -1
-texture = ExtResource( 3 )
+texture = ExtResource( 4 )
 _sections_unfolded = [ "Z Index" ]
 
 [node name="UISprite13" type="Sprite" parent="BottomUI" index="22"]
 
 position = Vector2( 400, 272 )
 z_index = -1
-texture = ExtResource( 3 )
+texture = ExtResource( 4 )
 _sections_unfolded = [ "Z Index" ]
 
 [node name="UISprite14" type="Sprite" parent="BottomUI" index="23"]
 
 position = Vector2( 432, 272 )
 z_index = -1
-texture = ExtResource( 3 )
+texture = ExtResource( 4 )
 _sections_unfolded = [ "Z Index" ]
 
 [node name="UISprite15" type="Sprite" parent="BottomUI" index="24"]
 
 position = Vector2( 464, 272 )
 z_index = -1
-texture = ExtResource( 3 )
+texture = ExtResource( 4 )
 _sections_unfolded = [ "Z Index" ]
 
 [node name="UISprite16" type="Sprite" parent="BottomUI" index="25"]
 
 position = Vector2( 496, 272 )
 z_index = -1
-texture = ExtResource( 3 )
+texture = ExtResource( 4 )
 _sections_unfolded = [ "Z Index" ]
 
 [node name="Player" type="KinematicBody2D" parent="." index="2"]
@@ -646,14 +533,14 @@ input_pickable = false
 collision_layer = 2
 collision_mask = 1025
 collision/safe_margin = 0.08
-script = ExtResource( 4 )
+script = ExtResource( 5 )
 _sections_unfolded = [ "Collision", "Pickable", "Transform", "Visibility", "Z Index", "collision" ]
 
 [node name="Shield" type="Sprite" parent="Player" index="0"]
 
 position = Vector2( 60.4037, -0.0852051 )
 scale = Vector2( 4, 4 )
-texture = ExtResource( 5 )
+texture = ExtResource( 6 )
 _sections_unfolded = [ "Animation", "Offset", "Region", "Transform", "Z Index" ]
 
 [node name="Cursor" type="Sprite" parent="Player" index="1"]
@@ -662,7 +549,7 @@ position = Vector2( -256, -448 )
 scale = Vector2( 4, 4 )
 z_index = 10
 z_as_relative = false
-texture = ExtResource( 6 )
+texture = ExtResource( 7 )
 centered = false
 _sections_unfolded = [ "Offset", "Visibility", "Z Index" ]
 
@@ -672,7 +559,7 @@ position = Vector2( 42.3766, -127.647 )
 scale = Vector2( 4, 4 )
 z_index = 9
 z_as_relative = false
-texture = ExtResource( 7 )
+texture = ExtResource( 8 )
 offset = Vector2( 0.5, 0.5 )
 _sections_unfolded = [ "Offset", "Transform", "Z Index" ]
 
@@ -686,7 +573,7 @@ shape = SubResource( 2 )
 scale = Vector2( 4, 4 )
 z_index = -3
 z_as_relative = false
-texture = ExtResource( 8 )
+texture = ExtResource( 9 )
 _sections_unfolded = [ "Transform", "Z Index" ]
 
 [node name="ShipCollision2" type="CollisionShape2D" parent="Player" index="4"]
@@ -700,7 +587,7 @@ _sections_unfolded = [ "Transform" ]
 scale = Vector2( 4, 4 )
 z_index = -3
 z_as_relative = false
-texture = ExtResource( 9 )
+texture = ExtResource( 10 )
 _sections_unfolded = [ "Transform", "Z Index" ]
 
 [node name="ShipCollision3" type="CollisionShape2D" parent="Player" index="5"]
@@ -714,7 +601,7 @@ _sections_unfolded = [ "Transform" ]
 scale = Vector2( 4, 4 )
 z_index = -3
 z_as_relative = false
-texture = ExtResource( 10 )
+texture = ExtResource( 11 )
 _sections_unfolded = [ "Transform", "Z Index" ]
 
 [node name="ShipCollision4" type="CollisionShape2D" parent="Player" index="6"]
@@ -728,12 +615,11 @@ _sections_unfolded = [ "Transform" ]
 scale = Vector2( 4, 4 )
 z_index = -3
 z_as_relative = false
-texture = ExtResource( 11 )
+texture = ExtResource( 12 )
 _sections_unfolded = [ "Transform", "Z Index" ]
 
 [node name="ActionUI" type="Control" parent="Player" index="7"]
 
-editor/display_folded = true
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
@@ -767,15 +653,15 @@ mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-custom_styles/hover = SubResource( 6 )
-custom_styles/pressed = SubResource( 7 )
-custom_styles/disabled = SubResource( 8 )
-custom_styles/normal = SubResource( 9 )
+custom_styles/hover = ExtResource( 13 )
+custom_styles/pressed = ExtResource( 14 )
+custom_styles/disabled = ExtResource( 15 )
+custom_styles/normal = ExtResource( 16 )
 custom_fonts/font = SubResource( 10 )
-custom_colors/font_color_disabled = Color( 0, 0, 0, 1 )
-custom_colors/font_color = Color( 0, 0, 0, 1 )
-custom_colors/font_color_hover = Color( 0, 0, 0, 1 )
-custom_colors/font_color_pressed = Color( 0, 0, 0, 1 )
+custom_colors/font_color_disabled = Color( 0.296875, 0.280114, 0.253967, 1 )
+custom_colors/font_color = Color( 0.296875, 0.280114, 0.253967, 1 )
+custom_colors/font_color_hover = Color( 0.296875, 0.280114, 0.253967, 1 )
+custom_colors/font_color_pressed = Color( 0.296875, 0.280114, 0.253967, 1 )
 disabled = true
 toggle_mode = false
 enabled_focus_mode = 2
@@ -806,15 +692,15 @@ mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-custom_styles/hover = SubResource( 6 )
-custom_styles/pressed = SubResource( 7 )
-custom_styles/disabled = SubResource( 8 )
-custom_styles/normal = SubResource( 9 )
+custom_styles/hover = ExtResource( 13 )
+custom_styles/pressed = ExtResource( 14 )
+custom_styles/disabled = ExtResource( 15 )
+custom_styles/normal = ExtResource( 16 )
 custom_fonts/font = SubResource( 10 )
-custom_colors/font_color_disabled = Color( 0, 0, 0, 1 )
-custom_colors/font_color = Color( 0, 0, 0, 1 )
-custom_colors/font_color_hover = Color( 0, 0, 0, 1 )
-custom_colors/font_color_pressed = Color( 0, 0, 0, 1 )
+custom_colors/font_color_disabled = Color( 0.296875, 0.280114, 0.253967, 1 )
+custom_colors/font_color = Color( 0.296875, 0.280114, 0.253967, 1 )
+custom_colors/font_color_hover = Color( 0.296875, 0.280114, 0.253967, 1 )
+custom_colors/font_color_pressed = Color( 0.296875, 0.280114, 0.253967, 1 )
 disabled = true
 toggle_mode = false
 enabled_focus_mode = 2
@@ -845,15 +731,15 @@ mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-custom_styles/hover = SubResource( 6 )
-custom_styles/pressed = SubResource( 7 )
-custom_styles/disabled = SubResource( 8 )
-custom_styles/normal = SubResource( 9 )
+custom_styles/hover = ExtResource( 13 )
+custom_styles/pressed = ExtResource( 14 )
+custom_styles/disabled = ExtResource( 15 )
+custom_styles/normal = ExtResource( 16 )
 custom_fonts/font = SubResource( 10 )
-custom_colors/font_color_disabled = Color( 0, 0, 0, 1 )
-custom_colors/font_color = Color( 0, 0, 0, 1 )
-custom_colors/font_color_hover = Color( 0, 0, 0, 1 )
-custom_colors/font_color_pressed = Color( 0, 0, 0, 1 )
+custom_colors/font_color_disabled = Color( 0.296875, 0.280114, 0.253967, 1 )
+custom_colors/font_color = Color( 0.296875, 0.280114, 0.253967, 1 )
+custom_colors/font_color_hover = Color( 0.296875, 0.280114, 0.253967, 1 )
+custom_colors/font_color_pressed = Color( 0.296875, 0.280114, 0.253967, 1 )
 toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
@@ -883,15 +769,15 @@ mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-custom_styles/hover = SubResource( 6 )
-custom_styles/pressed = SubResource( 7 )
-custom_styles/disabled = SubResource( 8 )
-custom_styles/normal = SubResource( 9 )
+custom_styles/hover = ExtResource( 13 )
+custom_styles/pressed = ExtResource( 14 )
+custom_styles/disabled = ExtResource( 15 )
+custom_styles/normal = ExtResource( 16 )
 custom_fonts/font = SubResource( 10 )
-custom_colors/font_color_disabled = Color( 0, 0, 0, 1 )
-custom_colors/font_color = Color( 0, 0, 0, 1 )
-custom_colors/font_color_hover = Color( 0, 0, 0, 1 )
-custom_colors/font_color_pressed = Color( 0, 0, 0, 1 )
+custom_colors/font_color_disabled = Color( 0.296875, 0.280114, 0.253967, 1 )
+custom_colors/font_color = Color( 0.296875, 0.280114, 0.253967, 1 )
+custom_colors/font_color_hover = Color( 0.296875, 0.280114, 0.253967, 1 )
+custom_colors/font_color_pressed = Color( 0.296875, 0.280114, 0.253967, 1 )
 toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
@@ -913,7 +799,7 @@ position = Vector2( -256, 0 )
 scale = Vector2( 8, 8 )
 z_index = 10
 z_as_relative = false
-texture = ExtResource( 12 )
+texture = ExtResource( 17 )
 centered = false
 offset = Vector2( 0, -32 )
 _sections_unfolded = [ "Animation", "Offset", "Region", "Transform", "Visibility", "Z Index" ]
@@ -951,7 +837,7 @@ position = Vector2( -211.573, 0 )
 scale = Vector2( 8, 8 )
 z_index = -2
 z_as_relative = false
-texture = ExtResource( 13 )
+texture = ExtResource( 18 )
 centered = false
 offset = Vector2( 0, -32 )
 _sections_unfolded = [ "Animation", "Offset", "Region", "Transform", "Visibility", "Z Index" ]
@@ -989,7 +875,7 @@ position = Vector2( -256, 0 )
 scale = Vector2( 8, 8 )
 z_index = -2
 z_as_relative = false
-texture = ExtResource( 14 )
+texture = ExtResource( 19 )
 centered = false
 offset = Vector2( 0, -32 )
 _sections_unfolded = [ "Animation", "Offset", "Region", "Transform", "Visibility", "Z Index" ]
@@ -1027,7 +913,7 @@ position = Vector2( -235.495, 0 )
 scale = Vector2( 8, 8 )
 z_index = -2
 z_as_relative = false
-texture = ExtResource( 15 )
+texture = ExtResource( 20 )
 centered = false
 offset = Vector2( 0, -32 )
 _sections_unfolded = [ "Animation", "Offset", "Region", "Transform", "Visibility", "Z Index" ]
@@ -1058,15 +944,14 @@ polygon = PoolVector2Array( -0.402412, -24.5827, 6.02206, -24.3691, 10.2119, -22
 
 [node name="LevelManager" type="Node" parent="." index="3"]
 
-script = ExtResource( 16 )
+script = ExtResource( 21 )
 
 [node name="EnemyManager" type="Node" parent="." index="4"]
 
-script = ExtResource( 17 )
+script = ExtResource( 22 )
 
 [node name="Shop" type="Control" parent="." index="5"]
 
-editor/display_folded = true
 visible = false
 anchor_left = 0.0
 anchor_top = 0.0
@@ -1080,7 +965,7 @@ mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-script = ExtResource( 18 )
+script = ExtResource( 23 )
 __meta__ = {
 "_edit_group_": true
 }
@@ -1101,9 +986,11 @@ mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-custom_styles/normal = ExtResource( 19 )
+custom_styles/normal = ExtResource( 16 )
 custom_fonts/normal_font = SubResource( 11 )
-custom_colors/default_color = Color( 0, 0, 0, 1 )
+custom_colors/default_color = Color( 0.296875, 0.280114, 0.253967, 1 )
+custom_colors/selection_color = Color( 0.296875, 0.280114, 0.253967, 1 )
+custom_colors/font_color_selected = Color( 0.296875, 0.280114, 0.253967, 1 )
 bbcode_enabled = false
 bbcode_text = ""
 visible_characters = -1
@@ -1133,9 +1020,11 @@ mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-custom_styles/normal = ExtResource( 19 )
+custom_styles/normal = ExtResource( 16 )
 custom_fonts/normal_font = SubResource( 11 )
-custom_colors/default_color = Color( 0, 0, 0, 1 )
+custom_colors/default_color = Color( 0.296875, 0.280114, 0.253967, 1 )
+custom_colors/selection_color = Color( 0.296875, 0.280114, 0.253967, 1 )
+custom_colors/font_color_selected = Color( 0.296875, 0.280114, 0.253967, 1 )
 bbcode_enabled = false
 bbcode_text = ""
 visible_characters = -1
@@ -1165,9 +1054,11 @@ mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-custom_styles/normal = ExtResource( 19 )
+custom_styles/normal = ExtResource( 16 )
 custom_fonts/normal_font = SubResource( 11 )
-custom_colors/default_color = Color( 0, 0, 0, 1 )
+custom_colors/default_color = Color( 0.296875, 0.280114, 0.253967, 1 )
+custom_colors/selection_color = Color( 0.296875, 0.280114, 0.253967, 1 )
+custom_colors/font_color_selected = Color( 0.296875, 0.280114, 0.253967, 1 )
 bbcode_enabled = false
 bbcode_text = ""
 visible_characters = -1
@@ -1197,9 +1088,11 @@ mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-custom_styles/normal = ExtResource( 19 )
+custom_styles/normal = ExtResource( 16 )
 custom_fonts/normal_font = SubResource( 11 )
-custom_colors/default_color = Color( 0, 0, 0, 1 )
+custom_colors/default_color = Color( 0.296875, 0.280114, 0.253967, 1 )
+custom_colors/selection_color = Color( 0.296875, 0.280114, 0.253967, 1 )
+custom_colors/font_color_selected = Color( 0.296875, 0.280114, 0.253967, 1 )
 bbcode_enabled = false
 bbcode_text = ""
 visible_characters = -1
@@ -1230,9 +1123,15 @@ mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-custom_styles/normal = ExtResource( 19 )
-custom_fonts/font = ExtResource( 20 )
-custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_styles/hover = ExtResource( 13 )
+custom_styles/pressed = ExtResource( 14 )
+custom_styles/disabled = ExtResource( 15 )
+custom_styles/normal = ExtResource( 16 )
+custom_fonts/font = ExtResource( 2 )
+custom_colors/font_color_disabled = Color( 0.296875, 0.280114, 0.253967, 1 )
+custom_colors/font_color = Color( 0.296875, 0.280114, 0.253967, 1 )
+custom_colors/font_color_hover = Color( 0.296875, 0.280114, 0.253967, 1 )
+custom_colors/font_color_pressed = Color( 0.296875, 0.280114, 0.253967, 1 )
 toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
@@ -1259,9 +1158,15 @@ mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-custom_styles/normal = ExtResource( 19 )
-custom_fonts/font = ExtResource( 20 )
-custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_styles/hover = ExtResource( 13 )
+custom_styles/pressed = ExtResource( 14 )
+custom_styles/disabled = ExtResource( 15 )
+custom_styles/normal = ExtResource( 16 )
+custom_fonts/font = ExtResource( 2 )
+custom_colors/font_color_disabled = Color( 0.296875, 0.280114, 0.253967, 1 )
+custom_colors/font_color = Color( 0.296875, 0.280114, 0.253967, 1 )
+custom_colors/font_color_hover = Color( 0.296875, 0.280114, 0.253967, 1 )
+custom_colors/font_color_pressed = Color( 0.296875, 0.280114, 0.253967, 1 )
 toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
@@ -1288,9 +1193,15 @@ mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-custom_styles/normal = ExtResource( 19 )
-custom_fonts/font = ExtResource( 20 )
-custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_styles/hover = ExtResource( 13 )
+custom_styles/pressed = ExtResource( 14 )
+custom_styles/disabled = ExtResource( 15 )
+custom_styles/normal = ExtResource( 16 )
+custom_fonts/font = ExtResource( 2 )
+custom_colors/font_color_disabled = Color( 0.296875, 0.280114, 0.253967, 1 )
+custom_colors/font_color = Color( 0.296875, 0.280114, 0.253967, 1 )
+custom_colors/font_color_hover = Color( 0.296875, 0.280114, 0.253967, 1 )
+custom_colors/font_color_pressed = Color( 0.296875, 0.280114, 0.253967, 1 )
 toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
@@ -1317,9 +1228,15 @@ mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-custom_styles/normal = ExtResource( 19 )
-custom_fonts/font = ExtResource( 20 )
-custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_styles/hover = ExtResource( 13 )
+custom_styles/pressed = ExtResource( 14 )
+custom_styles/disabled = ExtResource( 15 )
+custom_styles/normal = ExtResource( 16 )
+custom_fonts/font = ExtResource( 2 )
+custom_colors/font_color_disabled = Color( 0.296875, 0.280114, 0.253967, 1 )
+custom_colors/font_color = Color( 0.296875, 0.280114, 0.253967, 1 )
+custom_colors/font_color_hover = Color( 0.296875, 0.280114, 0.253967, 1 )
+custom_colors/font_color_pressed = Color( 0.296875, 0.280114, 0.253967, 1 )
 toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
@@ -1346,9 +1263,15 @@ mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-custom_styles/normal = ExtResource( 19 )
-custom_fonts/font = ExtResource( 20 )
-custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_styles/hover = ExtResource( 13 )
+custom_styles/pressed = ExtResource( 14 )
+custom_styles/disabled = ExtResource( 15 )
+custom_styles/normal = ExtResource( 16 )
+custom_fonts/font = ExtResource( 2 )
+custom_colors/font_color_disabled = Color( 0.296875, 0.280114, 0.253967, 1 )
+custom_colors/font_color = Color( 0.296875, 0.280114, 0.253967, 1 )
+custom_colors/font_color_hover = Color( 0.296875, 0.280114, 0.253967, 1 )
+custom_colors/font_color_pressed = Color( 0.296875, 0.280114, 0.253967, 1 )
 toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
@@ -1375,9 +1298,15 @@ mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-custom_styles/normal = ExtResource( 19 )
-custom_fonts/font = ExtResource( 20 )
-custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_styles/hover = ExtResource( 13 )
+custom_styles/pressed = ExtResource( 14 )
+custom_styles/disabled = ExtResource( 15 )
+custom_styles/normal = ExtResource( 16 )
+custom_fonts/font = ExtResource( 2 )
+custom_colors/font_color_disabled = Color( 0.296875, 0.280114, 0.253967, 1 )
+custom_colors/font_color = Color( 0.296875, 0.280114, 0.253967, 1 )
+custom_colors/font_color_hover = Color( 0.296875, 0.280114, 0.253967, 1 )
+custom_colors/font_color_pressed = Color( 0.296875, 0.280114, 0.253967, 1 )
 toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
