@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=2]
+[gd_scene load_steps=23 format=2]
 
 [ext_resource path="res://uni0553-webfont.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://Sprites/UI.png" type="Texture" id=2]
@@ -6,11 +6,14 @@
 [ext_resource path="res://Sprites/Cursor.png" type="Texture" id=4]
 [ext_resource path="res://Sprites/PlayerShip.png" type="Texture" id=5]
 [ext_resource path="res://Sprites/MovementCone1.png" type="Texture" id=6]
-[ext_resource path="res://LevelManager.gd" type="Script" id=7]
-[ext_resource path="res://Enemies/EnemyManager.gd" type="Script" id=8]
-[ext_resource path="res://Shop.gd" type="Script" id=9]
-[ext_resource path="res://Styleboxflat.tres" type="StyleBox" id=10]
-[ext_resource path="res://Dynamicfont.tres" type="DynamicFont" id=11]
+[ext_resource path="res://Sprites/MovementCone2.png" type="Texture" id=7]
+[ext_resource path="res://Sprites/MovementCone3.png" type="Texture" id=8]
+[ext_resource path="res://Sprites/MovementCone4.png" type="Texture" id=9]
+[ext_resource path="res://LevelManager.gd" type="Script" id=10]
+[ext_resource path="res://Enemies/EnemyManager.gd" type="Script" id=11]
+[ext_resource path="res://Shop.gd" type="Script" id=12]
+[ext_resource path="res://Styleboxflat.tres" type="StyleBox" id=13]
+[ext_resource path="res://Dynamicfont.tres" type="DynamicFont" id=14]
 
 [sub_resource type="DynamicFont" id=1]
 
@@ -157,7 +160,7 @@ use_filter = false
 font_data = ExtResource( 1 )
 _sections_unfolded = [ "Extra Spacing", "Font", "Font/fallback", "Settings" ]
 
-[node name="Game" type="Node"]
+[node name="Game" type="Node" index="0"]
 
 [node name="BottomUI" type="Node" parent="." index="0"]
 
@@ -816,6 +819,7 @@ shape = SubResource( 7 )
 
 [node name="MovementArea1" type="Sprite" parent="Player" index="4"]
 
+editor/display_folded = true
 modulate = Color( 1, 1, 1, 0.0196078 )
 position = Vector2( -256, 0 )
 scale = Vector2( 8, 8 )
@@ -829,7 +833,6 @@ __meta__ = {
 
 [node name="Area2D" type="Area2D" parent="Player/MovementArea1" index="0"]
 
-editor/display_folded = true
 position = Vector2( 1.35852, -0.486641 )
 input_pickable = true
 gravity_vec = Vector2( 0, 1 )
@@ -847,15 +850,120 @@ _sections_unfolded = [ "Collision", "Pickable", "Transform" ]
 position = Vector2( 31.3324, 0 )
 scale = Vector2( 1.01957, 1 )
 build_mode = 0
-polygon = PoolVector2Array( -8.6189, -16.3982, -1.78764, -19.0931, 6.67311, -21.6, 30.6139, -21.5373, 30.6766, 21.2678, 7.04914, 21.2678, -7.36546, 17.3821, -19.3985, 11.3029, -24.475, 7.41721, -29.6141, 1.33802, -29.4261, -2.48499, -24.2243, -8.56419, -17.393, -12.2618 )
+polygon = PoolVector2Array( -8.15368, -16.3949, -0.681744, -19.314, 8.95498, -21.3076, 26.6223, -21.45, 30.463, -19.7412, 30.463, 21.9095, 26.8318, 23.4047, 9.65329, 23.6183, -6.89672, 18.2784, -19.3985, 11.3029, -24.475, 7.41721, -27.9858, 2.47252, -27.9159, -2.51133, -22.6786, -8.13597, -15.9748, -12.2654 )
+
+[node name="MovementArea2" type="Sprite" parent="Player" index="5"]
+
+editor/display_folded = true
+modulate = Color( 1, 1, 1, 0.0196078 )
+position = Vector2( -211.573, 0 )
+scale = Vector2( 8, 8 )
+texture = ExtResource( 7 )
+centered = false
+offset = Vector2( 0, -32 )
+_sections_unfolded = [ "Animation", "Offset", "Region", "Transform", "Visibility", "Z Index" ]
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Area2D" type="Area2D" parent="Player/MovementArea2" index="0"]
+
+position = Vector2( 1.35852, -0.486641 )
+input_pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+collision_layer = 524288
+collision_mask = 524288
+audio_bus_override = false
+audio_bus_name = "Master"
+_sections_unfolded = [ "Audio Bus", "Collision", "Pickable", "Transform", "Z Index" ]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Player/MovementArea2/Area2D" index="0"]
+
+position = Vector2( 31.3324, 0 )
+scale = Vector2( 1.01957, 1 )
+build_mode = 0
+polygon = PoolVector2Array( 1.97185, 23.9031, 9.86278, 15.0033, 17.0554, 10.0195, 30.7423, 3.54049, 30.7423, -2.44014, 17.4744, -8.99034, 11.3991, -13.6182, -1.51971, -27.1458, -6.47773, -31.3465, -19.2569, -31.6313, -26.3098, -19.5276, -31.6868, -4.57607, -31.8963, 5.17804, -28.1254, 16.4273, -19.3267, 32.162, -6.75706, 32.4468 )
+
+[node name="MovementArea3" type="Sprite" parent="Player" index="6"]
+
+editor/display_folded = true
+modulate = Color( 1, 1, 1, 0.0196078 )
+position = Vector2( -256, 0 )
+scale = Vector2( 8, 8 )
+texture = ExtResource( 8 )
+centered = false
+offset = Vector2( 0, -32 )
+_sections_unfolded = [ "Animation", "Offset", "Region", "Transform", "Visibility", "Z Index" ]
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Area2D" type="Area2D" parent="Player/MovementArea3" index="0"]
+
+position = Vector2( 1.35852, -0.486641 )
+input_pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+collision_layer = 524288
+collision_mask = 524288
+audio_bus_override = false
+audio_bus_name = "Master"
+_sections_unfolded = [ "Audio Bus", "Collision", "Pickable", "Transform", "Z Index" ]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Player/MovementArea3/Area2D" index="0"]
+
+position = Vector2( 31.3324, 0 )
+scale = Vector2( 1.01957, 1 )
+build_mode = 0
+polygon = PoolVector2Array( -14.7178, -13.9742, -10.6676, -18.8868, -7.38554, -29.2817, -5.5001, -31.3465, 3.29864, -31.5601, 6.30138, -27.6442, 11.6784, -17.6053, 14.9605, -15.3981, 20.547, -13.9742, 25.7843, -12.835, 28.7172, -10.2007, 29.625, -7.21039, 29.4854, 8.45314, 28.9267, 11.1586, 26.9016, 13.3658, 23.6195, 14.2914, 14.6811, 16.3561, 11.2594, 18.5632, 8.74548, 24.7574, 3.22881, 32.6604, -5.5001, 32.3756, -7.45537, 30.3109, -11.2961, 19.2752, -12.4134, 16.7121, -15.2765, 14.5049, -23.3769, 14.2914, -27.0081, 12.4402, -29.0332, 8.38194, -29.1031, -7.70878, -27.0081, -11.4823, -22.9579, -13.6182 )
+
+[node name="MovementArea4" type="Sprite" parent="Player" index="7"]
+
+editor/display_folded = true
+modulate = Color( 1, 1, 1, 0.0196078 )
+position = Vector2( -235.495, 0 )
+scale = Vector2( 8, 8 )
+texture = ExtResource( 9 )
+centered = false
+offset = Vector2( 0, -32 )
+_sections_unfolded = [ "Animation", "Offset", "Region", "Transform", "Visibility", "Z Index" ]
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Area2D" type="Area2D" parent="Player/MovementArea4" index="0"]
+
+position = Vector2( 1.35852, -0.486641 )
+input_pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+collision_layer = 524288
+collision_mask = 524288
+audio_bus_override = false
+audio_bus_name = "Master"
+_sections_unfolded = [ "Audio Bus", "Collision", "Pickable", "Transform", "Z Index" ]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Player/MovementArea4/Area2D" index="0"]
+
+position = Vector2( 31.3324, 0 )
+scale = Vector2( 1.01957, 1 )
+build_mode = 0
+polygon = PoolVector2Array( -0.402412, -24.5827, 6.02206, -24.3691, 10.2119, -22.5179, 14.8208, -16.6797, 19.709, -5.57284, 19.6392, 6.3172, 15.7984, 15.5729, 10.9102, 22.4079, 5.8824, 25.3982, -0.472252, 25.3982, -17.3714, 14.3625, -30.9885, 1.19095, -31.1282, -0.233006, -17.4412, -13.3334 )
 
 [node name="LevelManager" type="Node" parent="." index="2"]
 
-script = ExtResource( 7 )
+script = ExtResource( 10 )
 
 [node name="EnemyManager" type="Node" parent="." index="3"]
 
-script = ExtResource( 8 )
+script = ExtResource( 11 )
 
 [node name="Shop" type="Control" parent="." index="4"]
 
@@ -871,7 +979,7 @@ mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-script = ExtResource( 9 )
+script = ExtResource( 12 )
 __meta__ = {
 "_edit_group_": true
 }
@@ -892,7 +1000,7 @@ mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-custom_styles/normal = ExtResource( 10 )
+custom_styles/normal = ExtResource( 13 )
 custom_fonts/normal_font = SubResource( 8 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 bbcode_enabled = false
@@ -924,7 +1032,7 @@ mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-custom_styles/normal = ExtResource( 10 )
+custom_styles/normal = ExtResource( 13 )
 custom_fonts/normal_font = SubResource( 8 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 bbcode_enabled = false
@@ -956,7 +1064,7 @@ mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-custom_styles/normal = ExtResource( 10 )
+custom_styles/normal = ExtResource( 13 )
 custom_fonts/normal_font = SubResource( 8 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 bbcode_enabled = false
@@ -989,8 +1097,8 @@ mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-custom_styles/normal = ExtResource( 10 )
-custom_fonts/font = ExtResource( 11 )
+custom_styles/normal = ExtResource( 13 )
+custom_fonts/font = ExtResource( 14 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 toggle_mode = false
 enabled_focus_mode = 2
@@ -1018,8 +1126,8 @@ mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-custom_styles/normal = ExtResource( 10 )
-custom_fonts/font = ExtResource( 11 )
+custom_styles/normal = ExtResource( 13 )
+custom_fonts/font = ExtResource( 14 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 toggle_mode = false
 enabled_focus_mode = 2
@@ -1047,8 +1155,8 @@ mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-custom_styles/normal = ExtResource( 10 )
-custom_fonts/font = ExtResource( 11 )
+custom_styles/normal = ExtResource( 13 )
+custom_fonts/font = ExtResource( 14 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 toggle_mode = false
 enabled_focus_mode = 2
@@ -1076,8 +1184,8 @@ mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-custom_styles/normal = ExtResource( 10 )
-custom_fonts/font = ExtResource( 11 )
+custom_styles/normal = ExtResource( 13 )
+custom_fonts/font = ExtResource( 14 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 toggle_mode = false
 enabled_focus_mode = 2
@@ -1097,6 +1205,12 @@ _sections_unfolded = [ "custom_colors", "custom_constants", "custom_fonts", "cus
 [connection signal="pressed" from="Player/ActionUI/Button4" to="Player" method="_on_Button4_pressed"]
 
 [connection signal="input_event" from="Player/MovementArea1/Area2D" to="Player" method="_on_Area2D_input_event"]
+
+[connection signal="input_event" from="Player/MovementArea2/Area2D" to="Player" method="_on_Area2D_input_event"]
+
+[connection signal="input_event" from="Player/MovementArea3/Area2D" to="Player" method="_on_Area2D_input_event"]
+
+[connection signal="input_event" from="Player/MovementArea4/Area2D" to="Player" method="_on_Area2D_input_event"]
 
 [connection signal="pressed" from="Shop/ShopItem1Buy" to="Shop" method="_on_ShopItem1Buy_pressed"]
 

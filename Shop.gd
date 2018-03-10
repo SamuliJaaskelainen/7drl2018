@@ -8,14 +8,14 @@ var corePrices = [1,2,3,4,5]
 var structurePrices = [1,2,3]
 var hullPrices = [1,2,3]
 var enginePrices = [1,2,3]
-var thrusterPrices = [1,2,3]
+var thrusterPrices = [1,2,3,4]
 var gunPrices = [1,2,3,4,5,6,7]
 
 var coreTexts = ["Shield","Probe","Teleport","Damage boost","Bomb"]
 var structureTexts = ["Small","Medium","Large"]
 var hullTexts = ["Light","Medium","Heavy"]
 var engineTexts = ["Slow","Medium","Fast"]
-var thrusterTexts = ["Agile","Balanced","Fast"]
+var thrusterTexts = ["Agile","Wide","Experimental", "Balanded"]
 var gunTexts = ["Single shot","Laser","Rail shot","Spread shot","Blow","Ground bomb","Charge"]
 
 var player 
@@ -94,6 +94,8 @@ func addItem(shopItem, shopItemBuy):
 			shopItemBuy.text += str(gunPrices[item])
 	shopItemBuy.text += "]"
 	
+	shopItem.visible = true
+	shopItemBuy.visible = true
 	
 func hide():
 	visible = false

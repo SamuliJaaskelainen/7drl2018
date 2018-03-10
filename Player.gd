@@ -28,8 +28,9 @@ enum ENGINE{
 
 enum THRUSTER{
   	agile,
-	balanced,
-	fast
+	wide,
+	experimental,
+	balanced
 }
 
 enum GUN{
@@ -50,8 +51,8 @@ var maxPowers = [100,100,100,100,100]
 var structureNames = ["Small", "Medium", "Large"]
 var hullNames = ["Light", "Medium", "Heavy"]
 var engineNames = ["Slow", "Medium", "Fast"]
-var thrusterNames = ["Agile", "Balanced", "Fast"]
-var movementScales = [0.75,1,1.25]
+var thrusterNames = ["Agile", "Wide", "Experimental", "Balanced"]
+var movementScales = [0.9,1,1.1]
 var start_movement_scale
 var armorValues = [80,100,120]
 
@@ -74,11 +75,11 @@ var powerPerTurn = 5
 
 var core = CORE.teleport
 var structure = STRUCTURE.medium
-var hull = HULL.medium
-var engine = ENGINE.fast
+var hull = HULL.light
+var engine = ENGINE.slow
 var thruster = THRUSTER.balanced
 var gun1 = GUN.singleShot
-var gun2 = GUN.chargeShot
+var gun2 = GUN.laser
 
 var currentMovementArea
 var movementAreas
@@ -116,9 +117,8 @@ func _ready():
 	Input.set_mouse_mode(Input.MOUSE_MODE_HIDDEN)
 	resolution.x = ProjectSettings.get_setting("display/window/size/width")
 	resolution.y = ProjectSettings.get_setting("display/window/size/height")
-	movementAreas = [$MovementArea1, $MovementArea1, $MovementArea1]
-	currentMovementArea = $MovementArea1
-	start_movement_scale = currentMovementArea.scale.x
+	movementAreas = [$MovementArea1, $MovementArea2, $MovementArea3, $MovementArea4]
+	start_movement_scale = $MovementArea1.scale.x
 	update_gear()
 	currentArmor = maxArmor
 	update_gear_values()
@@ -219,7 +219,8 @@ func go():
 func update_gear():
 	
 	# Movement area
-	currentMovementArea.hide()
+	for m in movementAreas: 
+		m.hide()
 	currentMovementArea = movementAreas[thruster]
 	currentMovementArea.scale = Vector2(start_movement_scale * movementScales[engine], currentMovementArea.scale.y)
 	currentMovementArea.show()
