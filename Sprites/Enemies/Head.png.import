@@ -7,10 +7,10 @@ path="res://.import/Head.png-e649119f946eeefdee902ecfff61c17c.stex"
 [deps]
 
 source_file="res://Sprites/Enemies/Head.png"
-source_md5="563ea76850e0895ca655ec215c4685e1"
+source_md5="6e9412e370c34ada2e487f47e428d25a"
 
 dest_files=[ "res://.import/Head.png-e649119f946eeefdee902ecfff61c17c.stex" ]
-dest_md5="2f7091faefb613272a31bc022f44959f"
+dest_md5="612552d41dc319ae733caaa8be7f6fd8"
 
 [params]
 

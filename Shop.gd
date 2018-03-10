@@ -97,10 +97,10 @@ func addItem(shopItem, shopItemBuy, rType):
 			shopItemBuy.text += str(thrusterPrices[item])
 			itemPrices.append(thrusterPrices[item])
 		player.GUN:
-			shopItemBuy.text = "BUY SLOT1 ["
+			shopItemBuy.text = "BUY Gun1 ["
 			shopItemBuy.text += str(gunPrices[item])
 			itemPrices.append(gunPrices[item])
-			$ShopItem4BuySlot2.text = "BUY SLOT2 ["
+			$ShopItem4BuySlot2.text = "BUY Gun2 ["
 			$ShopItem4BuySlot2.text += str(gunPrices[item])
 			$ShopItem4BuySlot2.text += "]"
 			$ShopItem4BuySlot2.visible = true
