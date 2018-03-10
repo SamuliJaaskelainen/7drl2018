@@ -16,10 +16,15 @@ var piece3 = preload("res://LevelPieces/LevelPiece3.tscn")
 var piece4 = preload("res://LevelPieces/LevelPiece4.tscn")
 var piece5 = preload("res://LevelPieces/LevelPiece5.tscn")
 var piece6 = preload("res://LevelPieces/LevelPiece6.tscn")
-var piece7 = preload("res://LevelPieces/LevelPiece7.tscn")
+#var piece7 = preload("res://LevelPieces/LevelPiece7.tscn")
 var piece8 = preload("res://LevelPieces/LevelPiece8.tscn")
 var piece9 = preload("res://LevelPieces/LevelPiece9.tscn")
 var piece10 = preload("res://LevelPieces/LevelPiece10.tscn")
+var piece11 = preload("res://LevelPieces/LevelPiece11.tscn")
+var piece12 = preload("res://LevelPieces/LevelPiece12.tscn")
+var piece13 = preload("res://LevelPieces/LevelPiece13.tscn")
+var piece14 = preload("res://LevelPieces/LevelPiece14.tscn")
+
 
 func _ready():
 	# Here add pieces that you want to use to levelPieces list
@@ -31,8 +36,14 @@ func _ready():
 	levelPieces.append(piece4)
 	levelPieces.append(piece5)
 	levelPieces.append(piece6)
-	levelPieces.append(piece7)
+	#levelPieces.append(piece7)
 	levelPieces.append(piece8)
+	levelPieces.append(piece9)
+	levelPieces.append(piece10)
+	levelPieces.append(piece11)
+	levelPieces.append(piece12)
+	levelPieces.append(piece13)
+	levelPieces.append(piece14)
 	
 	# Once all pieces are added we generate initial level
 	generateLevel()
