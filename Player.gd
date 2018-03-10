@@ -46,7 +46,7 @@ enum GUN{
 var coreAbilityNames = ["Shield", "Teleport", "DamageBoost", "Bomb"]
 var corePowers = [90,50,30,60]
 var gunNames = ["Single Shot", "Laser", "Rail Gun", "Spread Shot", "Blow", "Ground Bomb", "Charge Shot"]
-var gunPowers = [5,20,40,50,10,15,30]
+var gunPowers = [5,20,40,50,15,25,30]
 var maxPowers = [100,100,100,100,100]
 var structureNames = ["Rounded", "Pipe", "Large", "Multi"]
 var hullNames = ["Light", "Medium", "Heavy"]
