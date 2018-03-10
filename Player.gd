@@ -79,7 +79,7 @@ var hull = HULL.light
 var engine = ENGINE.slow
 var thruster = THRUSTER.balanced
 var gun1 = GUN.singleShot
-var gun2 = GUN.laser
+var gun2 = GUN.railGun
 
 var currentMovementArea
 var movementAreas
