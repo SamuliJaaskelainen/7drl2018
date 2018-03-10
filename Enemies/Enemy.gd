@@ -63,7 +63,7 @@ func shootAt(shootTarget):
 		var bullet = bulletScene.instance()
 		enemyManager.add_child(bullet)
 		enemyManager.enemyBullets.append(bullet)
-		var bulletPos = global_position - Vector2(16, 0)
+		var bulletPos = global_position - Vector2(8, 0)
 		bullet.global_position = bulletPos
 		
 		var shootDir = shootTarget - global_position
