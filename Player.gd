@@ -277,7 +277,6 @@ func update_gear_values():
 		_set_action_button($ActionUI/Button3, tempStr, true)
 		_set_action_button($ActionUI/Button4, "4) Only move", charge_turns > 3)
 	else:
-		# ActionUI
 		tempStr = tempStr % [gunNames[gun1], gunPowers[gun1]]
 		_set_action_button($ActionUI/Button1, tempStr, currentPower < gunPowers[gun1])
 		tempStr = "2) %s [-%s]"
@@ -316,6 +315,7 @@ func base_action():
 	
 	if charge:
 		charge_turns += 1
+		audioManager.PlayAudio("gun_prepare_charge")
 	
 	for b in shotBullets:
 		b.startMove()
@@ -344,20 +344,25 @@ func _on_Button3_pressed():
 			oldPos = targetPos
 			global_position = targetPos	
 		CORE.bomb:
+			audioManager.PlayAudio("player_big_screen_explosion")
 			for e in enemyManager.enemies:
 				e.hit(10)
 			for b in enemyManager.enemyBullets:
 				b.queue_free()
 				enemyManager.enemyBullets.erase(b)
 		CORE.shield:
+			audioManager.PlayAudio("player_create_energy_shield")
 			$Shield.show()
 		CORE.damageBoost:
+			audioManager.PlayAudio("player_boost_guns")
 			damageBoost = 1.5
 
 func _on_Button4_pressed():
+	audioManager.PlayAudio("player_ship_moves")
 	base_action()
 
 func skip_turn():
+	audioManager.PlayAudio("player_ship_moves")
 	oldPos = global_position
 	targetPos = global_position
 	base_action();
@@ -383,7 +388,6 @@ func shoot(gunBullet, gun):
 	elif (gun == GUN.chargeShot):
 		if charge_turns <= 0:
 			charge = true
-			audioManager.PlayAudio("gun_prepare_charge")
 		else:
 			charge = false
 			audioManager.PlayAudio("gun_shoot_charge")
@@ -393,8 +397,12 @@ func shoot(gunBullet, gun):
 			bullet.startMove()
 	elif (gun == GUN.railGun):
 		audioManager.PlayAudio("gun_shoot_rail_gun")
+		createBullet(gunBullet)
 	elif (gun == GUN.laser):
 		audioManager.PlayAudio("gun_shoot_laser")
+		createBullet(gunBullet)
+	elif (gun == GUN.blow):
+		audioManager.PlayAudio("gun_shoot_blow")
 		createBullet(gunBullet)
 	else:
 		createBullet(gunBullet)

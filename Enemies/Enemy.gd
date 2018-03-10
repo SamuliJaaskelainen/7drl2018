@@ -40,6 +40,9 @@ func hit(damageAmount):
 	health -= damageAmount
 	if health <= 0:
 		killMe = true
+		$"/root/Game/AudioManager".PlayAudio("hit_bullet_hits_enemy")
+	else:
+		$"/root/Game/AudioManager".PlayAudio("hit_enemy_dies")
 
 func canBeDestroyed():
 	return killMe
@@ -59,6 +62,7 @@ func move(moveProgressPercentage):
 func shootAt(shootTarget):
 	shootTurnCounter += 1
 	if shootTurnCounter >= shootingTurnInterval:
+		$"/root/Game/AudioManager".PlayAudio("gun_single_shot")
 		shootTurnCounter = 0
 		var bullet = bulletScene.instance()
 		enemyManager.add_child(bullet)

@@ -1,4 +1,4 @@
-[gd_scene load_steps=53 format=2]
+[gd_scene load_steps=57 format=2]
 
 [ext_resource path="res://Sprites/Sky.png" type="Texture" id=1]
 [ext_resource path="res://Dynamicfont.tres" type="DynamicFont" id=2]
@@ -28,23 +28,27 @@
 [ext_resource path="res://Audio/gun_drop_bomb.wav" type="AudioStream" id=26]
 [ext_resource path="res://Audio/gun_prepare_charge.wav" type="AudioStream" id=27]
 [ext_resource path="res://Audio/gun_shoot_charge.wav" type="AudioStream" id=28]
-[ext_resource path="res://Audio/gun_shoot_laser.wav" type="AudioStream" id=29]
-[ext_resource path="res://Audio/gun_shoot_rail_gun.wav" type="AudioStream" id=30]
-[ext_resource path="res://Audio/gun_single_shot.wav" type="AudioStream" id=31]
-[ext_resource path="res://Audio/gun_spread_shot.wav" type="AudioStream" id=32]
-[ext_resource path="res://Audio/hit_bullet_hits_enemy.wav" type="AudioStream" id=33]
-[ext_resource path="res://Audio/hit_bullet_hits_ground.wav" type="AudioStream" id=34]
-[ext_resource path="res://Audio/hit_enemy_dies.wav" type="AudioStream" id=35]
-[ext_resource path="res://Audio/hit_explosion.wav" type="AudioStream" id=36]
-[ext_resource path="res://Audio/player_send_probe.wav" type="AudioStream" id=37]
-[ext_resource path="res://Audio/player_ship_explodes.wav" type="AudioStream" id=38]
-[ext_resource path="res://Audio/player_ship_moves.wav" type="AudioStream" id=39]
-[ext_resource path="res://Audio/player_ship_takes_damage.wav" type="AudioStream" id=40]
-[ext_resource path="res://Audio/player_teleport.wav" type="AudioStream" id=41]
-[ext_resource path="res://Audio/ui_buy_from_shop.wav" type="AudioStream" id=42]
-[ext_resource path="res://Audio/ui_open_action_menu.wav" type="AudioStream" id=43]
-[ext_resource path="res://Audio/ui_select_from_action_menu.wav" type="AudioStream" id=44]
-[ext_resource path="res://Audio/ui_shop_opens.wav" type="AudioStream" id=45]
+[ext_resource path="res://Audio/gun_shoot_blow.wav" type="AudioStream" id=29]
+[ext_resource path="res://Audio/gun_shoot_laser.wav" type="AudioStream" id=30]
+[ext_resource path="res://Audio/gun_shoot_rail_gun.wav" type="AudioStream" id=31]
+[ext_resource path="res://Audio/gun_single_shot.wav" type="AudioStream" id=32]
+[ext_resource path="res://Audio/gun_spread_shot.wav" type="AudioStream" id=33]
+[ext_resource path="res://Audio/hit_bullet_hits_enemy.wav" type="AudioStream" id=34]
+[ext_resource path="res://Audio/hit_bullet_hits_ground.wav" type="AudioStream" id=35]
+[ext_resource path="res://Audio/hit_enemy_dies.wav" type="AudioStream" id=36]
+[ext_resource path="res://Audio/hit_explosion.wav" type="AudioStream" id=37]
+[ext_resource path="res://Audio/player_send_probe.wav" type="AudioStream" id=38]
+[ext_resource path="res://Audio/player_boost_guns.wav" type="AudioStream" id=39]
+[ext_resource path="res://Audio/player_create_energy_shield.wav" type="AudioStream" id=40]
+[ext_resource path="res://Audio/player_big_screen_explosion.wav" type="AudioStream" id=41]
+[ext_resource path="res://Audio/player_ship_explodes.wav" type="AudioStream" id=42]
+[ext_resource path="res://Audio/player_ship_moves.wav" type="AudioStream" id=43]
+[ext_resource path="res://Audio/player_ship_takes_damage.wav" type="AudioStream" id=44]
+[ext_resource path="res://Audio/player_teleport.wav" type="AudioStream" id=45]
+[ext_resource path="res://Audio/ui_buy_from_shop.wav" type="AudioStream" id=46]
+[ext_resource path="res://Audio/ui_open_action_menu.wav" type="AudioStream" id=47]
+[ext_resource path="res://Audio/ui_select_from_action_menu.wav" type="AudioStream" id=48]
+[ext_resource path="res://Audio/ui_shop_opens.wav" type="AudioStream" id=49]
 
 [sub_resource type="DynamicFont" id=1]
 
@@ -1375,7 +1379,7 @@ autoplay = false
 mix_target = 0
 bus = "Master"
 
-[node name="gun_shoot_laser" type="AudioStreamPlayer" parent="AudioManager" index="3"]
+[node name="gun_shoot_blow" type="AudioStreamPlayer" parent="AudioManager" index="3"]
 
 stream = ExtResource( 29 )
 volume_db = 0.0
@@ -1383,7 +1387,7 @@ autoplay = false
 mix_target = 0
 bus = "Master"
 
-[node name="gun_shoot_rail_gun" type="AudioStreamPlayer" parent="AudioManager" index="4"]
+[node name="gun_shoot_laser" type="AudioStreamPlayer" parent="AudioManager" index="4"]
 
 stream = ExtResource( 30 )
 volume_db = 0.0
@@ -1391,7 +1395,7 @@ autoplay = false
 mix_target = 0
 bus = "Master"
 
-[node name="gun_single_shot" type="AudioStreamPlayer" parent="AudioManager" index="5"]
+[node name="gun_shoot_rail_gun" type="AudioStreamPlayer" parent="AudioManager" index="5"]
 
 stream = ExtResource( 31 )
 volume_db = 0.0
@@ -1399,7 +1403,7 @@ autoplay = false
 mix_target = 0
 bus = "Master"
 
-[node name="gun_spread_shot" type="AudioStreamPlayer" parent="AudioManager" index="6"]
+[node name="gun_single_shot" type="AudioStreamPlayer" parent="AudioManager" index="6"]
 
 stream = ExtResource( 32 )
 volume_db = 0.0
@@ -1407,7 +1411,7 @@ autoplay = false
 mix_target = 0
 bus = "Master"
 
-[node name="hit_bullet_hits_enemy" type="AudioStreamPlayer" parent="AudioManager" index="7"]
+[node name="gun_spread_shot" type="AudioStreamPlayer" parent="AudioManager" index="7"]
 
 stream = ExtResource( 33 )
 volume_db = 0.0
@@ -1415,7 +1419,7 @@ autoplay = false
 mix_target = 0
 bus = "Master"
 
-[node name="hit_bullet_hits_ground" type="AudioStreamPlayer" parent="AudioManager" index="8"]
+[node name="hit_bullet_hits_enemy" type="AudioStreamPlayer" parent="AudioManager" index="8"]
 
 stream = ExtResource( 34 )
 volume_db = 0.0
@@ -1423,7 +1427,7 @@ autoplay = false
 mix_target = 0
 bus = "Master"
 
-[node name="hit_enemy_dies" type="AudioStreamPlayer" parent="AudioManager" index="9"]
+[node name="hit_bullet_hits_ground" type="AudioStreamPlayer" parent="AudioManager" index="9"]
 
 stream = ExtResource( 35 )
 volume_db = 0.0
@@ -1431,7 +1435,7 @@ autoplay = false
 mix_target = 0
 bus = "Master"
 
-[node name="hit_explosion" type="AudioStreamPlayer" parent="AudioManager" index="10"]
+[node name="hit_enemy_dies" type="AudioStreamPlayer" parent="AudioManager" index="10"]
 
 stream = ExtResource( 36 )
 volume_db = 0.0
@@ -1439,7 +1443,7 @@ autoplay = false
 mix_target = 0
 bus = "Master"
 
-[node name="player_send_probe" type="AudioStreamPlayer" parent="AudioManager" index="11"]
+[node name="hit_explosion" type="AudioStreamPlayer" parent="AudioManager" index="11"]
 
 stream = ExtResource( 37 )
 volume_db = 0.0
@@ -1447,7 +1451,7 @@ autoplay = false
 mix_target = 0
 bus = "Master"
 
-[node name="player_explodes" type="AudioStreamPlayer" parent="AudioManager" index="12"]
+[node name="player_send_probe" type="AudioStreamPlayer" parent="AudioManager" index="12"]
 
 stream = ExtResource( 38 )
 volume_db = 0.0
@@ -1455,7 +1459,7 @@ autoplay = false
 mix_target = 0
 bus = "Master"
 
-[node name="player_ship_moves" type="AudioStreamPlayer" parent="AudioManager" index="13"]
+[node name="player_boost_guns" type="AudioStreamPlayer" parent="AudioManager" index="13"]
 
 stream = ExtResource( 39 )
 volume_db = 0.0
@@ -1463,7 +1467,7 @@ autoplay = false
 mix_target = 0
 bus = "Master"
 
-[node name="player_ship_takes_damage" type="AudioStreamPlayer" parent="AudioManager" index="14"]
+[node name="player_create_energy_shield" type="AudioStreamPlayer" parent="AudioManager" index="14"]
 
 stream = ExtResource( 40 )
 volume_db = 0.0
@@ -1471,7 +1475,7 @@ autoplay = false
 mix_target = 0
 bus = "Master"
 
-[node name="player_teleport" type="AudioStreamPlayer" parent="AudioManager" index="15"]
+[node name="player_big_screen_explosion" type="AudioStreamPlayer" parent="AudioManager" index="15"]
 
 stream = ExtResource( 41 )
 volume_db = 0.0
@@ -1479,7 +1483,7 @@ autoplay = false
 mix_target = 0
 bus = "Master"
 
-[node name="ui_buy_from_shop" type="AudioStreamPlayer" parent="AudioManager" index="16"]
+[node name="player_explodes" type="AudioStreamPlayer" parent="AudioManager" index="16"]
 
 stream = ExtResource( 42 )
 volume_db = 0.0
@@ -1487,7 +1491,7 @@ autoplay = false
 mix_target = 0
 bus = "Master"
 
-[node name="ui_open_action_menu" type="AudioStreamPlayer" parent="AudioManager" index="17"]
+[node name="player_ship_moves" type="AudioStreamPlayer" parent="AudioManager" index="17"]
 
 stream = ExtResource( 43 )
 volume_db = 0.0
@@ -1495,7 +1499,7 @@ autoplay = false
 mix_target = 0
 bus = "Master"
 
-[node name="ui_select_action_from_action_menu" type="AudioStreamPlayer" parent="AudioManager" index="18"]
+[node name="player_ship_takes_damage" type="AudioStreamPlayer" parent="AudioManager" index="18"]
 
 stream = ExtResource( 44 )
 volume_db = 0.0
@@ -1503,9 +1507,41 @@ autoplay = false
 mix_target = 0
 bus = "Master"
 
-[node name="ui_shop_opens" type="AudioStreamPlayer" parent="AudioManager" index="19"]
+[node name="player_teleport" type="AudioStreamPlayer" parent="AudioManager" index="19"]
 
 stream = ExtResource( 45 )
+volume_db = 0.0
+autoplay = false
+mix_target = 0
+bus = "Master"
+
+[node name="ui_buy_from_shop" type="AudioStreamPlayer" parent="AudioManager" index="20"]
+
+stream = ExtResource( 46 )
+volume_db = 0.0
+autoplay = false
+mix_target = 0
+bus = "Master"
+
+[node name="ui_open_action_menu" type="AudioStreamPlayer" parent="AudioManager" index="21"]
+
+stream = ExtResource( 47 )
+volume_db = 0.0
+autoplay = false
+mix_target = 0
+bus = "Master"
+
+[node name="ui_select_action_from_action_menu" type="AudioStreamPlayer" parent="AudioManager" index="22"]
+
+stream = ExtResource( 48 )
+volume_db = 0.0
+autoplay = false
+mix_target = 0
+bus = "Master"
+
+[node name="ui_shop_opens" type="AudioStreamPlayer" parent="AudioManager" index="23"]
+
+stream = ExtResource( 49 )
 volume_db = 0.0
 autoplay = false
 mix_target = 0
