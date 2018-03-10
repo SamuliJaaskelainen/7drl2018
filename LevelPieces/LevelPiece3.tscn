@@ -66,28 +66,28 @@ spawnValue = 0.5
 
 [node name="SpawnEnemy" type="Position2D" parent="Wave1" index="0"]
 
-position = Vector2( 189.781, 44.4552 )
+position = Vector2( -78.2373, -50.6481 )
 script = ExtResource( 4 )
 enemyId = 3
 spawnValue = 0.8
 
 [node name="SpawnEnemy2" type="Position2D" parent="Wave1" index="1"]
 
-position = Vector2( 221.122, 67.6907 )
+position = Vector2( -46.3559, -31.1951 )
 script = ExtResource( 4 )
 enemyId = 3
 spawnValue = 0.8
 
 [node name="SpawnEnemy3" type="Position2D" parent="Wave1" index="2"]
 
-position = Vector2( 251.923, 90.9261 )
+position = Vector2( -15.0146, -31.7355 )
 script = ExtResource( 4 )
 enemyId = 3
 spawnValue = 0.8
 
 [node name="SpawnEnemy4" type="Position2D" parent="Wave1" index="3"]
 
-position = Vector2( 288.667, 63.3678 )
+position = Vector2( 11.4626, -56.592 )
 script = ExtResource( 4 )
 enemyId = 3
 spawnValue = 0.5
@@ -126,7 +126,7 @@ spawnValue = 0.8
 
 [node name="Wave3" type="Position2D" parent="." index="6"]
 
-position = Vector2( -271.26, -146.978 )
+position = Vector2( -272.341, -148.059 )
 
 [node name="SpawnEnemy2" type="Position2D" parent="Wave3" index="0"]
 
