@@ -11,7 +11,7 @@
 custom_solver_bias = 0.0
 extents = Vector2( 32, 10 )
 
-[node name="LevelPiece1" type="KinematicBody2D"]
+[node name="LevelPiece1" type="KinematicBody2D" index="0"]
 
 position = Vector2( 256, 128 )
 input_pickable = false
@@ -147,6 +147,7 @@ spawnValue = 0.99
 
 [node name="SpawnEnemy12" type="Position2D" parent="." index="15"]
 
+editor/display_folded = true
 position = Vector2( -152, 64 )
 script = ExtResource( 4 )
 enemyId = 3
@@ -159,7 +160,22 @@ wait_time = 1.0
 one_shot = false
 autostart = false
 
-[node name="Sprite" type="Sprite" parent="." index="16"]
+[node name="SpawnEnemy13" type="Position2D" parent="." index="16"]
+
+editor/display_folded = true
+position = Vector2( -128, 0 )
+script = ExtResource( 4 )
+enemyId = 4
+spawnValue = 0.99
+
+[node name="Timer" type="Timer" parent="SpawnEnemy13" index="0"]
+
+process_mode = 1
+wait_time = 1.0
+one_shot = false
+autostart = false
+
+[node name="Sprite" type="Sprite" parent="." index="17"]
 
 position = Vector2( -64, -80 )
 z_index = -4

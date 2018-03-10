@@ -1,8 +1,8 @@
 extends KinematicBody2D
 
 # include
-export(String, FILE, "*.tscn") var bulletSceneFile = "res://Enemies/EnemyShot.tscn"
-var bulletScene = load(bulletSceneFile)
+var bulletSceneFile = "res://Enemies/EnemyShot.tscn"
+var bulletScene
 
 export(int) var shootingTurnInterval = 1
 
@@ -21,6 +21,7 @@ var shootTurnCounter = 0
 var enemyManager
 
 func _ready():
+	bulletScene = load(bulletSceneFile)
 	lastPos = global_position
 	enemyManager = get_parent()
 

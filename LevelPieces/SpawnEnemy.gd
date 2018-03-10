@@ -7,6 +7,7 @@ var enemy1 = preload("res://Enemies/Enemy.tscn")
 var enemy2 = preload("res://Enemies/EnemyMine.tscn")
 var enemy3 = preload("res://Enemies/EnemyHead.tscn")
 var enemy4 = preload("res://Enemies/EnemyFish.tscn")
+var enemy5 = preload("res://Enemies/EnemySauna.tscn")
 var timer
 
 #func _ready():
@@ -16,6 +17,7 @@ func _notification(what):
 		enemyAssets.append(enemy2)
 		enemyAssets.append(enemy3)
 		enemyAssets.append(enemy4)
+		enemyAssets.append(enemy5)
 		timer = Timer.new() 
 		timer.connect("timeout",self,"_tryInit") 
 		timer.wait_time = 0.1
