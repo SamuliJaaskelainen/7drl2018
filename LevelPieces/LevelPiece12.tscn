@@ -1,0 +1,214 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://LevelPiece.gd" type="Script" id=1]
+[ext_resource path="res://TerrainAutoTile.tres" type="TileSet" id=2]
+[ext_resource path="res://LevelPieces/SpawnPickup.gd" type="Script" id=3]
+[ext_resource path="res://LevelPieces/SpawnEnemy.gd" type="Script" id=4]
+[ext_resource path="res://Sprites/Shop.png" type="Texture" id=5]
+
+[sub_resource type="RectangleShape2D" id=1]
+
+custom_solver_bias = 0.0
+extents = Vector2( 32, 10 )
+
+[node name="LevelPiece8" type="KinematicBody2D" index="0"]
+
+position = Vector2( 256, 128 )
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+collision/safe_margin = 0.08
+script = ExtResource( 1 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="TileMap2" type="TileMap" parent="." index="0"]
+
+z_index = -2
+z_as_relative = false
+mode = 0
+tile_set = ExtResource( 2 )
+cell_size = Vector2( 16, 16 )
+cell_quadrant_size = 16
+cell_custom_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+cell_half_offset = 2
+cell_tile_origin = 0
+cell_y_sort = false
+cell_clip_uv = false
+collision_use_kinematic = false
+collision_friction = 1.0
+collision_bounce = 0.0
+collision_layer = 1
+collision_mask = 1
+occluder_light_mask = 1
+format = 1
+tile_data = PoolIntArray( -524304, 0, 1, -524303, 0, 65536, -524302, 0, 65536, -524301, 0, 9, -524300, 0, 196609, -524299, 0, 196609, -524298, 0, 196609, -524297, 0, 196609, -524296, 0, 196609, -524295, 0, 196609, -524294, 0, 196609, -524293, 0, 196609, -524292, 0, 196609, -524291, 0, 196609, -524290, 0, 196609, -524289, 0, 196609, -589824, 0, 196609, -589823, 0, 196609, -589822, 0, 196609, -589821, 0, 196609, -589820, 0, 196609, -589819, 0, 196609, -589818, 0, 196609, -589817, 0, 196609, -589816, 0, 196609, -589815, 0, 10, -589814, 0, 65536, -589813, 0, 65536, -589812, 0, 65536, -589811, 0, 65536, -589810, 0, 65536, -589809, 0, 2, -458768, 0, 65537, -458767, 0, 196618, -458766, 0, 131072, -458765, 0, 65545, -524279, 0, 65537, -524278, 0, 196618, -524277, 0, 131072, -524276, 0, 131072, -524275, 0, 196618, -524274, 0, 131072, -524273, 0, 65545, -393231, 0, 65541, -393229, 0, 131077, -458742, 0, 131077, -458739, 0, 65541, -458737, 0, 131077, -327695, 0, 131077, -393203, 0, 65541, -327668, 0, 1, -327667, 0, 131082, -327666, 0, 2, -262140, 0, 196608, -262139, 0, 131076, -262138, 0, 196610, -262132, 0, 65537, -262131, 0, 196618, -262130, 0, 65538, -196603, 0, 65541, -196595, 0, 131077, -65544, 0, 6, -65543, 0, 196609, -65542, 0, 196609, -65541, 0, 10, -65540, 0, 9, -65539, 0, 196609, -65538, 0, 196609, -65537, 0, 7, -131069, 0, 1, -131068, 0, 65536, -131067, 0, 131082, -131066, 0, 65536, -131065, 0, 2, -8, 0, 131077, -5, 0, 131073, -4, 0, 131074, -1, 0, 131077, -65534, 0, 6, -65533, 0, 65544, -65532, 0, 4, -65531, 0, 196619, -65530, 0, 3, -65529, 0, 65547, -65528, 0, 7, 65531, 0, 65537, 65532, 0, 65538, 2, 0, 131077, 4, 0, 131073, 5, 0, 196619, 6, 0, 131074, 8, 0, 131077, 65540, 0, 65537, 65541, 0, 131072, 65542, 0, 65538, 262131, 0, 6, 262132, 0, 196609, 262133, 0, 10, 262134, 0, 9, 262135, 0, 196609, 262136, 0, 7, 262139, 0, 1, 262140, 0, 2, 327667, 0, 131077, 327669, 0, 131073, 327670, 0, 131074, 327672, 0, 131077, 327675, 0, 131073, 327676, 0, 131074, 327678, 0, 6, 327679, 0, 196609, 262144, 0, 131076, 262145, 0, 196609, 262146, 0, 7, 262148, 0, 1, 262149, 0, 65536, 262150, 0, 2, 393205, 0, 131073, 393206, 0, 131074, 393211, 0, 131073, 393212, 0, 131074, 393214, 0, 131077, 327680, 0, 65541, 327682, 0, 131077, 327684, 0, 131073, 327685, 0, 196619, 327686, 0, 131074, 327690, 0, 196608, 327691, 0, 10, 327692, 0, 9, 327693, 0, 196610, 458741, 0, 131073, 458742, 0, 131074, 458747, 0, 131073, 458748, 0, 131074, 393216, 0, 65541, 393220, 0, 131073, 393221, 0, 196619, 393222, 0, 131074, 393227, 0, 131073, 393228, 0, 131074, 524272, 0, 196608, 524273, 0, 196609, 524274, 0, 196609, 524275, 0, 196609, 524276, 0, 196609, 524277, 0, 65544, 524278, 0, 65547, 524279, 0, 196609, 524280, 0, 196609, 524281, 0, 196609, 524282, 0, 196609, 524283, 0, 65544, 524284, 0, 65547, 524285, 0, 196609, 524286, 0, 196609, 524287, 0, 196609, 458752, 0, 196611, 458753, 0, 196609, 458754, 0, 196609, 458755, 0, 196609, 458756, 0, 65544, 458757, 0, 131072, 458758, 0, 65547, 458759, 0, 196609, 458760, 0, 196609, 458761, 0, 196609, 458762, 0, 196609, 458763, 0, 65544, 458764, 0, 65547, 458765, 0, 196609, 458766, 0, 196609, 458767, 0, 196610 )
+_sections_unfolded = [ "Cell", "Z Index" ]
+
+[node name="SpawnPickup" type="Position2D" parent="." index="1"]
+
+position = Vector2( -63.5412, -42.8348 )
+script = ExtResource( 3 )
+_sections_unfolded = [ "Material", "Transform", "Visibility", "Z Index" ]
+pickupId = 2
+spawnValue = 0.5
+
+[node name="SpawnPickup2" type="Position2D" parent="." index="2"]
+
+position = Vector2( 86.5864, -75.1456 )
+script = ExtResource( 3 )
+_sections_unfolded = [ "Material", "Transform", "Visibility", "Z Index" ]
+pickupId = 1
+spawnValue = 0.5
+
+[node name="SpawnPickup3" type="Position2D" parent="." index="3"]
+
+position = Vector2( 191.323, 67.4767 )
+script = ExtResource( 3 )
+_sections_unfolded = [ "Material", "Transform", "Visibility", "Z Index" ]
+pickupId = 0
+spawnValue = 0.5
+
+[node name="Wave1" type="Position2D" parent="." index="4"]
+
+editor/display_folded = true
+position = Vector2( -264.8, -156.647 )
+
+[node name="SpawnEnemy" type="Position2D" parent="Wave1" index="0"]
+
+position = Vector2( 164.273, 174.498 )
+script = ExtResource( 4 )
+enemyId = 3
+spawnValue = 0.5
+
+[node name="SpawnEnemy2" type="Position2D" parent="Wave1" index="1"]
+
+position = Vector2( 234.174, 188.859 )
+script = ExtResource( 4 )
+enemyId = 0
+spawnValue = 0.5
+
+[node name="SpawnEnemy3" type="Position2D" parent="Wave1" index="2"]
+
+position = Vector2( 210.955, 188.816 )
+script = ExtResource( 4 )
+enemyId = 2
+spawnValue = 0.5
+
+[node name="SpawnEnemy5" type="Position2D" parent="Wave1" index="3"]
+
+position = Vector2( 186.603, 188.874 )
+script = ExtResource( 4 )
+enemyId = 2
+spawnValue = 0.5
+
+[node name="Wave2" type="Position2D" parent="." index="5"]
+
+position = Vector2( -279.92, -156.018 )
+
+[node name="SpawnEnemy2" type="Position2D" parent="Wave2" index="0"]
+
+position = Vector2( 424.828, 58.7299 )
+script = ExtResource( 4 )
+enemyId = 0
+spawnValue = 0.5
+
+[node name="SpawnEnemy3" type="Position2D" parent="Wave2" index="1"]
+
+position = Vector2( 296.72, 91.8621 )
+script = ExtResource( 4 )
+enemyId = 2
+spawnValue = 0.5
+
+[node name="SpawnEnemy5" type="Position2D" parent="Wave2" index="2"]
+
+position = Vector2( 319.472, 72.7025 )
+script = ExtResource( 4 )
+enemyId = 2
+spawnValue = 0.5
+
+[node name="SpawnEnemy6" type="Position2D" parent="Wave2" index="3"]
+
+position = Vector2( 342.823, 49.3516 )
+script = ExtResource( 4 )
+enemyId = 2
+spawnValue = 0.5
+
+[node name="SpawnEnemy4" type="Position2D" parent="Wave2" index="4"]
+
+position = Vector2( 273.072, 108.635 )
+script = ExtResource( 4 )
+enemyId = 2
+spawnValue = 0.5
+
+[node name="RandomEnemies" type="Position2D" parent="." index="6"]
+
+position = Vector2( -258.198, -124.619 )
+
+[node name="SpawnEnemy3" type="Position2D" parent="RandomEnemies" index="0"]
+
+position = Vector2( 273.784, 115.719 )
+script = ExtResource( 4 )
+enemyId = 1
+spawnValue = 0.5
+
+[node name="SpawnEnemy4" type="Position2D" parent="RandomEnemies" index="1"]
+
+position = Vector2( 451.569, 91.922 )
+script = ExtResource( 4 )
+enemyId = 1
+spawnValue = 0.5
+
+[node name="SpawnEnemy5" type="Position2D" parent="RandomEnemies" index="2"]
+
+position = Vector2( 434.603, 109.663 )
+script = ExtResource( 4 )
+enemyId = 1
+spawnValue = 0.5
+
+[node name="SpawnEnemy6" type="Position2D" parent="RandomEnemies" index="3"]
+
+position = Vector2( 118.718, 38.9961 )
+script = ExtResource( 4 )
+enemyId = 1
+spawnValue = 0.5
+
+[node name="SpawnEnemy7" type="Position2D" parent="RandomEnemies" index="4"]
+
+position = Vector2( 136.986, 53.4105 )
+script = ExtResource( 4 )
+enemyId = 1
+spawnValue = 0.5
+
+[node name="SpawnEnemy8" type="Position2D" parent="RandomEnemies" index="5"]
+
+position = Vector2( 188.268, 24.6383 )
+script = ExtResource( 4 )
+enemyId = 1
+spawnValue = 0.5
+
+[node name="Sprite" type="Sprite" parent="." index="7"]
+
+position = Vector2( 9.51047, 49.2499 )
+z_index = -4
+texture = ExtResource( 5 )
+_sections_unfolded = [ "Z Index" ]
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Shop" type="StaticBody2D" parent="Sprite" index="0"]
+
+input_pickable = false
+collision_layer = 1024
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+_sections_unfolded = [ "Collision", "Pickable", "Transform", "Z Index" ]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite/Shop" index="0"]
+
+shape = SubResource( 1 )
+
+
