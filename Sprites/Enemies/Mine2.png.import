@@ -7,10 +7,10 @@ path="res://.import/Mine2.png-4f8cc6fc69ad885b0740c4a9e09bc21b.stex"
 [deps]
 
 source_file="res://Sprites/Enemies/Mine2.png"
-source_md5="ddd507bd2d39910f5ecaaeb3510ef59c"
+source_md5="cc0a338c686879907f5e0911ddc82752"
 
 dest_files=[ "res://.import/Mine2.png-4f8cc6fc69ad885b0740c4a9e09bc21b.stex" ]
-dest_md5="85ec9f3746ad7ea66d57ee90353ff2cc"
+dest_md5="1a24895ef6ed521df81e32c678b51158"
 
 [params]
 

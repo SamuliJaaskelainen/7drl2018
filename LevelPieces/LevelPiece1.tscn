@@ -192,6 +192,7 @@ autostart = false
 
 [node name="Sprite" type="Sprite" parent="." index="18"]
 
+editor/display_folded = true
 position = Vector2( -64, -80 )
 z_index = -4
 texture = ExtResource( 5 )

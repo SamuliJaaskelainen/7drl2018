@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/PlayerShipGreenPotato.png-2ee026fb24992d92fa48b9608d988316.stex"
+path="res://.import/Sky.png-14b1388b41baefd575e2908a4f206ee9.stex"
 
 [deps]
 
-source_file="res://Sprites/Enemies/PlayerShipGreenPotato.png"
-source_md5="452ce4bb9355437a60f8db53872056a3"
+source_file="res://Sprites/Sky.png"
+source_md5="ce8a6650262df9dd4f4fe6f2840fe8b9"
 
-dest_files=[ "res://.import/PlayerShipGreenPotato.png-2ee026fb24992d92fa48b9608d988316.stex" ]
-dest_md5="16be23a6309065dedf19d5f78f1007cc"
+dest_files=[ "res://.import/Sky.png-14b1388b41baefd575e2908a4f206ee9.stex" ]
+dest_md5="e43eebf8e557cb4bdf2377d0a9bd3637"
 
 [params]
 
