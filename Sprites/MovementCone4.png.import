@@ -7,10 +7,10 @@ path="res://.import/MovementCone4.png-a10f6677d4cd23de212481516b69651f.stex"
 [deps]
 
 source_file="res://Sprites/MovementCone4.png"
-source_md5="e743c5d6871e988e08e6ec173892beea"
+source_md5="4319463965fcf83ed13ce8492eaa1f8c"
 
 dest_files=[ "res://.import/MovementCone4.png-a10f6677d4cd23de212481516b69651f.stex" ]
-dest_md5="565cb10780b37ac472bbc947cd923cac"
+dest_md5="fa0bd259efdae51ad484989fe7aadbaa"
 
 [params]
 
