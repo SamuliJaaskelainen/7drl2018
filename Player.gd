@@ -203,9 +203,10 @@ func go():
 			collision.collider.queue_free()
 		elif not wallHit:
 			global_position = prevPos
-			targetPos = prevPos
 			wallHit = true
 			hit(8)
+			
+	move_and_slide(nextPos - global_position)
 		
 	global_position.x = clamp(global_position.x, 0, resolution.x);
 	global_position.y = clamp(global_position.y, 0, resolution.y - 32);	
