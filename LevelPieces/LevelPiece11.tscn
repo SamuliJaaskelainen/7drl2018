@@ -1,0 +1,201 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://LevelPiece.gd" type="Script" id=1]
+[ext_resource path="res://TerrainAutoTile.tres" type="TileSet" id=2]
+[ext_resource path="res://LevelPieces/SpawnPickup.gd" type="Script" id=3]
+[ext_resource path="res://LevelPieces/SpawnEnemy.gd" type="Script" id=4]
+[ext_resource path="res://Sprites/Shop.png" type="Texture" id=5]
+
+[sub_resource type="RectangleShape2D" id=1]
+
+custom_solver_bias = 0.0
+extents = Vector2( 32, 10 )
+
+[node name="LevelPiece8" type="KinematicBody2D" index="0"]
+
+position = Vector2( 256, 128 )
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+collision/safe_margin = 0.08
+script = ExtResource( 1 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="TileMap2" type="TileMap" parent="." index="0"]
+
+z_index = -2
+z_as_relative = false
+mode = 0
+tile_set = ExtResource( 2 )
+cell_size = Vector2( 16, 16 )
+cell_quadrant_size = 16
+cell_custom_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+cell_half_offset = 2
+cell_tile_origin = 0
+cell_y_sort = false
+cell_clip_uv = false
+collision_use_kinematic = false
+collision_friction = 1.0
+collision_bounce = 0.0
+collision_layer = 1
+collision_mask = 1
+occluder_light_mask = 1
+format = 1
+tile_data = PoolIntArray( -524304, 0, 1, -524303, 0, 65536, -524302, 0, 65536, -524301, 0, 65536, -524300, 0, 65536, -524299, 0, 65536, -524298, 0, 65536, -524297, 0, 65536, -524296, 0, 65536, -524295, 0, 65536, -524294, 0, 65536, -524293, 0, 65536, -524292, 0, 65536, -524291, 0, 65536, -524290, 0, 65536, -524289, 0, 65536, -589824, 0, 65536, -589823, 0, 65536, -589822, 0, 65536, -589821, 0, 65536, -589820, 0, 65536, -589819, 0, 65536, -589818, 0, 65536, -589817, 0, 65536, -589816, 0, 65536, -589815, 0, 65536, -589814, 0, 65536, -589813, 0, 65536, -589812, 0, 65536, -589811, 0, 65536, -589810, 0, 65536, -589809, 0, 2, -458768, 0, 131073, -458767, 0, 196619, -458766, 0, 196619, -458765, 0, 3, -458764, 0, 131072, -458763, 0, 131072, -458762, 0, 131072, -458761, 0, 131072, -458760, 0, 131072, -458759, 0, 131072, -458758, 0, 131072, -458757, 0, 131072, -458756, 0, 131072, -458755, 0, 131072, -458754, 0, 131072, -458753, 0, 4, -524288, 0, 196619, -524287, 0, 196619, -524286, 0, 196619, -524285, 0, 196619, -524284, 0, 196619, -524283, 0, 196619, -524282, 0, 196619, -524281, 0, 196619, -524280, 0, 196619, -524279, 0, 196619, -524278, 0, 196619, -524277, 0, 196619, -524276, 0, 196619, -524275, 0, 196619, -524274, 0, 196619, -524273, 0, 131074, -393232, 0, 65546, -393231, 0, 131072, -393230, 0, 131072, -393229, 0, 65538, -393217, 0, 65537, -458752, 0, 131072, -458751, 0, 4, -458750, 0, 3, -458749, 0, 131072, -458748, 0, 131072, -458747, 0, 131072, -458746, 0, 131072, -458745, 0, 131072, -458744, 0, 131072, -458743, 0, 131072, -458742, 0, 131072, -458741, 0, 131072, -458740, 0, 131072, -458739, 0, 4, -458738, 0, 196619, -458737, 0, 131074, -327696, 0, 65541, -393215, 0, 65537, -393214, 0, 65545, -393203, 0, 65537, -393202, 0, 131072, -393201, 0, 65545, -262160, 0, 65541, -327678, 0, 131077, -327665, 0, 131077, -196624, 0, 8, -196623, 0, 65536, -196622, 0, 2, -262139, 0, 196608, -262138, 0, 10, -262137, 0, 65536, -262136, 0, 65536, -262135, 0, 65536, -262134, 0, 2, -131088, 0, 65537, -131087, 0, 131072, -131086, 0, 65547, -131085, 0, 196609, -131084, 0, 7, -196602, 0, 131073, -196601, 0, 196619, -196600, 0, 196619, -196599, 0, 196619, -196598, 0, 196615, -196597, 0, 196609, -196596, 0, 196610, -65548, 0, 65542, -65547, 0, 196610, -65542, 0, 1, -65541, 0, 65536, -65540, 0, 2, -131066, 0, 65537, -131065, 0, 4, -131064, 0, 3, -131063, 0, 131072, -131062, 0, 65545, -6, 0, 65537, -5, 0, 4, -4, 0, 65539, -3, 0, 65536, -2, 0, 2, -65529, 0, 65546, -65528, 0, 65538, -65526, 0, 131077, 65531, 0, 131073, 65532, 0, 196619, 65533, 0, 196619, 65534, 0, 196615, 65535, 0, 196609, 0, 0, 196609, 1, 0, 196609, 2, 0, 196610, 7, 0, 131077, 131067, 0, 131073, 131068, 0, 196619, 131069, 0, 196619, 131070, 0, 131074, 196603, 0, 131073, 196604, 0, 196619, 196605, 0, 196619, 196606, 0, 131074, 262128, 0, 1, 262129, 0, 65536, 262130, 0, 65536, 262131, 0, 2, 262139, 0, 131073, 262140, 0, 196619, 262141, 0, 196619, 262142, 0, 131074, 327664, 0, 131073, 327665, 0, 196619, 327666, 0, 196619, 327667, 0, 65539, 327668, 0, 65536, 327669, 0, 2, 327673, 0, 1, 327674, 0, 65536, 327675, 0, 65540, 327676, 0, 196619, 327677, 0, 196619, 327678, 0, 131079, 327679, 0, 65536, 262144, 0, 65536, 262145, 0, 65536, 262146, 0, 65536, 262147, 0, 65536, 262148, 0, 2, 262159, 0, 5, 393200, 0, 131073, 393201, 0, 196619, 393202, 0, 196619, 393203, 0, 196619, 393204, 0, 196619, 393205, 0, 131079, 393206, 0, 65536, 393207, 0, 65536, 393208, 0, 65536, 393209, 0, 65540, 393210, 0, 196619, 393211, 0, 196619, 393212, 0, 196619, 393213, 0, 196619, 393214, 0, 196619, 393215, 0, 196619, 327680, 0, 196619, 327681, 0, 196619, 327682, 0, 196619, 327683, 0, 196619, 327684, 0, 131074, 327693, 0, 1, 327694, 0, 65536, 327695, 0, 11, 458736, 0, 131073, 458737, 0, 196619, 458738, 0, 196619, 458739, 0, 196619, 458740, 0, 196619, 458741, 0, 196619, 458742, 0, 196619, 458743, 0, 196619, 458744, 0, 196619, 458745, 0, 196619, 458746, 0, 196619, 458747, 0, 196619, 458748, 0, 196619, 458749, 0, 196619, 458750, 0, 196619, 458751, 0, 196619, 393216, 0, 196619, 393217, 0, 196619, 393218, 0, 196619, 393219, 0, 196619, 393220, 0, 131079, 393221, 0, 65536, 393222, 0, 2, 393224, 0, 1, 393225, 0, 65536, 393226, 0, 65536, 393227, 0, 65536, 393228, 0, 65536, 393229, 0, 65540, 393230, 0, 196619, 393231, 0, 131074, 524272, 0, 65537, 524273, 0, 131072, 524274, 0, 131072, 524275, 0, 131072, 524276, 0, 131072, 524277, 0, 131072, 524278, 0, 131072, 524279, 0, 131072, 524280, 0, 131072, 524281, 0, 131072, 524282, 0, 131072, 524283, 0, 131072, 524284, 0, 131072, 524285, 0, 131072, 524286, 0, 131072, 524287, 0, 131072, 458752, 0, 131072, 458753, 0, 131072, 458754, 0, 131072, 458755, 0, 131072, 458756, 0, 131072, 458757, 0, 131072, 458758, 0, 65547, 458759, 0, 196609, 458760, 0, 65544, 458761, 0, 131072, 458762, 0, 131072, 458763, 0, 131072, 458764, 0, 131072, 458765, 0, 131072, 458766, 0, 131072, 458767, 0, 65538 )
+_sections_unfolded = [ "Cell", "Z Index" ]
+
+[node name="SpawnPickup" type="Position2D" parent="." index="1"]
+
+position = Vector2( -192.27, -59.5995 )
+script = ExtResource( 3 )
+_sections_unfolded = [ "Material", "Transform", "Visibility", "Z Index" ]
+pickupId = 2
+spawnValue = 0.5
+
+[node name="SpawnPickup2" type="Position2D" parent="." index="2"]
+
+position = Vector2( -224.159, -73.9481 )
+script = ExtResource( 3 )
+_sections_unfolded = [ "Material", "Transform", "Visibility", "Z Index" ]
+pickupId = 1
+spawnValue = 0.5
+
+[node name="SpawnPickup3" type="Position2D" parent="." index="3"]
+
+position = Vector2( 195.514, -57.6597 )
+script = ExtResource( 3 )
+_sections_unfolded = [ "Material", "Transform", "Visibility", "Z Index" ]
+pickupId = 0
+spawnValue = 0.5
+
+[node name="Wave1" type="Position2D" parent="." index="4"]
+
+editor/display_folded = true
+position = Vector2( -264.8, -156.647 )
+
+[node name="SpawnEnemy" type="Position2D" parent="Wave1" index="0"]
+
+position = Vector2( 167.865, 170.906 )
+script = ExtResource( 4 )
+enemyId = 2
+spawnValue = 0.5
+
+[node name="SpawnEnemy2" type="Position2D" parent="Wave1" index="1"]
+
+position = Vector2( 256.327, 102.042 )
+script = ExtResource( 4 )
+enemyId = 2
+spawnValue = 0.5
+
+[node name="SpawnEnemy3" type="Position2D" parent="Wave1" index="2"]
+
+position = Vector2( 254.663, 81.0433 )
+script = ExtResource( 4 )
+enemyId = 3
+spawnValue = 0.5
+
+[node name="SpawnEnemy5" type="Position2D" parent="Wave1" index="3"]
+
+position = Vector2( 168.042, 191.868 )
+script = ExtResource( 4 )
+enemyId = 3
+spawnValue = 0.5
+
+[node name="Wave2" type="Position2D" parent="." index="5"]
+
+position = Vector2( -279.92, -156.018 )
+
+[node name="SpawnEnemy2" type="Position2D" parent="Wave2" index="0"]
+
+position = Vector2( 520.028, 200.631 )
+script = ExtResource( 4 )
+enemyId = 0
+spawnValue = 0.5
+
+[node name="SpawnEnemy3" type="Position2D" parent="Wave2" index="1"]
+
+position = Vector2( 490.711, 215.801 )
+script = ExtResource( 4 )
+enemyId = 3
+spawnValue = 0.5
+
+[node name="SpawnEnemy4" type="Position2D" parent="Wave2" index="2"]
+
+position = Vector2( 489.815, 185.872 )
+script = ExtResource( 4 )
+enemyId = 2
+spawnValue = 0.5
+
+[node name="RandomEnemies" type="Position2D" parent="." index="6"]
+
+editor/display_folded = true
+position = Vector2( -258.198, -124.619 )
+
+[node name="SpawnEnemy3" type="Position2D" parent="RandomEnemies" index="0"]
+
+position = Vector2( 392.334, 45.0675 )
+script = ExtResource( 4 )
+enemyId = 1
+spawnValue = 0.5
+
+[node name="SpawnEnemy4" type="Position2D" parent="RandomEnemies" index="1"]
+
+position = Vector2( 275.54, 58.9914 )
+script = ExtResource( 4 )
+enemyId = 1
+spawnValue = 0.5
+
+[node name="SpawnEnemy5" type="Position2D" parent="RandomEnemies" index="2"]
+
+position = Vector2( 296.893, 82.1215 )
+script = ExtResource( 4 )
+enemyId = 1
+spawnValue = 0.5
+
+[node name="SpawnEnemy6" type="Position2D" parent="RandomEnemies" index="3"]
+
+position = Vector2( 276.186, 81.5066 )
+script = ExtResource( 4 )
+enemyId = 1
+spawnValue = 0.5
+
+[node name="SpawnEnemy7" type="Position2D" parent="RandomEnemies" index="4"]
+
+position = Vector2( 275.893, 104.902 )
+script = ExtResource( 4 )
+enemyId = 1
+spawnValue = 0.5
+
+[node name="SpawnEnemy8" type="Position2D" parent="RandomEnemies" index="5"]
+
+position = Vector2( 298.436, 105.468 )
+script = ExtResource( 4 )
+enemyId = 1
+spawnValue = 0.5
+
+[node name="Sprite" type="Sprite" parent="." index="7"]
+
+position = Vector2( 18.4915, 51.6449 )
+z_index = -4
+texture = ExtResource( 5 )
+_sections_unfolded = [ "Z Index" ]
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Shop" type="StaticBody2D" parent="Sprite" index="0"]
+
+input_pickable = false
+collision_layer = 1024
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+_sections_unfolded = [ "Collision", "Pickable", "Transform", "Z Index" ]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite/Shop" index="0"]
+
+shape = SubResource( 1 )
+
+
