@@ -3,6 +3,7 @@ extends Control
 var boughtAmount
 var items = []
 var itemTypes = []
+var itemPrices = []
 
 var corePrices = [1,2,3,4]
 var structurePrices = [1,2,3]
@@ -28,19 +29,19 @@ func show():
 	boughtAmount = 0
 	items = []
 	itemTypes = []
-	addItem($ShopItem1, $ShopItem1Buy)
-	addItem($ShopItem2, $ShopItem2Buy)
-	addItem($ShopItem3, $ShopItem3Buy)
+	itemPrices = []
+	addItem($ShopItem1, $ShopItem1Buy, randi() % 5)
+	addItem($ShopItem2, $ShopItem2Buy, randi() % 5)
+	addItem($ShopItem3, $ShopItem3Buy, randi() % 5)
+	addItem($ShopItem4, $ShopItem4BuySlot1, 5)
 	visible = true
 	
-func addItem(shopItem, shopItemBuy):
+func addItem(shopItem, shopItemBuy, rType):
 	
 	var item
 	var type
-	var r = randi() % 6
-	print(r)
 
-	match r:
+	match rType:
 		0:
 			type = player.CORE
 		1:
@@ -81,17 +82,28 @@ func addItem(shopItem, shopItemBuy):
 	shopItemBuy.text = "BUY ["
 	match type:
 		player.CORE:
-			shopItemBuy.text += str(corePrices[item]) 
+			shopItemBuy.text += str(corePrices[item])
+			itemPrices.append(corePrices[item])
 		player.STRUCTURE:
 			shopItemBuy.text += str(structurePrices[item])
+			itemPrices.append(structurePrices[item])
 		player.HULL:
 			shopItemBuy.text += str(hullPrices[item])
+			itemPrices.append(hullPrices[item])
 		player.ENGINE:
 			shopItemBuy.text += str(enginePrices[item])
+			itemPrices.append(enginePrices[item])
 		player.THRUSTER:
 			shopItemBuy.text += str(thrusterPrices[item])
+			itemPrices.append(thrusterPrices[item])
 		player.GUN:
+			shopItemBuy.text = "BUY SLOT1 ["
 			shopItemBuy.text += str(gunPrices[item])
+			itemPrices.append(gunPrices[item])
+			$ShopItem4BuySlot2.text = "BUY SLOT2 ["
+			$ShopItem4BuySlot2.text += str(gunPrices[item])
+			$ShopItem4BuySlot2.text += "]"
+			$ShopItem4BuySlot2.visible = true
 	shopItemBuy.text += "]"
 	
 	shopItem.visible = true
@@ -101,18 +113,29 @@ func hide():
 	visible = false
 
 func _on_ShopItem1Buy_pressed():
-	buyItem(items[0], itemTypes[0], $ShopItem1, $ShopItem1Buy)
+	buyItem(items[0], itemTypes[0], $ShopItem1, $ShopItem1Buy, itemPrices[0], -1)
 
 func _on_ShopItem2Buy_pressed():
-	buyItem(items[1], itemTypes[1], $ShopItem2, $ShopItem2Buy)
+	buyItem(items[1], itemTypes[1], $ShopItem2, $ShopItem2Buy, itemPrices[1], -1)
 
 func _on_ShopItem3Buy_pressed():
-	buyItem(items[2], itemTypes[2], $ShopItem3, $ShopItem3Buy)
+	buyItem(items[2], itemTypes[2], $ShopItem3, $ShopItem3Buy, itemPrices[3], -1)
+	
+func _on_ShopItem4BuySlot1_pressed():
+	buyItem(items[3], itemTypes[3], $ShopItem4, $ShopItem4BuySlot1, itemPrices[3], 1)
+	
+func _on_ShopItem4BuySlot2_pressed():
+	buyItem(items[3], itemTypes[3], $ShopItem4, $ShopItem4BuySlot1, itemPrices[3], 2)
 
 func _on_ShopClose_pressed():
 	hide()
 	
-func buyItem(item, type, shopItem, shopItemBuy):
+func buyItem(item, type, shopItem, shopItemBuy, price, gunID):
+	
+	if player.money < price:
+		return
+		
+	player.money -= price
 	
 	match type:
 		player.CORE:
@@ -126,7 +149,11 @@ func buyItem(item, type, shopItem, shopItemBuy):
 		player.THRUSTER:
 			player.thruster = item
 		player.GUN:
-			player.gun2 = item
+			if (gunID == 1):
+				player.gun1 = item
+			else:
+				player.gun2 = item
+			$ShopItem4BuySlot2.visible = false
 			
 	player.update_gear()
 	player.update_gear_values()
@@ -136,3 +163,9 @@ func buyItem(item, type, shopItem, shopItemBuy):
 	boughtAmount += 1
 	if boughtAmount >= 3:
 		hide()
+
+
+
+
+
+
