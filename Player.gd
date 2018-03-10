@@ -2,7 +2,6 @@ extends KinematicBody2D
 
 enum CORE{
   	shield,
-  	probe,
 	teleport,
 	damageBoost,
 	bomb
@@ -43,8 +42,8 @@ enum GUN{
 	chargeShot
 }
 
-var coreAbilityNames = ["Shield", "Probe", "Teleport", "DamageBoost", "Bomb"]
-var corePowers = [90,10,50,30,60]
+var coreAbilityNames = ["Shield", "Teleport", "DamageBoost", "Bomb"]
+var corePowers = [90,50,30,60]
 var gunNames = ["Single Shot", "Laser", "Rail Gun", "Spread Shot", "Blow", "Ground Bomb", "Charge Shot"]
 var gunPowers = [5,20,40,50,10,15,30]
 var maxPowers = [100,100,100,100,100]
@@ -72,8 +71,9 @@ var maxArmor = 0
 var wallHit = false
 var money = 0
 var powerPerTurn = 5
+var damageBoost = 1
 
-var core = CORE.teleport
+var core = CORE.damageBoost
 var structure = STRUCTURE.medium
 var hull = HULL.light
 var engine = ENGINE.slow
@@ -123,6 +123,7 @@ func _ready():
 	currentArmor = maxArmor
 	update_gear_values()
 	shop.hide()
+	$Shield.hide()
 
 func _process(delta):
 	mousePos = get_viewport().get_mouse_position()
@@ -325,6 +326,16 @@ func _on_Button3_pressed():
 		CORE.teleport:
 			oldPos = targetPos
 			global_position = targetPos	
+		CORE.bomb:
+			for e in enemyManager.enemies:
+				e.hit(10)
+			for b in enemyManager.enemyBullets:
+				b.queue_free()
+				enemyManager.enemyBullets.erase(b)
+		CORE.shield:
+			$Shield.show()
+		CORE.damageBoost:
+			damageBoost = 1.5
 
 func _on_Button4_pressed():
 	base_action()
@@ -361,16 +372,23 @@ func shoot(gunBullet, gun):
 			bullet.startMove()
 	else:
 		createBullet(gunBullet)
+		
+	damageBoost = 1
 	
 func createBullet(gunBullet):
 	var bullet = gunBullet.instance()
 	bullet.position = Vector2(global_position.x + 16, global_position.y)
 	get_parent().add_child(bullet)
+	bullet.damage *= damageBoost
 	bullet.startMove()
 	shotBullets.append(bullet)
 	return bullet
 	
 func hit(damage):
+	if $Shield.visible:
+		$Shield.hide()
+		return
+	
 	currentArmor -= damage
 	if(currentArmor <= 0):
 		currentArmor = 0
