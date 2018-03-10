@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/ShipMultiHull.png-6a3b6cb2d0220ad4e27b36743546fa76.stex"
+path="res://.import/PipeShip.png-027a4bc85c6d77f516de549b04a67348.stex"
 
 [deps]
 
-source_file="res://Sprites/Enemies/ShipMultiHull.png"
-source_md5="b425cd07d0aa8d66d62c76a876ed92cd"
+source_file="res://Sprites/Ships/PipeShip.png"
+source_md5="c5cebb325fe8930f2e7a1b2622913a6e"
 
-dest_files=[ "res://.import/ShipMultiHull.png-6a3b6cb2d0220ad4e27b36743546fa76.stex" ]
-dest_md5="a4420efbf04dcd2d2917b48a3007b542"
+dest_files=[ "res://.import/PipeShip.png-027a4bc85c6d77f516de549b04a67348.stex" ]
+dest_md5="7d226950ba0057a2b8820622227be0b0"
 
 [params]
 

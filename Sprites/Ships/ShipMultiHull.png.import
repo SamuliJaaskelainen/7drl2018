@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/ShipFatso.png-c4a43c4a0fe1700bbf6588f0139de65d.stex"
+path="res://.import/ShipMultiHull.png-3ab955a12c5adbdbfdcaf17a490d5470.stex"
 
 [deps]
 
-source_file="res://Sprites/Enemies/ShipFatso.png"
-source_md5="a527a8d37b6569fec05fa3e1d013dd3c"
+source_file="res://Sprites/Ships/ShipMultiHull.png"
+source_md5="b425cd07d0aa8d66d62c76a876ed92cd"
 
-dest_files=[ "res://.import/ShipFatso.png-c4a43c4a0fe1700bbf6588f0139de65d.stex" ]
-dest_md5="98938845741f31eeba276d75b2e92eb1"
+dest_files=[ "res://.import/ShipMultiHull.png-3ab955a12c5adbdbfdcaf17a490d5470.stex" ]
+dest_md5="a4420efbf04dcd2d2917b48a3007b542"
 
 [params]
 

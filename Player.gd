@@ -8,9 +8,10 @@ enum CORE{
 }
 
 enum STRUCTURE{
-  	small,
-	medium,
-	large
+  	rounded,
+	pipe,
+	large,
+	multi
 }
 
 enum HULL{
@@ -47,7 +48,7 @@ var corePowers = [90,50,30,60]
 var gunNames = ["Single Shot", "Laser", "Rail Gun", "Spread Shot", "Blow", "Ground Bomb", "Charge Shot"]
 var gunPowers = [5,20,40,50,10,15,30]
 var maxPowers = [100,100,100,100,100]
-var structureNames = ["Small", "Medium", "Large"]
+var structureNames = ["Rounded", "Pipe", "Large", "Multi"]
 var hullNames = ["Light", "Medium", "Heavy"]
 var engineNames = ["Slow", "Medium", "Fast"]
 var thrusterNames = ["Agile", "Wide", "Experimental", "Balanced"]
@@ -74,7 +75,7 @@ var powerPerTurn = 5
 var damageBoost = 1
 
 var core = CORE.damageBoost
-var structure = STRUCTURE.medium
+var structure = STRUCTURE.rounded
 var hull = HULL.light
 var engine = ENGINE.slow
 var thruster = THRUSTER.balanced
@@ -248,6 +249,14 @@ func update_gear():
 	maxPower = maxPowers[core]
 	gun1Bullet = bullets[gun1]
 	gun2Bullet = bullets[gun2]
+	$ShipCollision1.disabled = structure != STRUCTURE.rounded
+	$ShipCollision1.visible = structure == STRUCTURE.rounded
+	$ShipCollision2.disabled = structure != STRUCTURE.pipe
+	$ShipCollision2.visible = structure == STRUCTURE.pipe
+	$ShipCollision3.disabled = structure != STRUCTURE.large
+	$ShipCollision3.visible = structure == STRUCTURE.large
+	$ShipCollision4.disabled = structure != STRUCTURE.multi
+	$ShipCollision4.visible = structure == STRUCTURE.multi
 	
 func update_gear_values():
 	

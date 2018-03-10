@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/PipeShip.png-b5cd06f96f7ef8b23cd7c1fe59aa9eed.stex"
+path="res://.import/ShipFatso.png-b95aee55cdc0c4aad13138bf358ad95b.stex"
 
 [deps]
 
-source_file="res://Sprites/Enemies/PipeShip.png"
-source_md5="c5cebb325fe8930f2e7a1b2622913a6e"
+source_file="res://Sprites/Ships/ShipFatso.png"
+source_md5="a527a8d37b6569fec05fa3e1d013dd3c"
 
-dest_files=[ "res://.import/PipeShip.png-b5cd06f96f7ef8b23cd7c1fe59aa9eed.stex" ]
-dest_md5="7d226950ba0057a2b8820622227be0b0"
+dest_files=[ "res://.import/ShipFatso.png-b95aee55cdc0c4aad13138bf358ad95b.stex" ]
+dest_md5="98938845741f31eeba276d75b2e92eb1"
 
 [params]
 
