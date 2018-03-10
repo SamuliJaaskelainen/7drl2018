@@ -69,7 +69,7 @@ var maxPower = 0
 var currentArmor = 0
 var maxArmor = 0
 var wallHit = false
-var money = 0
+var money = 10
 var powerPerTurn = 5
 var damageBoost = 1
 
