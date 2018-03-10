@@ -52,7 +52,7 @@ extents = Vector2( 27.4911, 23.0952 )
 custom_solver_bias = 0.0
 extents = Vector2( 27.2704, 22.9849 )
 
-[sub_resource type="DynamicFont" id=10]
+[sub_resource type="DynamicFont" id=6]
 
 size = 8
 use_mipmaps = false
@@ -60,7 +60,7 @@ use_filter = false
 font_data = ExtResource( 3 )
 _sections_unfolded = [ "Extra Spacing", "Font", "Settings" ]
 
-[sub_resource type="DynamicFont" id=11]
+[sub_resource type="DynamicFont" id=7]
 
 size = 8
 use_mipmaps = false
@@ -68,7 +68,7 @@ use_filter = false
 font_data = ExtResource( 3 )
 _sections_unfolded = [ "Extra Spacing", "Font", "Font/fallback", "Settings" ]
 
-[node name="Game" type="Node" index="0"]
+[node name="Game" type="Node"]
 
 [node name="Sky" type="Sprite" parent="." index="0"]
 
@@ -657,7 +657,7 @@ custom_styles/hover = ExtResource( 13 )
 custom_styles/pressed = ExtResource( 14 )
 custom_styles/disabled = ExtResource( 15 )
 custom_styles/normal = ExtResource( 16 )
-custom_fonts/font = SubResource( 10 )
+custom_fonts/font = SubResource( 6 )
 custom_colors/font_color_disabled = Color( 0.296875, 0.280114, 0.253967, 1 )
 custom_colors/font_color = Color( 0.296875, 0.280114, 0.253967, 1 )
 custom_colors/font_color_hover = Color( 0.296875, 0.280114, 0.253967, 1 )
@@ -696,7 +696,7 @@ custom_styles/hover = ExtResource( 13 )
 custom_styles/pressed = ExtResource( 14 )
 custom_styles/disabled = ExtResource( 15 )
 custom_styles/normal = ExtResource( 16 )
-custom_fonts/font = SubResource( 10 )
+custom_fonts/font = SubResource( 6 )
 custom_colors/font_color_disabled = Color( 0.296875, 0.280114, 0.253967, 1 )
 custom_colors/font_color = Color( 0.296875, 0.280114, 0.253967, 1 )
 custom_colors/font_color_hover = Color( 0.296875, 0.280114, 0.253967, 1 )
@@ -735,7 +735,7 @@ custom_styles/hover = ExtResource( 13 )
 custom_styles/pressed = ExtResource( 14 )
 custom_styles/disabled = ExtResource( 15 )
 custom_styles/normal = ExtResource( 16 )
-custom_fonts/font = SubResource( 10 )
+custom_fonts/font = SubResource( 6 )
 custom_colors/font_color_disabled = Color( 0.296875, 0.280114, 0.253967, 1 )
 custom_colors/font_color = Color( 0.296875, 0.280114, 0.253967, 1 )
 custom_colors/font_color_hover = Color( 0.296875, 0.280114, 0.253967, 1 )
@@ -773,7 +773,7 @@ custom_styles/hover = ExtResource( 13 )
 custom_styles/pressed = ExtResource( 14 )
 custom_styles/disabled = ExtResource( 15 )
 custom_styles/normal = ExtResource( 16 )
-custom_fonts/font = SubResource( 10 )
+custom_fonts/font = SubResource( 6 )
 custom_colors/font_color_disabled = Color( 0.296875, 0.280114, 0.253967, 1 )
 custom_colors/font_color = Color( 0.296875, 0.280114, 0.253967, 1 )
 custom_colors/font_color_hover = Color( 0.296875, 0.280114, 0.253967, 1 )
@@ -986,7 +986,7 @@ mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
 custom_styles/normal = ExtResource( 16 )
-custom_fonts/normal_font = SubResource( 11 )
+custom_fonts/normal_font = SubResource( 7 )
 custom_colors/default_color = Color( 0.296875, 0.280114, 0.253967, 1 )
 custom_colors/selection_color = Color( 0.296875, 0.280114, 0.253967, 1 )
 custom_colors/font_color_selected = Color( 0.296875, 0.280114, 0.253967, 1 )
@@ -1020,7 +1020,7 @@ mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
 custom_styles/normal = ExtResource( 16 )
-custom_fonts/normal_font = SubResource( 11 )
+custom_fonts/normal_font = SubResource( 7 )
 custom_colors/default_color = Color( 0.296875, 0.280114, 0.253967, 1 )
 custom_colors/selection_color = Color( 0.296875, 0.280114, 0.253967, 1 )
 custom_colors/font_color_selected = Color( 0.296875, 0.280114, 0.253967, 1 )
@@ -1054,7 +1054,7 @@ mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
 custom_styles/normal = ExtResource( 16 )
-custom_fonts/normal_font = SubResource( 11 )
+custom_fonts/normal_font = SubResource( 7 )
 custom_colors/default_color = Color( 0.296875, 0.280114, 0.253967, 1 )
 custom_colors/selection_color = Color( 0.296875, 0.280114, 0.253967, 1 )
 custom_colors/font_color_selected = Color( 0.296875, 0.280114, 0.253967, 1 )
@@ -1088,7 +1088,7 @@ mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
 custom_styles/normal = ExtResource( 16 )
-custom_fonts/normal_font = SubResource( 11 )
+custom_fonts/normal_font = SubResource( 7 )
 custom_colors/default_color = Color( 0.296875, 0.280114, 0.253967, 1 )
 custom_colors/selection_color = Color( 0.296875, 0.280114, 0.253967, 1 )
 custom_colors/font_color_selected = Color( 0.296875, 0.280114, 0.253967, 1 )
