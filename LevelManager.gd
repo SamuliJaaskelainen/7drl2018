@@ -6,6 +6,15 @@ var currentLevel = []
 # Pieces used in random pool
 var levelPieces = []
 
+# Pieces used in random pool
+var allLevelPieces = []
+
+# Values to controls piece pool
+var pieceSpawnCount = 0
+var poolIndex
+var movePoolRate = 5
+var startPoolSize = 5
+
 # Add pieces here, piece1, piece2, piece3 etc.
 # Pieces should be in LevelPieces folder
 # Each piece var needs to point to different level piece
@@ -30,25 +39,46 @@ func _ready():
 	# Here add pieces that you want to use to levelPieces list
 	# Comment out with #-sign pieces you don't want in your random pool
 	# MIGI COMMENT OUT PIECES YOU DON'T WANT TO TEST
-	levelPieces.append(piece1)
-	levelPieces.append(piece2)
-	levelPieces.append(piece3)
-	levelPieces.append(piece4)
-	levelPieces.append(piece5)
-	levelPieces.append(piece6)
-	#levelPieces.append(piece7)
-	levelPieces.append(piece8)
-	levelPieces.append(piece9)
-	levelPieces.append(piece10)
-	levelPieces.append(piece11)
-	levelPieces.append(piece12)
-	levelPieces.append(piece13)
-	levelPieces.append(piece14)
+	allLevelPieces.append(piece1)
+	allLevelPieces.append(piece2)
+	allLevelPieces.append(piece3)
+	allLevelPieces.append(piece4)
+	allLevelPieces.append(piece5)
+	allLevelPieces.append(piece6)
+	#levelPieces.push_back(piece7)
+	allLevelPieces.append(piece8)
+	allLevelPieces.append(piece9)
+	allLevelPieces.append(piece10)
+	allLevelPieces.append(piece11)
+	allLevelPieces.append(piece12)
+	allLevelPieces.append(piece13)
+	allLevelPieces.append(piece14)
+	
+	# Add initial pool
+	for i in startPoolSize:
+		levelPieces.append(allLevelPieces[i])
+		print(i)
+	poolIndex = 4
 	
 	# Once all pieces are added we generate initial level
 	generateLevel()
 
+func refreshPool():
+	pieceSpawnCount = 0
+	poolIndex += 1
+	if poolIndex < allLevelPieces.size():
+		levelPieces.pop_front()
+		levelPieces.append(allLevelPieces[poolIndex])
+		
+	print("Refresh pool")
+	for p in levelPieces:
+		print(p)
+
 func generateLevel():
+	pieceSpawnCount += 1
+	if(pieceSpawnCount >= movePoolRate):
+		refreshPool()
+	
 	# When game is booted, we need to add beginning piece
 	if currentLevel.size() == 0:
 		createPiece(Vector2(256,128))
