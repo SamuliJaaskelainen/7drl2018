@@ -106,8 +106,6 @@ _sections_unfolded = [ "Z Index" ]
 
 [node name="BottomUI" type="Node" parent="." index="1"]
 
-editor/display_folded = true
-
 [node name="PowerLabel" type="RichTextLabel" parent="BottomUI" index="0"]
 
 anchor_left = 0.0
@@ -182,7 +180,7 @@ anchor_right = 0.0
 anchor_bottom = 0.0
 margin_left = 104.0
 margin_top = 260.0
-margin_right = 188.0
+margin_right = 273.0
 margin_bottom = 271.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = true
@@ -200,7 +198,7 @@ visible_characters = -1
 percent_visible = 1.0
 meta_underlined = true
 tab_size = 4
-text = "Core: Teleport"
+text = "Core: Damage boost"
 scroll_active = false
 scroll_following = false
 selection_enabled = false
@@ -215,7 +213,7 @@ anchor_right = 0.0
 anchor_bottom = 0.0
 margin_left = 104.0
 margin_top = 272.0
-margin_right = 188.0
+margin_right = 271.0
 margin_bottom = 283.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = true
@@ -248,7 +246,7 @@ anchor_right = 0.0
 anchor_bottom = 0.0
 margin_left = 200.0
 margin_top = 260.0
-margin_right = 284.0
+margin_right = 385.0
 margin_bottom = 271.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = true
@@ -281,7 +279,7 @@ anchor_right = 0.0
 anchor_bottom = 0.0
 margin_left = 200.0
 margin_top = 272.0
-margin_right = 284.0
+margin_right = 384.0
 margin_bottom = 283.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = true
@@ -314,7 +312,7 @@ anchor_right = 0.0
 anchor_bottom = 0.0
 margin_left = 300.0
 margin_top = 260.0
-margin_right = 384.0
+margin_right = 446.0
 margin_bottom = 271.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = true
@@ -347,7 +345,7 @@ anchor_right = 0.0
 anchor_bottom = 0.0
 margin_left = 300.0
 margin_top = 272.0
-margin_right = 384.0
+margin_right = 450.0
 margin_bottom = 283.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = true
@@ -380,7 +378,7 @@ anchor_right = 0.0
 anchor_bottom = 0.0
 margin_left = 412.0
 margin_top = 260.0
-margin_right = 496.0
+margin_right = 512.0
 margin_bottom = 271.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = true
@@ -413,7 +411,7 @@ anchor_right = 0.0
 anchor_bottom = 0.0
 margin_left = 412.0
 margin_top = 272.0
-margin_right = 496.0
+margin_right = 512.0
 margin_bottom = 283.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = true
@@ -1353,6 +1351,7 @@ bus = "Master"
 
 [node name="AudioManager" type="Node2D" parent="." index="7"]
 
+editor/display_folded = true
 script = ExtResource( 25 )
 
 [node name="gun_drop_bomb" type="AudioStreamPlayer" parent="AudioManager" index="0"]

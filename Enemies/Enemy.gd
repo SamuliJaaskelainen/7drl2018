@@ -31,7 +31,8 @@ func startMove():
 	
 	var shootTarget = getPlayerPos()
 	if shootTarget:
-		shootAt(shootTarget)
+		if shootTarget < lastPos:
+			shootAt(shootTarget)
 			
 func endMove():
 	pass
