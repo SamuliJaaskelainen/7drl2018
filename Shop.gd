@@ -4,19 +4,19 @@ var boughtAmount
 var items = []
 var itemTypes = []
 
-var corePrices = [1,2,3,4,5]
+var corePrices = [1,2,3,4]
 var structurePrices = [1,2,3]
 var hullPrices = [1,2,3]
 var enginePrices = [1,2,3]
 var thrusterPrices = [1,2,3,4]
 var gunPrices = [1,2,3,4,5,6,7]
 
-var coreTexts = ["Shield","Probe","Teleport","Damage boost","Bomb"]
-var structureTexts = ["Small","Medium","Large"]
-var hullTexts = ["Light","Medium","Heavy"]
-var engineTexts = ["Slow","Medium","Fast"]
-var thrusterTexts = ["Agile","Wide","Experimental", "Balanded"]
-var gunTexts = ["Single shot","Laser","Rail shot","Spread shot","Blow","Ground bomb","Charge"]
+var coreTexts = ["CORE: Shield, Next hit no dmg","CORE: Teleport, Appear into new place","CORE: Damage boost, Next shot 1.5x dmg","CORE: Bomb, Clears bullets, 10dmg to all enemies"]
+var structureTexts = ["STRUCTURE: Small","STRUCTURE: Medium","STRUCTURE: Large"]
+var hullTexts = ["HULL: Light, 80 armor","HULL: Medium, 100 armor","HULL: Heavy, 120 armor"]
+var engineTexts = ["ENGINE: Slow","ENGINE: Medium","ENGINE: Fast"]
+var thrusterTexts = ["THRUSTER: Agile","THRUSTER: Wide","THRUSTER: Experimental", "THRUSTER: Balanded"]
+var gunTexts = ["GUN: Single shot","GUN: Laser","GUN: Rail shot","GUN: Spread shot","GUN: Blow","GUN: Ground bomb","Charge"]
 
 var player 
 
