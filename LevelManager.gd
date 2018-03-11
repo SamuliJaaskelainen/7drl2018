@@ -33,6 +33,7 @@ var piece11 = preload("res://LevelPieces/LevelPiece11.tscn")
 var piece12 = preload("res://LevelPieces/LevelPiece12.tscn")
 var piece13 = preload("res://LevelPieces/LevelPiece13.tscn")
 var piece14 = preload("res://LevelPieces/LevelPiece14.tscn")
+var piece15 = preload("res://LevelPieces/LevelPiece15.tscn")
 
 
 func _ready():
@@ -40,6 +41,7 @@ func _ready():
 	# Comment out with #-sign pieces you don't want in your random pool
 	# MIGI COMMENT OUT PIECES YOU DON'T WANT TO TEST
 	#allLevelPieces.append(piece1)
+
 	allLevelPieces.append(piece2)
 	allLevelPieces.append(piece3)
 	allLevelPieces.append(piece4)
@@ -53,6 +55,7 @@ func _ready():
 	allLevelPieces.append(piece12)
 	allLevelPieces.append(piece13)
 	allLevelPieces.append(piece14)
+	allLevelPieces.append(piece15)
 	
 	# Add initial pool
 	for i in startPoolSize:

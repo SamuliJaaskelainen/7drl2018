@@ -43,7 +43,7 @@ enum GUN{
 	chargeShot
 }
 
-var coreAbilityNames = ["Shield", "Teleport", "DamageBoost", "Bomb"]
+var coreAbilityNames = ["Shield", "Teleport", "Damage+", "Clear"]
 var corePowers = [45,50,30,60]
 var gunNames = ["Single Shot", "Laser", "Rail Gun", "Spread Shot", "Blow", "Ground Bomb", "Charge Shot"]
 var gunPowers = [5,20,40,50,15,35,25]
@@ -204,6 +204,8 @@ func go():
 			audioManager.PlayAudio("ui_shop_opens")
 			shop.show()
 			collision.collider.queue_free()
+		elif "End" in collision.collider.get_name():
+			get_tree().quit()
 		elif not wallHit:
 			global_position = prevPos
 			wallHit = true

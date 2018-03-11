@@ -94,7 +94,7 @@ use_filter = false
 font_data = ExtResource( 3 )
 _sections_unfolded = [ "Extra Spacing", "Font", "Font/fallback", "Settings" ]
 
-[node name="Game" type="Node" index="0"]
+[node name="Game" type="Node"]
 
 [node name="Sky" type="Sprite" parent="." index="0"]
 
@@ -105,6 +105,8 @@ texture = ExtResource( 1 )
 _sections_unfolded = [ "Z Index" ]
 
 [node name="BottomUI" type="Node" parent="." index="1"]
+
+editor/display_folded = true
 
 [node name="PowerLabel" type="RichTextLabel" parent="BottomUI" index="0"]
 
@@ -550,6 +552,7 @@ _sections_unfolded = [ "Z Index" ]
 
 [node name="Player" type="KinematicBody2D" parent="." index="2"]
 
+editor/display_folded = true
 position = Vector2( 64, 112 )
 scale = Vector2( 0.25, 0.25 )
 z_as_relative = false
@@ -1351,12 +1354,13 @@ bus = "Master"
 
 [node name="AudioManager" type="Node2D" parent="." index="7"]
 
+editor/display_folded = true
 script = ExtResource( 25 )
 
 [node name="gun_drop_bomb" type="AudioStreamPlayer" parent="AudioManager" index="0"]
 
 stream = ExtResource( 26 )
-volume_db = -10.0
+volume_db = 0.0
 autoplay = false
 mix_target = 0
 bus = "Master"
@@ -1364,7 +1368,7 @@ bus = "Master"
 [node name="gun_prepare_charge" type="AudioStreamPlayer" parent="AudioManager" index="1"]
 
 stream = ExtResource( 27 )
-volume_db = -15.0
+volume_db = 0.0
 autoplay = false
 mix_target = 0
 bus = "Master"
@@ -1372,7 +1376,7 @@ bus = "Master"
 [node name="gun_shoot_charge" type="AudioStreamPlayer" parent="AudioManager" index="2"]
 
 stream = ExtResource( 28 )
-volume_db = -15.0
+volume_db = 0.0
 autoplay = false
 mix_target = 0
 bus = "Master"
@@ -1380,7 +1384,7 @@ bus = "Master"
 [node name="gun_shoot_blow" type="AudioStreamPlayer" parent="AudioManager" index="3"]
 
 stream = ExtResource( 29 )
-volume_db = -9.0
+volume_db = 0.0
 autoplay = false
 mix_target = 0
 bus = "Master"
@@ -1388,7 +1392,7 @@ bus = "Master"
 [node name="gun_shoot_laser" type="AudioStreamPlayer" parent="AudioManager" index="4"]
 
 stream = ExtResource( 30 )
-volume_db = -15.0
+volume_db = 0.0
 autoplay = false
 mix_target = 0
 bus = "Master"
@@ -1396,7 +1400,7 @@ bus = "Master"
 [node name="gun_shoot_rail_gun" type="AudioStreamPlayer" parent="AudioManager" index="5"]
 
 stream = ExtResource( 31 )
-volume_db = -15.0
+volume_db = 0.0
 autoplay = false
 mix_target = 0
 bus = "Master"
@@ -1404,7 +1408,7 @@ bus = "Master"
 [node name="gun_single_shot" type="AudioStreamPlayer" parent="AudioManager" index="6"]
 
 stream = ExtResource( 32 )
-volume_db = -12.0
+volume_db = 0.0
 autoplay = false
 mix_target = 0
 bus = "Master"
@@ -1412,7 +1416,7 @@ bus = "Master"
 [node name="gun_spread_shot" type="AudioStreamPlayer" parent="AudioManager" index="7"]
 
 stream = ExtResource( 33 )
-volume_db = -12.0
+volume_db = 0.0
 autoplay = false
 mix_target = 0
 bus = "Master"
@@ -1420,7 +1424,7 @@ bus = "Master"
 [node name="hit_bullet_hits_enemy" type="AudioStreamPlayer" parent="AudioManager" index="8"]
 
 stream = ExtResource( 34 )
-volume_db = -13.0
+volume_db = 0.0
 autoplay = false
 mix_target = 0
 bus = "Master"
@@ -1428,7 +1432,7 @@ bus = "Master"
 [node name="hit_bullet_hits_ground" type="AudioStreamPlayer" parent="AudioManager" index="9"]
 
 stream = ExtResource( 35 )
-volume_db = -12.0
+volume_db = 0.0
 autoplay = false
 mix_target = 0
 bus = "Master"
@@ -1436,7 +1440,7 @@ bus = "Master"
 [node name="hit_enemy_dies" type="AudioStreamPlayer" parent="AudioManager" index="10"]
 
 stream = ExtResource( 36 )
-volume_db = -12.0
+volume_db = 0.0
 autoplay = false
 mix_target = 0
 bus = "Master"
@@ -1444,7 +1448,7 @@ bus = "Master"
 [node name="hit_explosion" type="AudioStreamPlayer" parent="AudioManager" index="11"]
 
 stream = ExtResource( 37 )
-volume_db = -10.0
+volume_db = 0.0
 autoplay = false
 mix_target = 0
 bus = "Master"
@@ -1452,7 +1456,7 @@ bus = "Master"
 [node name="player_send_probe" type="AudioStreamPlayer" parent="AudioManager" index="12"]
 
 stream = ExtResource( 38 )
-volume_db = -10.0
+volume_db = 0.0
 autoplay = false
 mix_target = 0
 bus = "Master"
@@ -1460,7 +1464,7 @@ bus = "Master"
 [node name="player_boost_guns" type="AudioStreamPlayer" parent="AudioManager" index="13"]
 
 stream = ExtResource( 39 )
-volume_db = -14.0
+volume_db = 0.0
 autoplay = false
 mix_target = 0
 bus = "Master"
@@ -1468,7 +1472,7 @@ bus = "Master"
 [node name="player_create_energy_shield" type="AudioStreamPlayer" parent="AudioManager" index="14"]
 
 stream = ExtResource( 40 )
-volume_db = -7.0
+volume_db = 0.0
 autoplay = false
 mix_target = 0
 bus = "Master"
@@ -1476,7 +1480,7 @@ bus = "Master"
 [node name="player_big_screen_explosion" type="AudioStreamPlayer" parent="AudioManager" index="15"]
 
 stream = ExtResource( 41 )
-volume_db = -12.0
+volume_db = 0.0
 autoplay = false
 mix_target = 0
 bus = "Master"
@@ -1484,7 +1488,7 @@ bus = "Master"
 [node name="player_explodes" type="AudioStreamPlayer" parent="AudioManager" index="16"]
 
 stream = ExtResource( 42 )
-volume_db = -7.0
+volume_db = 0.0
 autoplay = false
 mix_target = 0
 bus = "Master"
@@ -1492,7 +1496,7 @@ bus = "Master"
 [node name="player_ship_moves" type="AudioStreamPlayer" parent="AudioManager" index="17"]
 
 stream = ExtResource( 43 )
-volume_db = -5.0
+volume_db = 0.0
 autoplay = false
 mix_target = 0
 bus = "Master"
@@ -1500,7 +1504,7 @@ bus = "Master"
 [node name="player_ship_takes_damage" type="AudioStreamPlayer" parent="AudioManager" index="18"]
 
 stream = ExtResource( 44 )
-volume_db = -12.0
+volume_db = 0.0
 autoplay = false
 mix_target = 0
 bus = "Master"
@@ -1508,7 +1512,7 @@ bus = "Master"
 [node name="player_teleport" type="AudioStreamPlayer" parent="AudioManager" index="19"]
 
 stream = ExtResource( 45 )
-volume_db = -13.0
+volume_db = 0.0
 autoplay = false
 mix_target = 0
 bus = "Master"
@@ -1516,7 +1520,7 @@ bus = "Master"
 [node name="ui_buy_from_shop" type="AudioStreamPlayer" parent="AudioManager" index="20"]
 
 stream = ExtResource( 46 )
-volume_db = -13.0
+volume_db = 0.0
 autoplay = false
 mix_target = 0
 bus = "Master"
@@ -1524,7 +1528,7 @@ bus = "Master"
 [node name="ui_open_action_menu" type="AudioStreamPlayer" parent="AudioManager" index="21"]
 
 stream = ExtResource( 47 )
-volume_db = -13.0
+volume_db = 0.0
 autoplay = false
 mix_target = 0
 bus = "Master"
@@ -1532,7 +1536,7 @@ bus = "Master"
 [node name="ui_select_action_from_action_menu" type="AudioStreamPlayer" parent="AudioManager" index="22"]
 
 stream = ExtResource( 48 )
-volume_db = -12.0
+volume_db = 0.0
 autoplay = false
 mix_target = 0
 bus = "Master"
@@ -1540,7 +1544,7 @@ bus = "Master"
 [node name="ui_shop_opens" type="AudioStreamPlayer" parent="AudioManager" index="23"]
 
 stream = ExtResource( 49 )
-volume_db = -10.0
+volume_db = 0.0
 autoplay = false
 mix_target = 0
 bus = "Master"
