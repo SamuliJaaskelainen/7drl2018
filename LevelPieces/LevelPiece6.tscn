@@ -11,7 +11,7 @@
 custom_solver_bias = 0.0
 extents = Vector2( 32, 10 )
 
-[node name="LevelPiece6" type="KinematicBody2D" index="0"]
+[node name="LevelPiece6" type="KinematicBody2D"]
 
 position = Vector2( 256, 128 )
 input_pickable = false
@@ -231,6 +231,14 @@ position = Vector2( 501.429, 122.159 )
 scale = Vector2( 1.21191, 1 )
 script = ExtResource( 5 )
 enemyId = 1
+spawnValue = 0.6
+
+[node name="SpawnEnemy12" type="Position2D" parent="RandomEnemies" index="10"]
+
+position = Vector2( 231.417, 127.466 )
+scale = Vector2( 1.21191, 1 )
+script = ExtResource( 5 )
+enemyId = 4
 spawnValue = 0.6
 
 

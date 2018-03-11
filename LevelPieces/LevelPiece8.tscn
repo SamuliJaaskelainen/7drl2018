@@ -107,6 +107,13 @@ script = ExtResource( 4 )
 enemyId = 3
 spawnValue = 0.6
 
+[node name="SpawnEnemy6" type="Position2D" parent="Wave1" index="5"]
+
+position = Vector2( 254.978, 92.4259 )
+script = ExtResource( 4 )
+enemyId = 5
+spawnValue = 0.6
+
 [node name="Wave2" type="Position2D" parent="." index="5"]
 
 position = Vector2( -256.569, -127.877 )

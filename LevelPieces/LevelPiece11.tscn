@@ -127,7 +127,6 @@ spawnValue = 0.8
 
 [node name="RandomEnemies" type="Position2D" parent="." index="6"]
 
-editor/display_folded = true
 position = Vector2( -258.198, -124.619 )
 
 [node name="SpawnEnemy3" type="Position2D" parent="RandomEnemies" index="0"]
@@ -137,35 +136,63 @@ script = ExtResource( 4 )
 enemyId = 1
 spawnValue = 0.5
 
-[node name="SpawnEnemy4" type="Position2D" parent="RandomEnemies" index="1"]
+[node name="SpawnEnemy9" type="Position2D" parent="RandomEnemies" index="1"]
+
+position = Vector2( 396.978, 210.923 )
+script = ExtResource( 4 )
+enemyId = 5
+spawnValue = 0.5
+
+[node name="SpawnEnemy10" type="Position2D" parent="RandomEnemies" index="2"]
+
+position = Vector2( 133.6, 195.001 )
+script = ExtResource( 4 )
+enemyId = 5
+spawnValue = 0.5
+
+[node name="SpawnEnemy11" type="Position2D" parent="RandomEnemies" index="3"]
+
+position = Vector2( 261.64, 115.39 )
+script = ExtResource( 4 )
+enemyId = 5
+spawnValue = 0.5
+
+[node name="SpawnEnemy12" type="Position2D" parent="RandomEnemies" index="4"]
+
+position = Vector2( 261.64, 115.39 )
+script = ExtResource( 4 )
+enemyId = 5
+spawnValue = 0.5
+
+[node name="SpawnEnemy4" type="Position2D" parent="RandomEnemies" index="5"]
 
 position = Vector2( 275.54, 58.9914 )
 script = ExtResource( 4 )
 enemyId = 1
 spawnValue = 0.5
 
-[node name="SpawnEnemy5" type="Position2D" parent="RandomEnemies" index="2"]
+[node name="SpawnEnemy5" type="Position2D" parent="RandomEnemies" index="6"]
 
 position = Vector2( 296.893, 82.1215 )
 script = ExtResource( 4 )
 enemyId = 1
 spawnValue = 0.5
 
-[node name="SpawnEnemy6" type="Position2D" parent="RandomEnemies" index="3"]
+[node name="SpawnEnemy6" type="Position2D" parent="RandomEnemies" index="7"]
 
 position = Vector2( 276.186, 81.5066 )
 script = ExtResource( 4 )
 enemyId = 1
 spawnValue = 0.5
 
-[node name="SpawnEnemy7" type="Position2D" parent="RandomEnemies" index="4"]
+[node name="SpawnEnemy7" type="Position2D" parent="RandomEnemies" index="8"]
 
-position = Vector2( 275.893, 104.902 )
+position = Vector2( 500.792, 150.015 )
 script = ExtResource( 4 )
-enemyId = 1
+enemyId = 4
 spawnValue = 0.5
 
-[node name="SpawnEnemy8" type="Position2D" parent="RandomEnemies" index="5"]
+[node name="SpawnEnemy8" type="Position2D" parent="RandomEnemies" index="9"]
 
 position = Vector2( 298.436, 105.468 )
 script = ExtResource( 4 )

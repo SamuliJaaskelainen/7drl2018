@@ -195,7 +195,7 @@ func go():
 			currentPower += 30
 			collision.collider.queue_free()
 		elif "Armor" in collision.collider.get_name():
-			currentArmor += 5
+			currentArmor += 10
 			collision.collider.queue_free()
 		elif "Money" in collision.collider.get_name():
 			money += 10

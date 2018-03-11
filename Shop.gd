@@ -10,7 +10,7 @@ var structurePrices = [20,25,20,20]
 var hullPrices = [30,50,60,4]
 var enginePrices = [10,20,50]
 var thrusterPrices = [20,30,50,10]
-var gunPrices = [10,15,50,50,25,40,20]
+var gunPrices = [10,15,40,40,25,35,20]
 
 var coreTexts = ["CORE: Shield, Next hit no dmg","CORE: Teleport, Appear into new place","CORE: Damage boost, Next shot 1.5x dmg","CORE: Bomb, Clears bullets, 10dmg to all enemies"]
 var structureTexts = ["STRUCTURE: Rounded","STRUCTURE: Pipe","STRUCTURE: Large","STRUCTURE: Multi"]

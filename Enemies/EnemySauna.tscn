@@ -8,7 +8,7 @@
 custom_solver_bias = 0.0
 extents = Vector2( 13.1794, 11.6821 )
 
-[node name="Enemy" type="KinematicBody2D"]
+[node name="Enemy" type="KinematicBody2D" index="0"]
 
 position = Vector2( 0.581135, 1.35598 )
 input_pickable = false
@@ -20,7 +20,7 @@ _sections_unfolded = [ "Collision", "Pickable", "collision" ]
 shootingTurnInterval = 2
 moveSpeed = 35.0
 collisionDamage = 10
-health = 10
+health = 35
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." index="0"]
 
