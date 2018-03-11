@@ -14,10 +14,10 @@ var gunPrices = [10,15,40,40,25,35,20]
 
 var coreTexts = ["CORE: Shield, Next hit no dmg","CORE: Teleport, Appear into new place","CORE: Damage boost, Next shot 1.5x dmg","CORE: Bomb, Clears bullets, 10dmg to all enemies"]
 var structureTexts = ["STRUCTURE: Rounded","STRUCTURE: Pipe","STRUCTURE: Large","STRUCTURE: Multi"]
-var hullTexts = ["HULL: Light, 80 armor","HULL: Medium, 100 armor","HULL: Heavy, 120 armor"]
-var engineTexts = ["ENGINE: Slow","ENGINE: Medium","ENGINE: Fast"]
-var thrusterTexts = ["THRUSTER: Agile","THRUSTER: Wide","THRUSTER: Experimental", "THRUSTER: Balanded"]
-var gunTexts = ["GUN: Single shot","GUN: Laser","GUN: Rail shot","GUN: Spread shot","GUN: Blow","GUN: Ground bomb","Charge"]
+var hullTexts = ["HULL: Light, 80 armor, repairs ship fully","HULL: Medium, 100 armor, repairs ship fully","HULL: Heavy, 120 armor, repairs ship fully"]
+var engineTexts = ["ENGINE: Slow, 90% movement ragne","ENGINE: Medium, 100% movement range","ENGINE: Fast, 110% movement range"]
+var thrusterTexts = ["THRUSTER: Agile, made for fast travel","THRUSTER: Wide, made for dodging","THRUSTER: Experimental, made for fun", "THRUSTER: Balanded, made for safety"]
+var gunTexts = ["GUN: Single shot, damage 10, shoots on action","GUN: Laser, damage 20, shoots continuously","GUN: Rail shot, damage 40, shoots at the end of the action","GUN: Spread shot, damage 10x3, shoots 3 bullets on action","GUN: Blow, damage 30, shoots close range blast on action","GUN: Ground bomb, damage 10x2, drops bombs on action","Charge, damage 20-60, shoots after 1-3 charges on action"]
 
 var player 
 var audioManager
