@@ -7,7 +7,7 @@ path="res://.import/Cursor.png-fcd5a00857a28e87c249056eda5037fc.stex"
 [deps]
 
 source_file="res://Sprites/Cursor.png"
-source_md5="8117da325237c7c3211658812793ea15"
+source_md5="0bb244a1de7d0fab97be0bf760e50bfa"
 
 dest_files=[ "res://.import/Cursor.png-fcd5a00857a28e87c249056eda5037fc.stex" ]
 dest_md5="404ee487167351c50ac40b089b35040b"

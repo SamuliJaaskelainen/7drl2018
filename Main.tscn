@@ -303,7 +303,7 @@ scroll_active = false
 scroll_following = false
 selection_enabled = false
 override_selected_font_color = false
-_sections_unfolded = [ "custom_fonts" ]
+_sections_unfolded = [ "custom_colors", "custom_constants", "custom_fonts" ]
 
 [node name="EngineLabel" type="RichTextLabel" parent="BottomUI" index="6"]
 
@@ -435,7 +435,7 @@ scroll_active = false
 scroll_following = false
 selection_enabled = false
 override_selected_font_color = false
-_sections_unfolded = [ "custom_fonts" ]
+_sections_unfolded = [ "custom_colors", "custom_fonts" ]
 
 [node name="UISprite" type="Sprite" parent="BottomUI" index="10"]
 
@@ -586,7 +586,6 @@ _sections_unfolded = [ "custom_colors", "custom_fonts", "custom_styles" ]
 
 [node name="Player" type="KinematicBody2D" parent="." index="2"]
 
-editor/display_folded = true
 position = Vector2( 64, 112 )
 scale = Vector2( 0.25, 0.25 )
 z_as_relative = false
