@@ -12,7 +12,7 @@ var allLevelPieces = []
 # Values to controls piece pool
 var pieceSpawnCount = 0
 var poolIndex
-var movePoolRate = 5
+var movePoolRate = 4
 var startPoolSize = 5
 
 # Add pieces here, piece1, piece2, piece3 etc.
